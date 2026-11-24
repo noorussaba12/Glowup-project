@@ -1,0 +1,27 @@
+# Dependency directories
+node_modules/
+glow_backend/node_modules/
+
+# Uploads & Temp files
+glow_backend/uploads/*
+!glow_backend/uploads/.gitkeep
+*.log
+
+# Environment variables & secrets
+.env
+glow_backend/.env
+
+# Flutter / Dart build artifacts
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+android/.gradle
+android/captures/
+android/gradlew
+android/gradlew.bat
+android/local.properties
+
+# OS files
+.DS_Store
+Thumbs.db
