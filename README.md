@@ -102,6 +102,84 @@ flutter run
 
 ---
 
+## 🥗 PART 3: Nutriflow — Dermatological Nutrition & Diet Plan Engine
+
+Nutriflow builds a personalized diet plan derived directly from the user's skin concerns, nutrition goals, food allergies, and daily grocery budget in Pakistani Rupees (₨ PKR) or kitchen food on hand.
+
+### Key Nutriflow Deliverables & Capabilities:
+
+1. **Strict 5-Tab Bottom Navigation Bar:**
+   - **Tab 1: Home**
+   - **Tab 2: Scan**
+   - **Tab 3: My Plan (Skincare)**
+   - **Tab 4: Nutriflow (Nutrition)**
+   - **Tab 5: Profile** *(History is organized under Profile and in the Recent Scans card on Home; Shop is completely removed from navigation)*.
+
+2. **Setup Wizard (Chat-Style Assistant Consultation):**
+   - **Step 1 (Timings & Reminders):** Customizable breakfast, lunch, snack, dinner times, water reminder intervals (every 2-4 hours), and device local notification permission.
+   - **Step 2 (Allergies & Exclusions):** Common allergens (peanuts, tree nuts, dairy/lactose, eggs, gluten, soy, fish, shellfish, sesame) + diet tags (halal, vegetarian, vegan, no beef).
+   - **Step 3 (Daily Budget in PKR & Food at Home):** Daily budget chips (Under ₨ 500, ₨ 500-1,000, ₨ 1,000-1,500, ₨ 1,500+) or upload food-at-home photos for automatic Gemini Vision pantry ingredient detection.
+   - **Step 4 (Nutrition Goals):** Fiber, low sodium (<2,000 mg), hydration, more protein, lower carbs, plus auto-suggested skin goals linked directly to the user's skin scan findings.
+   - **Step 5 (Clinical Safe Targets & Medical Flags):** Age, sex, height, weight with Mifflin-St Jeor equation calculation. Enforces clinical caloric floors (min 1,200 kcal women, 1,500 kcal men; under 18 hides calorie counting completely). Flags for diabetes, hypertension, PCOS, kidney disease, pregnancy, or eating disorder history trigger a prominent physician/dietitian disclaimer card.
+   - **Step 6 (Confirmation):** Review parameters and compile 7-day meal plan.
+
+3. **Nutriflow Home Dashboard:**
+   - Greeting & today's date
+   - **Calories ring** (eaten vs target kcal) and macro split bars (protein, carbs, fiber)
+   - "Quality-First Mode" toggle to hide calorie numbers
+   - **Interactive Water Tracker** with `+` / `-` 250ml glass buttons
+   - **Next Meal Card** with thumbnail photo, prep time, PKR cost, and "View Recipe & Skin Benefits" button
+   - Today's budget spent vs daily PKR budget remaining
+   - Adherence streak counter (`🔥 4 Days`)
+   - Shortcuts to 7-Day Plan, Daily Tracker, Schedule, and Analytics Dashboard
+
+4. **Schedule & Reminders:**
+   - Daily timeline with meal times, water reminders, and planned meals with toggle switches.
+
+5. **7-Day Meal Plan:**
+   - Mon-Sun day selector tabs
+   - Day totals summary (calories, macros, daily PKR grocery cost)
+   - Verified meal cards with Pakistani staples (moong daal, chana chaat, rolled oats with dahi, soft-boiled eggs, spiced spinach bhurji, etc.)
+   - Real-time "Swap Meal" button per slot and "Regenerate Day" feature
+
+6. **Meal Details Screen:**
+   - Large photo, prep time, difficulty, cost in PKR
+   - Personalized AI clinical rationale: "How this meal works for you" (linking skin scan findings to nutrients)
+   - "Why it matters" nutritional role
+   - Numbered recipe cooking instructions
+   - Ingredient measurements with itemized PKR prices
+   - Nutritional breakdown table + modest skin nutrient claims (e.g. bioavailable choline, beta-glucan, lutein)
+   - **Affordable Alternatives:** Cheaper Pakistani staple swaps (e.g. Peanuts instead of Almonds, save ₨ 25 PKR) with 1-tap live swap!
+
+7. **Daily Nutrition Tracker & Calendar:**
+   - Daily meal checklist with checkbox to mark as eaten
+   - "Add Custom Food" search and logging
+   - 30-day calendar view with adherence dots (green = target met, gold = planned, gray = incomplete)
+
+8. **Full Nutrition Analytics Dashboard:**
+   - Weekly & monthly consistency trends (88% adherence)
+   - **Skin Link Card:** Connects nutrition adherence with scan score improvement (+14 pts hydration) with transparent multifactorial clinical disclaimers
+   - Export Weekly Summary as PDF
+
+---
+
+## 🌾 Verified Seed Data & Import Script
+
+All meals and ingredient nutrition figures come from trusted databases (USDA FoodData Central and verified Pakistani staples), never from AI guesses:
+
+- `glow_backend/ingredients_seed.csv` — 20 Pakistani staples with PKR prices, allergens, diet tags, and 3 `TODO` owner verification rows.
+- `glow_backend/meals_seed.csv` — 13 complete meals with recipe steps, nutrition per serving, prep times, and 3 `TODO` owner verification rows.
+- `glow_backend/import_seeds.js` — Import script converting CSV templates into `ingredients.json` and `meals.json`.
+- `firestore.rules` — Complete security rules enforcing user ownership and admin-only write access to ingredients and meals.
+
+To run the seed importer:
+```bash
+cd "Glow up/glow_backend"
+node import_seeds.js
+```
+
+---
+
 ## 🚫 What is NOT Included in this MVP
 
 To maintain a laser-focused, production-grade clinical MVP, the following are deliberately excluded from this scope:

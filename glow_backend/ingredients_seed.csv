@@ -1,0 +1,21 @@
+id,name,category,pricePerUnitPKR,unit,priceUpdatedAt,calories100g,protein100g,carbs100g,fiber100g,sugar100g,fat100g,sodium100g,allergens,dietTags,roleTags,alternatives,verified,sourceNote
+eggs,Fresh Farm Eggs,protein,30,piece,2026-11-20,143,12.6,0.7,0.0,0.4,9.5,142,eggs,halal;vegetarian,protein;vitamin_d;choline,boiled_eggs,true,USDA FoodData Central
+chicken_breast,Skinless Chicken Breast,protein,900,kg,2026-11-22,165,31.0,0.0,0.0,0.0,3.6,74,,halal,lean_protein;zinc;niacin,tofu;eggs,true,Pakistan Poultry Assoc / USDA
+dahi_plain,Plain Fresh Yogurt (Dahi),dairy,220,kg,2026-11-24,61,3.5,4.7,0.0,4.7,3.3,46,dairy,halal;vegetarian,probiotics;calcium;hydration,greek_yogurt;soya_curd,true,USDA FoodData Central
+oats_rolled,Whole Rolled Oats (Jaee),grains,450,kg,2026-11-15,389,16.9,66.3,10.6,0.0,6.9,2,gluten,halal;vegetarian;vegan,fiber;beta_glucan;complex_carbs,dalia;quinoa,true,USDA FoodData Central
+chickpeas_chana,White Chickpeas (Kabuli Chana),legumes,380,kg,2026-11-18,364,19.3,60.6,17.4,10.7,6.0,24,,halal;vegetarian;vegan,fiber;plant_protein;iron,kala_chana;kidney_beans,true,USDA FoodData Central
+daal_moong,Yellow Moong Lentils,legumes,320,kg,2026-11-19,347,23.8,63.4,16.3,6.6,1.2,15,,halal;vegetarian;vegan,plant_protein;folate;potassium,masoor_daal,true,USDA FoodData Central
+atta_whole_wheat,Chakki Whole Wheat Flour,grains,130,kg,2026-11-24,340,13.2,72.0,10.7,0.4,2.5,5,gluten,halal;vegetarian;vegan,fiber;b_vitamins;energy,jowar_flour,true,Pakistan Millers Assoc
+cucumber,Fresh Salad Cucumber (Kheera),vegetables,90,kg,2026-11-25,15,0.7,3.6,0.5,1.7,0.1,2,,halal;vegetarian;vegan,hydration;silica;potassium,zucchini,true,USDA FoodData Central
+tomato,Fresh Tomatoes (Tamatar),vegetables,120,kg,2026-11-25,18,0.9,3.9,1.2,2.6,0.2,5,,halal;vegetarian;vegan,lycopene;vitamin_c;antioxidants,bell_pepper,true,USDA FoodData Central
+spinach_palak,Fresh Spinach (Palak),vegetables,80,kg,2026-11-23,23,2.9,3.6,2.2,0.4,0.4,79,,halal;vegetarian;vegan,iron;vitamin_a;vitamin_k;folate,methi_leaves,true,USDA FoodData Central
+almonds_raw,Raw Almonds (Badaam),nuts,2200,kg,2026-11-10,579,21.2,21.6,12.5,4.4,49.9,1,tree_nuts,halal;vegetarian;vegan,healthy_fat;vitamin_e;magnesium,peanuts;flaxseeds,true,USDA FoodData Central
+peanuts_roasted,Roasted Peanuts (Moongphali),nuts,550,kg,2026-11-20,567,25.8,16.1,8.5,4.7,49.2,18,peanuts,halal;vegetarian;vegan,healthy_fat;protein;resveratrol,almonds;sunflower_seeds,true,USDA FoodData Central
+chia_seeds,Chia Seeds / Tukhm-e-Balanga,seeds,1400,kg,2026-11-12,486,16.5,42.1,34.4,0.0,30.7,16,,halal;vegetarian;vegan,omega_3;fiber;hydration,flaxseeds;basil_seeds,true,USDA FoodData Central
+lemon_fresh,Fresh Lemons (Leemo),fruits,180,kg,2026-11-25,29,1.1,9.3,2.8,2.5,0.3,2,,halal;vegetarian;vegan,vitamin_c;flavonoids;citric_acid,lime;amla,true,USDA FoodData Central
+guava_amrood,Seasonal Fresh Guava (Amrood),fruits,140,kg,2026-11-24,68,2.6,14.3,5.4,8.9,1.0,2,,halal;vegetarian;vegan,vitamin_c;fiber;lycopene,papaya;oranges,true,USDA FoodData Central
+olive_oil_extra,Extra Virgin Olive Oil,oils,2800,liter,2026-11-05,884,0.0,0.0,0.0,0.0,100.0,2,,halal;vegetarian;vegan,polyphenols;monounsaturated_fat,mustard_oil,true,USDA FoodData Central
+mustard_oil,Pure Mustard Oil (Sarson ka Tel),oils,600,liter,2026-11-15,884,0.0,0.0,0.0,0.0,100.0,0,,halal;vegetarian;vegan,omega_3;monounsaturated_fat,sesame_oil,true,Verified Pakistani Local Market
+TODO_brown_rice,TODO: Brown Basmati Rice (Verify Wholesale Price),grains,280,kg,2026-11-26,370,7.9,77.2,3.5,0.8,2.9,7,,halal;vegetarian;vegan,fiber;manganese;complex_carbs,white_basmati,false,TODO: Owner verify price
+TODO_mutton_lean,TODO: Lean Goat Meat (Mutton),protein,2200,kg,2026-11-26,143,20.6,0.0,0.0,0.0,6.0,86,,halal,heme_iron;b12;protein,beef_lean;chicken,false,TODO: Owner verify price
+TODO_walnuts_swat,TODO: Swat Walnuts in Shell,nuts,1800,kg,2026-11-26,654,15.2,13.7,6.7,2.6,65.2,2,tree_nuts,halal;vegetarian;vegan,omega_3;alpha_linolenic_acid,flaxseeds,false,TODO: Owner verify price

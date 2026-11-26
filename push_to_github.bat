@@ -1,8 +1,8 @@
 @echo off
-title Push Glow App to GitHub
+title Push Glow App to GitHub (Glowup-project)
 cd /d "C:\Users\Admin\Desktop\Glow up"
 echo ===============================================================
-echo Pushing project to https://github.com/noorussaba12/skin-glow.git
+echo Pushing project to https://github.com/noorussaba12/Glowup-project.git
 echo ===============================================================
 echo.
 git push -u origin main
@@ -11,7 +11,7 @@ echo ===============================================================
 if %ERRORLEVEL% EQU 0 (
     echo SUCCESS: Project has been pushed to GitHub!
 ) else (
-    echo Push incomplete. If prompted, please sign in via browser.
+    echo Push incomplete.
 )
 echo ===============================================================
 echo.

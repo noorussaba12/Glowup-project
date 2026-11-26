@@ -87,12 +87,12 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                     : _buildScansList(palette),
       ),
       bottomNavigationBar: GlowBottomNavBar(
-        currentIndex: 3,
+        currentIndex: 4,
         onTap: (index) {
           if (index == 0) context.go('/home');
           if (index == 1) context.push('/instructions');
           if (index == 2) context.push('/plan');
-          if (index == 3) {}
+          if (index == 3) context.push('/nutriflow');
           if (index == 4) context.push('/profile');
         },
       ),

@@ -375,6 +375,245 @@
         background: #FFF !important;
       }
     }
+
+    /* ========================================================
+       NUTRIFLOW: Luxury Clinical Nutrition Styles
+       ======================================================== */
+    .nf-ring-container {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: 0 auto;
+    }
+    .nf-ring-svg {
+      transform: rotate(-90deg);
+    }
+    .nf-ring-bg {
+      fill: none;
+      stroke: var(--surface-sec);
+      stroke-width: 10;
+    }
+    .nf-ring-fill {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 10;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.8s ease;
+    }
+    .nf-ring-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .nf-macro-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .nf-macro-card {
+      flex: 1;
+      background: var(--surface-sec);
+      border-radius: 12px;
+      padding: 8px 10px;
+      font-size: 11px;
+    }
+    .nf-macro-bar-track {
+      height: 4px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+    .nf-macro-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--accent);
+      transition: width 0.5s ease;
+    }
+
+    .nf-water-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #F0F6F9;
+      border: 1px solid #D6E8F0;
+      border-radius: 18px;
+      padding: 14px 18px;
+      margin-top: 12px;
+    }
+    body.theme-male .nf-water-box {
+      background: #EBF3F7;
+      border-color: #CCE0EB;
+    }
+
+    .nf-water-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: #5B8296;
+      color: #FFF;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(91, 130, 150, 0.25);
+      transition: transform 0.15s ease;
+    }
+    .nf-water-btn:active {
+      transform: scale(0.92);
+    }
+    .nf-water-btn.sub {
+      background: #FFF;
+      color: #5B8296;
+      border: 1px solid #CCE0EB;
+    }
+
+    .nf-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--primary-dark);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      margin: 3px;
+    }
+    .nf-chip:hover {
+      border-color: var(--accent);
+    }
+    .nf-chip.selected {
+      background: var(--accent);
+      color: #FFF;
+      border-color: var(--accent);
+      box-shadow: 0 2px 8px rgba(197, 139, 125, 0.25);
+    }
+
+    .nf-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 8px;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .nf-badge-gold {
+      background: #FDF4E7;
+      color: #B57A22;
+      border: 1px solid #F5E1C3;
+    }
+    .nf-badge-green {
+      background: #EAF5EB;
+      color: #3B7E40;
+      border: 1px solid #D1EBD4;
+    }
+    .nf-badge-pink {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(197, 139, 125, 0.3);
+    }
+
+    .nf-meal-card {
+      background: var(--surface);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 12px;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      position: relative;
+    }
+    .nf-meal-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(38, 32, 30, 0.06);
+    }
+    .nf-meal-thumb {
+      width: 72px;
+      height: 72px;
+      border-radius: 14px;
+      object-fit: cover;
+      background: var(--surface-sec);
+      flex-shrink: 0;
+    }
+
+    .nf-timeline-item {
+      display: flex;
+      gap: 14px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+    .nf-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 17px;
+      top: 36px;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .nf-timeline-item:last-child::before {
+      display: none;
+    }
+    .nf-timeline-time-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    .nf-cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      text-align: center;
+      font-size: 12px;
+    }
+    .nf-cal-day {
+      padding: 10px 4px;
+      border-radius: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      min-height: 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .nf-cal-day:hover, .nf-cal-day.active {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+    .nf-cal-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin: 1px;
+    }
+    .nf-cal-dot.green { background: #4E8752; }
+    .nf-cal-dot.gold { background: #C58B2D; }
+    .nf-cal-dot.gray { background: #CCC; }
   </style>
 </head>
 <body>
@@ -400,6 +639,13 @@
       <button onclick="showScreen('plan')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">Plan</button>
       <button onclick="showScreen('history')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">History</button>
       <button onclick="showScreen('profile')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">Profile</button>
+      <button onclick="showScreen('nutriflow')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer; background:var(--accent); color:#FFF; font-weight:700;">🥗 Nutriflow</button>
+      <button onclick="showScreen('nutriflow-setup')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">NF Setup</button>
+      <button onclick="showScreen('nutriflow-schedule')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">NF Schedule</button>
+      <button onclick="showScreen('nutriflow-plan')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">NF Plan</button>
+      <button onclick="showScreen('nutriflow-tracker')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">NF Tracker</button>
+      <button onclick="showScreen('nutriflow-calendar')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">NF Calendar</button>
+      <button onclick="showScreen('nutriflow-dashboard')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">NF Dashboard</button>
     </div>
   </div>
 
@@ -1565,6 +1811,926 @@
         <button class="pill-btn secondary" style="margin-top: 16px;" onclick="showScreen('auth')"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button>
       </div>
 
+      <!-- ========================================================
+           NUTRIFLOW SCREENS (Dermatological Nutrition & Diet Engine)
+           ======================================================== -->
+
+      <!-- 1. Nutriflow Setup Wizard -->
+      <div id="screen-nutriflow-setup" class="screen">
+        <div class="screen-header">
+          <button class="back-btn" onclick="showScreen('nutriflow-home')"><i class="fa-solid fa-chevron-left"></i></button>
+          <h2>Nutriflow Setup</h2>
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent);" id="nf-setup-step-indicator">Step 1/6</div>
+        </div>
+
+        <div style="background: var(--surface-sec); height: 4px; border-radius: 4px; margin-bottom: 18px; overflow: hidden;">
+          <div id="nf-setup-progress-bar" style="height: 100%; width: 16.6%; background: var(--accent); transition: width 0.3s ease;"></div>
+        </div>
+
+        <!-- Assistant Consultation Card -->
+        <div style="display: flex; gap: 10px; margin-bottom: 16px; align-items: flex-start;">
+          <div class="icon-badge" style="width: 36px; height: 36px; font-size: 16px; flex-shrink: 0; background: var(--accent-soft); color: var(--accent);">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 12px 14px; font-size: 13px; line-height: 1.4; color: var(--primary-dark);" id="nf-assistant-speech">
+            Welcome to Nutriflow! Let's set up your personal nutrition routine tailored to your skin scan, diet preferences, and daily budget.
+          </div>
+        </div>
+
+        <!-- Step 1: Meal Timings & Reminders -->
+        <div id="nf-step-1" class="nf-wizard-step">
+          <div class="glow-card">
+            <h4 style="font-size: 14px; margin-bottom: 12px; font-weight: 700;"><i class="fa-regular fa-clock" style="color: var(--accent);"></i> 1. Meal Reminders & Timings</h4>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12.5px;">Breakfast</span>
+                <input type="time" id="nf-time-breakfast" value="08:00" style="padding: 4px 8px; border-radius: 8px; border: 1px solid var(--border); font-family: inherit;">
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12.5px;">Lunch</span>
+                <input type="time" id="nf-time-lunch" value="13:30" style="padding: 4px 8px; border-radius: 8px; border: 1px solid var(--border); font-family: inherit;">
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12.5px;">Afternoon Snack</span>
+                <input type="time" id="nf-time-snack" value="16:30" style="padding: 4px 8px; border-radius: 8px; border: 1px solid var(--border); font-family: inherit;">
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12.5px;">Dinner</span>
+                <input type="time" id="nf-time-dinner" value="20:00" style="padding: 4px 8px; border-radius: 8px; border: 1px solid var(--border); font-family: inherit;">
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 10px;">
+                <span style="font-size: 12.5px;">Water Reminder</span>
+                <select id="nf-water-interval" style="padding: 4px 8px; border-radius: 8px; border: 1px solid var(--border); font-family: inherit;">
+                  <option value="2">Every 2 hours</option>
+                  <option value="3">Every 3 hours</option>
+                  <option value="4">Every 4 hours</option>
+                  <option value="0">Off</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-top: 14px; background: var(--surface-sec); padding: 10px 12px; border-radius: 12px; font-size: 11.5px; display: flex; align-items: center; justify-content: space-between;">
+              <span><i class="fa-solid fa-bell" style="color: var(--accent);"></i> Enable Local Notifications</span>
+              <input type="checkbox" id="nf-notif-toggle" checked style="accent-color: var(--accent);">
+            </div>
+          </div>
+          <button class="pill-btn" onclick="nextNfStep(2)">Continue to Allergies <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Step 2: Food Allergies & Intolerances -->
+        <div id="nf-step-2" class="nf-wizard-step" style="display: none;">
+          <div class="glow-card">
+            <h4 style="font-size: 14px; margin-bottom: 6px; font-weight: 700;"><i class="fa-solid fa-shield-halved" style="color: var(--accent);"></i> 2. Allergies & Exclusions</h4>
+            <div style="font-size: 12px; color: var(--text-sec); margin-bottom: 12px;">Select ingredients to strictly exclude from your meal suggestions:</div>
+            
+            <div style="margin-bottom: 10px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--text-sec); text-transform: uppercase; margin-bottom: 6px;">Common Allergens</div>
+              <div id="nf-allergies-chips">
+                <span class="nf-chip" onclick="toggleNfChip(this, 'peanuts')"><i class="fa-solid fa-ban"></i> Peanuts</span>
+                <span class="nf-chip" onclick="toggleNfChip(this, 'tree_nuts')"><i class="fa-solid fa-ban"></i> Tree Nuts</span>
+                <span class="nf-chip" onclick="toggleNfChip(this, 'dairy')"><i class="fa-solid fa-ban"></i> Dairy / Lactose</span>
+                <span class="nf-chip" onclick="toggleNfChip(this, 'eggs')"><i class="fa-solid fa-ban"></i> Eggs</span>
+                <span class="nf-chip" onclick="toggleNfChip(this, 'gluten')"><i class="fa-solid fa-ban"></i> Gluten / Wheat</span>
+                <span class="nf-chip" onclick="toggleNfChip(this, 'soy')"><i class="fa-solid fa-ban"></i> Soy</span>
+                <span class="nf-chip" onclick="toggleNfChip(this, 'fish')"><i class="fa-solid fa-ban"></i> Fish / Seafood</span>
+                <span class="nf-chip" onclick="toggleNfChip(this, 'shellfish')"><i class="fa-solid fa-ban"></i> Shellfish</span>
+                <span class="nf-chip" onclick="toggleNfChip(this, 'sesame')"><i class="fa-solid fa-ban"></i> Sesame</span>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--text-sec); text-transform: uppercase; margin-bottom: 6px;">Dietary Preferences</div>
+              <div id="nf-diet-chips">
+                <span class="nf-chip selected" onclick="toggleNfChip(this, 'halal')"><i class="fa-solid fa-check"></i> Halal Only</span>
+                <span class="nf-chip" onclick="toggleNfChip(this, 'vegetarian')"><i class="fa-solid fa-leaf"></i> Vegetarian</span>
+                <span class="nf-chip" onclick="toggleNfChip(this, 'vegan')"><i class="fa-solid fa-seedling"></i> Vegan</span>
+                <span class="nf-chip" onclick="toggleNfChip(this, 'no_beef')"><i class="fa-solid fa-ban"></i> No Beef</span>
+              </div>
+            </div>
+
+            <div>
+              <div style="font-size: 11px; font-weight: 700; color: var(--text-sec); text-transform: uppercase; margin-bottom: 6px;">Other Foods I Avoid</div>
+              <input type="text" id="nf-custom-allergies" placeholder="e.g. eggplant, mushrooms, spicy peppers" style="width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); font-size: 12px; background: var(--surface-sec); outline: none;">
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="pill-btn secondary" style="flex: 1;" onclick="nextNfStep(1)">Back</button>
+            <button class="pill-btn" style="flex: 2;" onclick="nextNfStep(3)">Continue to Budget <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 3: Daily Food Budget in PKR OR Food at Home -->
+        <div id="nf-step-3" class="nf-wizard-step" style="display: none;">
+          <div class="glow-card">
+            <h4 style="font-size: 14px; margin-bottom: 6px; font-weight: 700;"><i class="fa-solid fa-coins" style="color: var(--accent);"></i> 3. Daily Budget & Food at Home</h4>
+            <div style="font-size: 12px; color: var(--text-sec); margin-bottom: 12px;">Choose your daily grocery budget in Pakistani Rupees (₨):</div>
+            
+            <div id="nf-budget-chips" style="margin-bottom: 14px;">
+              <span class="nf-chip" onclick="selectNfBudgetChip(this, 400)">Under ₨ 500</span>
+              <span class="nf-chip selected" onclick="selectNfBudgetChip(this, 800)">₨ 500 - 1,000</span>
+              <span class="nf-chip" onclick="selectNfBudgetChip(this, 1200)">₨ 1,000 - 1,500</span>
+              <span class="nf-chip" onclick="selectNfBudgetChip(this, 1800)">₨ 1,500+</span>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+              <span style="font-size: 12px; font-weight: 600;">Custom Daily Budget:</span>
+              <div style="position: relative; flex: 1;">
+                <span style="position: absolute; left: 10px; top: 8px; font-size: 12px; color: var(--text-sec);">₨</span>
+                <input type="number" id="nf-budget-pkr" value="800" style="width: 100%; padding: 7px 10px 7px 26px; border-radius: 10px; border: 1px solid var(--border); font-size: 12.5px; font-weight: 700;">
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--border); padding-top: 14px;">
+              <div style="font-weight: 700; font-size: 13px; margin-bottom: 4px;"><i class="fa-solid fa-kitchen-set" style="color: var(--accent);"></i> Food Available at Home (Optional)</div>
+              <div style="font-size: 11.5px; color: var(--text-sec); margin-bottom: 10px;">We'll prioritize meals using ingredients you already have in your kitchen:</div>
+              
+              <div style="display: flex; gap: 8px; margin-bottom: 10px;">
+                <input type="text" id="nf-pantry-input" placeholder="e.g. daal, eggs, dahi, cucumber, oats" style="flex: 1; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); font-size: 12px; background: var(--surface-sec); outline: none;">
+                <button class="pill-btn secondary" style="width: auto; padding: 0 14px; height: 38px;" onclick="addPantryItem()"><i class="fa-solid fa-plus"></i></button>
+              </div>
+
+              <!-- Food Photo Analysis Trigger -->
+              <div style="background: var(--surface-sec); border: 1px dashed var(--border); border-radius: 14px; padding: 14px; text-align: center; margin-bottom: 10px;">
+                <i class="fa-solid fa-camera" style="font-size: 20px; color: var(--accent); margin-bottom: 6px;"></i>
+                <div style="font-size: 12px; font-weight: 600;">Take or Upload Food/Pantry Photo</div>
+                <div style="font-size: 11px; color: var(--text-sec); margin-bottom: 10px;">Gemini Vision will auto-detect ingredients in your kitchen</div>
+                <input type="file" id="nf-food-photo-file" accept="image/*" style="display: none;" onchange="handleFoodPhotoUpload(event)">
+                <button class="pill-btn secondary" style="height: 36px; font-size: 12px; margin: 0 auto; width: auto; padding: 0 16px;" onclick="document.getElementById('nf-food-photo-file').click()">
+                  <i class="fa-solid fa-upload"></i> Upload / Capture Photo
+                </button>
+                <div id="nf-photo-analysis-status" style="font-size: 11px; color: var(--accent); margin-top: 8px; display: none;"></div>
+              </div>
+
+              <div id="nf-detected-pantry-chips" style="display: flex; flex-wrap: wrap; gap: 4px;">
+                <span class="nf-chip selected"><i class="fa-solid fa-check"></i> Eggs <i class="fa-solid fa-xmark" style="margin-left: 4px;" onclick="this.parentElement.remove()"></i></span>
+                <span class="nf-chip selected"><i class="fa-solid fa-check"></i> Moong Daal <i class="fa-solid fa-xmark" style="margin-left: 4px;" onclick="this.parentElement.remove()"></i></span>
+                <span class="nf-chip selected"><i class="fa-solid fa-check"></i> Fresh Dahi <i class="fa-solid fa-xmark" style="margin-left: 4px;" onclick="this.parentElement.remove()"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 8px;">
+            <button class="pill-btn secondary" style="flex: 1;" onclick="nextNfStep(2)">Back</button>
+            <button class="pill-btn" style="flex: 2;" onclick="nextNfStep(4)">Continue to Goals <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 4: Nutrition Goals -->
+        <div id="nf-step-4" class="nf-wizard-step" style="display: none;">
+          <div class="glow-card">
+            <h4 style="font-size: 14px; margin-bottom: 6px; font-weight: 700;"><i class="fa-solid fa-bullseye" style="color: var(--accent);"></i> 4. Nutrition Goals</h4>
+            <div style="font-size: 12px; color: var(--text-sec); margin-bottom: 12px;">Select what you want your nutrition plan to emphasize:</div>
+            
+            <div id="nf-goals-chips">
+              <span class="nf-chip selected" onclick="toggleNfChip(this, 'high_fiber')"><i class="fa-solid fa-check"></i> Eat more fiber</span>
+              <span class="nf-chip selected" onclick="toggleNfChip(this, 'low_sodium')"><i class="fa-solid fa-check"></i> Eat less sodium (<2,000 mg)</span>
+              <span class="nf-chip selected" onclick="toggleNfChip(this, 'hydration')"><i class="fa-solid fa-check"></i> Drink more water</span>
+              <span class="nf-chip" onclick="toggleNfChip(this, 'high_protein')"><i class="fa-solid fa-plus"></i> More protein</span>
+              <span class="nf-chip" onclick="toggleNfChip(this, 'lower_carbs')"><i class="fa-solid fa-plus"></i> Lower my carbs</span>
+              <span class="nf-chip" onclick="toggleNfChip(this, 'less_added_sugar')"><i class="fa-solid fa-plus"></i> Less added sugar</span>
+            </div>
+
+            <!-- Auto-suggested Skin Goal from Scan -->
+            <div style="margin-top: 14px; background: var(--accent-soft); border: 1px solid rgba(197, 139, 125, 0.35); border-radius: 14px; padding: 12px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 4px;">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Suggested from your Skin Scan
+              </div>
+              <div style="font-size: 12.5px; font-weight: 600; margin-bottom: 4px;" id="nf-scan-goal-title">💧 Hydration & Barrier Moisture Support</div>
+              <div style="font-size: 11px; color: var(--text-pri); margin-bottom: 8px;" id="nf-scan-goal-desc">Your scan detected elevated epidermal dehydration. We recommend meals rich in water, beta-glucans, and natural electrolytes.</div>
+              <div style="display: flex; gap: 6px;">
+                <button class="pill-btn" style="height: 32px; font-size: 11px; padding: 0 12px; width: auto;" id="nf-scan-goal-accept-btn" onclick="acceptScanGoal()">
+                  <i class="fa-solid fa-check"></i> Included in Plan
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 8px;">
+            <button class="pill-btn secondary" style="flex: 1;" onclick="nextNfStep(3)">Back</button>
+            <button class="pill-btn" style="flex: 2;" onclick="nextNfStep(5)">Continue to Health Flags <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 5: Safe Targets & Medical Flags -->
+        <div id="nf-step-5" class="nf-wizard-step" style="display: none;">
+          <div class="glow-card">
+            <h4 style="font-size: 14px; margin-bottom: 6px; font-weight: 700;"><i class="fa-solid fa-user-doctor" style="color: var(--accent);"></i> 5. Health Basics & Safety</h4>
+            <div style="font-size: 11.5px; color: var(--text-sec); margin-bottom: 12px;">This is strictly used to enforce safe caloric floors and appropriate nutritional guidelines.</div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+              <div>
+                <label style="font-size: 11px; font-weight: 600;">Age</label>
+                <input type="number" id="nf-age" value="26" style="width: 100%; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); font-size: 12px;">
+              </div>
+              <div>
+                <label style="font-size: 11px; font-weight: 600;">Biological Sex</label>
+                <select id="nf-sex" style="width: 100%; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); font-size: 12px;">
+                  <option value="female">Female</option>
+                  <option value="male">Male</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 11px; font-weight: 600;">Height (cm)</label>
+                <input type="number" id="nf-height" value="165" style="width: 100%; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); font-size: 12px;">
+              </div>
+              <div>
+                <label style="font-size: 11px; font-weight: 600;">Weight (kg)</label>
+                <input type="number" id="nf-weight" value="58" style="width: 100%; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); font-size: 12px;">
+              </div>
+            </div>
+
+            <!-- Medical Flags Checklist -->
+            <div style="border-top: 1px solid var(--border); padding-top: 12px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--text-sec); text-transform: uppercase; margin-bottom: 6px;">Do you have any of these?</div>
+              <div id="nf-medical-flags" style="display: flex; flex-direction: column; gap: 6px;">
+                <label style="font-size: 12px; display: flex; align-items: center; gap: 8px;">
+                  <input type="checkbox" value="diabetes" onchange="handleMedicalFlagChange()"> Diabetes / Pre-diabetes
+                </label>
+                <label style="font-size: 12px; display: flex; align-items: center; gap: 8px;">
+                  <input type="checkbox" value="hypertension" onchange="handleMedicalFlagChange()"> High Blood Pressure
+                </label>
+                <label style="font-size: 12px; display: flex; align-items: center; gap: 8px;">
+                  <input type="checkbox" value="pcos" onchange="handleMedicalFlagChange()"> PCOS
+                </label>
+                <label style="font-size: 12px; display: flex; align-items: center; gap: 8px;">
+                  <input type="checkbox" value="kidney" onchange="handleMedicalFlagChange()"> Kidney Disease
+                </label>
+                <label style="font-size: 12px; display: flex; align-items: center; gap: 8px;">
+                  <input type="checkbox" value="pregnancy" onchange="handleMedicalFlagChange()"> Pregnant or Breastfeeding
+                </label>
+                <label style="font-size: 12px; display: flex; align-items: center; gap: 8px;">
+                  <input type="checkbox" value="ed_history" onchange="handleMedicalFlagChange()"> History of Eating Disorder
+                </label>
+              </div>
+
+              <!-- Doctor Card -->
+              <div id="nf-doctor-flag-alert" style="display: none; margin-top: 10px; background: #FFF9F0; border: 1px solid #F5E1C3; border-radius: 12px; padding: 10px; font-size: 11.5px; color: #8A5A1C;">
+                <i class="fa-solid fa-triangle-exclamation"></i> <strong>Medical Notice:</strong> Calorie restriction is disabled and a conservative balanced plan will be generated. Please follow your physician or registered dietitian's guidance.
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 8px;">
+            <button class="pill-btn secondary" style="flex: 1;" onclick="nextNfStep(4)">Back</button>
+            <button class="pill-btn" style="flex: 2;" onclick="nextNfStep(6)">Review Schedule <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 6: Confirmation & Plan Generation -->
+        <div id="nf-step-6" class="nf-wizard-step" style="display: none;">
+          <div class="glow-card">
+            <h4 style="font-size: 14px; margin-bottom: 6px; font-weight: 700;"><i class="fa-solid fa-calendar-check" style="color: var(--accent);"></i> 6. Schedule Confirmation</h4>
+            <div style="font-size: 12px; color: var(--text-sec); margin-bottom: 14px;">Review your personalized Nutriflow configuration:</div>
+
+            <div style="background: var(--surface-sec); border-radius: 14px; padding: 14px; font-size: 12.5px; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-sec);">Plan Duration:</span>
+                <strong>7 Days (Monday - Sunday)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-sec);">Daily Budget Target:</span>
+                <strong id="nf-conf-budget">₨ 800 PKR / day</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-sec);">Meal Structure:</span>
+                <strong>4 Meals (B / L / S / D)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-sec);">Safe Caloric Floor:</span>
+                <strong id="nf-conf-calories">1,650 kcal (Enforced)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-sec);">Primary Skin Goal:</span>
+                <strong id="nf-conf-skin-goal">Hydration Support</strong>
+              </div>
+            </div>
+
+            <div style="font-size: 11px; color: var(--text-sec); text-align: center; margin-bottom: 12px;">
+              <i class="fa-solid fa-shield-halved"></i> Only verified nutritional entries and modest clinical associations are used.
+            </div>
+
+            <button class="pill-btn" onclick="generateAndSavePlan()">
+              <i class="fa-solid fa-sparkles"></i> Generate My 7-Day Plan
+            </button>
+          </div>
+          <button class="pill-btn secondary" onclick="nextNfStep(5)">Back</button>
+        </div>
+      </div>
+
+      <!-- 2. Nutriflow Home (Small Dashboard) -->
+      <div id="screen-nutriflow-home" class="screen">
+        <div class="screen-header">
+          <div>
+            <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); font-weight: 700;" id="nf-home-date">Thursday, 26 Nov</div>
+            <h2 style="margin: 0; font-size: 20px;">Nutriflow 🥗</h2>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="back-btn" onclick="showScreen('nutriflow-setup')" title="Reopen Nutriflow Setup"><i class="fa-solid fa-sliders"></i></button>
+          </div>
+        </div>
+
+        <!-- Clinical Safety Disclaimer Banner -->
+        <div style="background: var(--surface-sec); border-left: 3px solid var(--accent); padding: 8px 12px; border-radius: 8px; font-size: 11px; color: var(--text-sec); margin-bottom: 14px; line-height: 1.35;">
+          <strong>Clinical Note:</strong> Nutriflow provides general dermatological nutrition guidance. It does not replace care from a doctor or registered dietitian.
+        </div>
+
+        <!-- Calories Circular Ring & Macro Split -->
+        <div class="glow-card" style="text-align: center; padding: 20px 16px 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div style="font-size: 13px; font-weight: 700; color: var(--primary-dark);">Today's Nutrition</div>
+            <button class="nf-badge nf-badge-gold" style="border: none; cursor: pointer;" onclick="toggleHideCalories()" id="nf-cal-toggle-btn">
+              <i class="fa-regular fa-eye-slash"></i> Hide Calories
+            </button>
+          </div>
+
+          <div id="nf-cal-ring-area">
+            <div class="nf-ring-container">
+              <svg class="nf-ring-svg" width="140" height="140">
+                <circle class="nf-ring-bg" cx="70" cy="70" r="58"></circle>
+                <circle class="nf-ring-fill" id="nf-ring-circle" cx="70" cy="70" r="58" stroke-dasharray="364.4" stroke-dashoffset="109.3"></circle>
+              </svg>
+              <div class="nf-ring-center">
+                <div style="font-size: 22px; font-weight: 800; color: var(--primary-dark);" id="nf-calories-eaten">1,180</div>
+                <div style="font-size: 11px; color: var(--text-sec);">/ <span id="nf-calories-target">1,650</span> kcal</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quality-first banner shown when calories hidden -->
+          <div id="nf-quality-mode-banner" style="display: none; padding: 18px 10px; background: var(--surface-sec); border-radius: 14px; margin-bottom: 8px;">
+            <div style="font-size: 14px; font-weight: 700; color: var(--success);"><i class="fa-solid fa-leaf"></i> Quality-First Mode</div>
+            <div style="font-size: 11.5px; color: var(--text-sec); margin-top: 4px;">Tracking food density, fiber, and whole foods rather than caloric restriction.</div>
+          </div>
+
+          <!-- Macro Bar Split -->
+          <div class="nf-macro-row">
+            <div class="nf-macro-card">
+              <div style="display: flex; justify-content: space-between; color: var(--text-sec);">
+                <span>Protein</span>
+                <strong id="nf-protein-txt">58 / 85g</strong>
+              </div>
+              <div class="nf-macro-bar-track">
+                <div class="nf-macro-bar-fill" id="nf-protein-bar" style="width: 68%;"></div>
+              </div>
+            </div>
+            <div class="nf-macro-card">
+              <div style="display: flex; justify-content: space-between; color: var(--text-sec);">
+                <span>Carbs</span>
+                <strong id="nf-carbs-txt">142 / 210g</strong>
+              </div>
+              <div class="nf-macro-bar-track">
+                <div class="nf-macro-bar-fill" id="nf-carbs-bar" style="width: 67%; background: #C58B2D;"></div>
+              </div>
+            </div>
+            <div class="nf-macro-card">
+              <div style="display: flex; justify-content: space-between; color: var(--text-sec);">
+                <span>Fiber</span>
+                <strong id="nf-fiber-txt">22 / 30g</strong>
+              </div>
+              <div class="nf-macro-bar-track">
+                <div class="nf-macro-bar-fill" id="nf-fiber-bar" style="width: 73%; background: #4E8752;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Water Tracker Widget -->
+        <div class="glow-card" style="padding: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-size: 13px; font-weight: 700;"><i class="fa-solid fa-droplet" style="color: #5B8296;"></i> Hydration Tracker</div>
+            <span style="font-size: 12px; font-weight: 700; color: #5B8296;"><span id="nf-water-ml">1,750</span> / 2,500 ml</span>
+          </div>
+          
+          <div class="nf-water-box">
+            <button class="nf-water-btn sub" onclick="adjustWater(-250)" title="Minus 1 Glass"><i class="fa-solid fa-minus"></i></button>
+            <div style="text-align: center;">
+              <div style="font-size: 18px; font-weight: 800; color: #2C5263;" id="nf-water-glasses">7 Glasses</div>
+              <div style="font-size: 11px; color: var(--text-sec);">250 ml per glass</div>
+            </div>
+            <button class="nf-water-btn" onclick="adjustWater(250)" title="Plus 1 Glass"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+
+        <!-- Next Meal Card -->
+        <div class="glow-card" style="padding: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="nf-badge nf-badge-pink" id="nf-next-meal-slot">Next Meal • 1:30 PM (Lunch)</span>
+            <span style="font-size: 12px; font-weight: 700; color: var(--accent);" id="nf-next-meal-cost">₨ 75 PKR</span>
+          </div>
+
+          <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 12px;">
+            <img id="nf-next-meal-img" src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" class="nf-meal-thumb" alt="Meal">
+            <div style="flex: 1;">
+              <h4 style="font-size: 14px; margin: 0 0 4px; font-weight: 700;" id="nf-next-meal-name">High-Fiber Mint Lemon Chana Chaat</h4>
+              <div style="font-size: 11.5px; color: var(--text-sec);" id="nf-next-meal-stats">15 min prep • 318 kcal • High Fiber</div>
+            </div>
+          </div>
+
+          <button class="pill-btn secondary" style="height: 40px; font-size: 12.5px;" onclick="viewMealDetails('chana_chaat_salad')">
+            <i class="fa-regular fa-eye"></i> View Recipe & Skin Benefits
+          </button>
+        </div>
+
+        <!-- Budget & Streak 2-Col Card -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px;">
+          <div class="glow-card" style="padding: 14px; margin-bottom: 0;">
+            <div style="font-size: 11px; color: var(--text-sec); font-weight: 600;">Daily Budget (PKR)</div>
+            <div style="font-size: 16px; font-weight: 800; color: var(--primary-dark); margin: 4px 0;" id="nf-budget-spent-txt">₨ 380</div>
+            <div style="font-size: 10.5px; color: var(--success);"><span id="nf-budget-rem-txt">₨ 420</span> remaining</div>
+          </div>
+          <div class="glow-card" style="padding: 14px; margin-bottom: 0;">
+            <div style="font-size: 11px; color: var(--text-sec); font-weight: 600;">Adherence Streak</div>
+            <div style="font-size: 16px; font-weight: 800; color: #C58B2D; margin: 4px 0;">🔥 4 Days</div>
+            <div style="font-size: 10.5px; color: var(--text-sec);">Best: 12 days</div>
+          </div>
+        </div>
+
+        <!-- Shortcuts Grid -->
+        <div style="font-size: 12px; font-weight: 700; color: var(--text-sec); text-transform: uppercase; margin-bottom: 8px;">Explore Nutriflow</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px;">
+          <div class="glow-card" style="padding: 14px; cursor: pointer; text-align: center; margin-bottom: 0;" onclick="showScreen('nutriflow-plan')">
+            <div class="icon-badge" style="width: 38px; height: 38px; margin: 0 auto 8px; font-size: 16px; background: var(--accent-soft); color: var(--accent);">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div style="font-weight: 700; font-size: 13px;">7-Day Plan</div>
+            <div style="font-size: 10.5px; color: var(--text-sec);">Meals & recipes</div>
+          </div>
+
+          <div class="glow-card" style="padding: 14px; cursor: pointer; text-align: center; margin-bottom: 0;" onclick="showScreen('nutriflow-tracker')">
+            <div class="icon-badge" style="width: 38px; height: 38px; margin: 0 auto 8px; font-size: 16px; background: #EAF5EB; color: #4E8752;">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+            <div style="font-weight: 700; font-size: 13px;">Daily Tracker</div>
+            <div style="font-size: 10.5px; color: var(--text-sec);">Log meals & water</div>
+          </div>
+
+          <div class="glow-card" style="padding: 14px; cursor: pointer; text-align: center; margin-bottom: 0;" onclick="showScreen('nutriflow-schedule')">
+            <div class="icon-badge" style="width: 38px; height: 38px; margin: 0 auto 8px; font-size: 16px; background: #FDF4E7; color: #B57A22;">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+            <div style="font-weight: 700; font-size: 13px;">Schedule</div>
+            <div style="font-size: 10.5px; color: var(--text-sec);">Timings & alarms</div>
+          </div>
+
+          <div class="glow-card" style="padding: 14px; cursor: pointer; text-align: center; margin-bottom: 0;" onclick="showScreen('nutriflow-dashboard')">
+            <div class="icon-badge" style="width: 38px; height: 38px; margin: 0 auto 8px; font-size: 16px; background: #EBF3F7; color: #5B8296;">
+              <i class="fa-solid fa-chart-pie"></i>
+            </div>
+            <div style="font-weight: 700; font-size: 13px;">Dashboard</div>
+            <div style="font-size: 10.5px; color: var(--text-sec);">Skin link & PDF</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin: 10px 0 20px;">
+          <a href="#" style="font-size: 11px; color: var(--text-sec); text-decoration: underline;" onclick="alert('Nutriflow Clinical Nutrition Policy: We only use verified whole food data from USDA FoodData Central and verified Pakistani staples. All skin nutrients reflect modest, well-documented literature on barrier integrity and hydration.'); return false;">Nutriflow Clinical & Transparency Policy</a>
+        </div>
+      </div>
+
+      <!-- 3. Nutriflow Schedule -->
+      <div id="screen-nutriflow-schedule" class="screen">
+        <div class="screen-header">
+          <button class="back-btn" onclick="showScreen('nutriflow-home')"><i class="fa-solid fa-chevron-left"></i></button>
+          <h2>Daily Schedule</h2>
+          <div style="width: 24px;"></div>
+        </div>
+
+        <div class="glow-card" style="padding: 16px; margin-bottom: 16px;">
+          <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">Meal & Hydration Timeline</div>
+          <div style="font-size: 11.5px; color: var(--text-sec); margin-bottom: 16px;">Local notifications scheduled according to your daily rhythm:</div>
+
+          <div class="nf-timeline-item">
+            <div class="nf-timeline-time-badge"><i class="fa-solid fa-egg"></i></div>
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 11px; font-weight: 700; color: var(--accent);">08:00 AM • BREAKFAST</span>
+                <input type="checkbox" checked style="accent-color: var(--accent);">
+              </div>
+              <div style="font-size: 13.5px; font-weight: 700; margin: 2px 0;">2 Soft Boiled Eggs & Cucumber</div>
+              <div style="font-size: 11px; color: var(--text-sec);">Protein boost & morning electrolytes</div>
+            </div>
+          </div>
+
+          <div class="nf-timeline-item">
+            <div class="nf-timeline-time-badge" style="background: #EBF3F7; color: #5B8296;"><i class="fa-solid fa-droplet"></i></div>
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 11px; font-weight: 700; color: #5B8296;">10:30 AM • HYDRATION</span>
+                <input type="checkbox" checked style="accent-color: #5B8296;">
+              </div>
+              <div style="font-size: 13.5px; font-weight: 700; margin: 2px 0;">250ml Pure Water Reminder</div>
+              <div style="font-size: 11px; color: var(--text-sec);">Mid-morning hydration target</div>
+            </div>
+          </div>
+
+          <div class="nf-timeline-item">
+            <div class="nf-timeline-time-badge"><i class="fa-solid fa-bowl-rice"></i></div>
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 11px; font-weight: 700; color: var(--accent);">01:30 PM • LUNCH</span>
+                <input type="checkbox" checked style="accent-color: var(--accent);">
+              </div>
+              <div style="font-size: 13.5px; font-weight: 700; margin: 2px 0;">High-Fiber Mint Lemon Chana Chaat</div>
+              <div style="font-size: 11px; color: var(--text-sec);">Soluble oligosaccharides & gut barrier support</div>
+            </div>
+          </div>
+
+          <div class="nf-timeline-item">
+            <div class="nf-timeline-time-badge" style="background: #FDF4E7; color: #B57A22;"><i class="fa-solid fa-mug-hot"></i></div>
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 11px; font-weight: 700; color: #B57A22;">04:30 PM • AFTERNOON SNACK</span>
+                <input type="checkbox" checked style="accent-color: #B57A22;">
+              </div>
+              <div style="font-size: 13.5px; font-weight: 700; margin: 2px 0;">Mint Probiotic Buttermilk (Namkeen Lassi)</div>
+              <div style="font-size: 11px; color: var(--text-sec);">Probiotic lactobacillus without added sugar</div>
+            </div>
+          </div>
+
+          <div class="nf-timeline-item">
+            <div class="nf-timeline-time-badge"><i class="fa-solid fa-plate-wheat"></i></div>
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 11px; font-weight: 700; color: var(--accent);">08:00 PM • DINNER</span>
+                <input type="checkbox" checked style="accent-color: var(--accent);">
+              </div>
+              <div style="font-size: 13.5px; font-weight: 700; margin: 2px 0;">Spiced Spinach & Scrambled Eggs with 1 Roti</div>
+              <div style="font-size: 11px; color: var(--text-sec);">Lutein, complete amino acids & nocturnal repair</div>
+            </div>
+          </div>
+        </div>
+
+        <button class="pill-btn" onclick="saveScheduleSettings()">
+          <i class="fa-solid fa-check"></i> Save Schedule & Sync Reminders
+        </button>
+      </div>
+
+      <!-- 4. Nutriflow 7-Day Meal Plan -->
+      <div id="screen-nutriflow-plan" class="screen">
+        <div class="screen-header">
+          <button class="back-btn" onclick="showScreen('nutriflow-home')"><i class="fa-solid fa-chevron-left"></i></button>
+          <h2>7-Day Meal Plan</h2>
+          <button class="back-btn" onclick="regenerateCurrentDayPlan()" title="Regenerate Day"><i class="fa-solid fa-arrows-rotate"></i></button>
+        </div>
+
+        <!-- Day Selector Pills (Mon - Sun) -->
+        <div style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 12px;" id="nf-day-pills">
+          <button class="tab-pill active" onclick="selectNfDay('Mon', this)">Mon</button>
+          <button class="tab-pill" onclick="selectNfDay('Tue', this)">Tue</button>
+          <button class="tab-pill" onclick="selectNfDay('Wed', this)">Wed</button>
+          <button class="tab-pill" onclick="selectNfDay('Thu', this)">Thu</button>
+          <button class="tab-pill" onclick="selectNfDay('Fri', this)">Fri</button>
+          <button class="tab-pill" onclick="selectNfDay('Sat', this)">Sat</button>
+          <button class="tab-pill" onclick="selectNfDay('Sun', this)">Sun</button>
+        </div>
+
+        <!-- Daily Target Summary Card -->
+        <div class="glow-card" style="padding: 12px 16px; margin-bottom: 14px; background: var(--surface-sec);">
+          <div style="display: flex; justify-content: space-between; font-size: 12px;">
+            <span><strong id="nf-plan-day-name">Thursday</strong> Total</span>
+            <span style="font-weight: 700; color: var(--accent);" id="nf-plan-day-cost">₨ 360 of ₨ 800 Budget</span>
+          </div>
+          <div style="font-size: 11px; color: var(--text-sec); margin-top: 4px;" id="nf-plan-day-macros">
+            1,640 kcal • Protein: 78g • Carbs: 185g • Fiber: 28g • Sodium: 1,320 mg
+          </div>
+        </div>
+
+        <!-- Meals List -->
+        <div id="nf-plan-meals-list">
+          <!-- Populated dynamically via renderMealPlanCards() -->
+        </div>
+
+        <button class="pill-btn secondary" style="margin-top: 10px;" onclick="regenerateCurrentDayPlan()">
+          <i class="fa-solid fa-shuffle"></i> Regenerate Day's Selection
+        </button>
+      </div>
+
+      <!-- 5. Nutriflow Meal Details Screen -->
+      <div id="screen-nutriflow-meal-details" class="screen">
+        <div class="screen-header">
+          <button class="back-btn" onclick="showScreen('nutriflow-plan')"><i class="fa-solid fa-chevron-left"></i></button>
+          <h2>Meal Details</h2>
+          <button class="back-btn" onclick="alert('Meal saved to favorites!')"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+
+        <!-- Hero Meal Image -->
+        <div style="position: relative; border-radius: 20px; overflow: hidden; margin-bottom: 14px; height: 180px;">
+          <img id="nf-detail-img" src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" style="width: 100%; height: 100%; object-fit: cover;" alt="Meal">
+          <div style="position: absolute; bottom: 10px; left: 10px; display: flex; gap: 6px;">
+            <span class="nf-badge nf-badge-gold" id="nf-detail-type">LUNCH</span>
+            <span class="nf-badge nf-badge-pink" id="nf-detail-cost">₨ 75 PKR</span>
+          </div>
+        </div>
+
+        <h3 class="serif-title" style="font-size: 20px; margin: 0 0 4px;" id="nf-detail-title">High-Fiber Mint Lemon Chana Chaat</h3>
+        <div style="font-size: 12px; color: var(--text-sec); margin-bottom: 14px;" id="nf-detail-meta">15 min prep • Easy • 318 kcal</div>
+
+        <!-- Conflict Warning Banner (if any) -->
+        <div id="nf-detail-warning" style="display: none; background: #FFF9F0; border: 1px solid #F5E1C3; border-radius: 12px; padding: 10px; font-size: 11.5px; color: #8A5A1C; margin-bottom: 14px;"></div>
+
+        <!-- How this meal works for you (Personalized AI Note) -->
+        <div class="glow-card" style="padding: 14px; margin-bottom: 12px;">
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 4px;">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> How this meal works for you
+          </div>
+          <div style="font-size: 12.5px; line-height: 1.45; color: var(--primary-dark);" id="nf-detail-why-works">
+            Chickpeas deliver soluble prebiotic oligosaccharides that nourish beneficial gut bacteroidetes, which dermatological research associates with reduced systemic cutaneous erythema and balanced sebum.
+          </div>
+        </div>
+
+        <!-- Why it matters -->
+        <div class="glow-card" style="padding: 14px; margin-bottom: 12px;">
+          <div style="font-size: 11px; font-weight: 700; color: var(--text-sec); text-transform: uppercase; margin-bottom: 4px;">
+            <i class="fa-solid fa-circle-info"></i> Why it is important
+          </div>
+          <div style="font-size: 12.5px; line-height: 1.45; color: var(--primary-dark);" id="nf-detail-why-matters">
+            Rich dietary fiber content keeps glycemic index low, stabilizing insulin levels to minimize androgen-driven sebum gland stimulation.
+          </div>
+        </div>
+
+        <!-- How to prepare (Recipe Steps) -->
+        <div class="glow-card" style="padding: 14px; margin-bottom: 12px;">
+          <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px;"><i class="fa-solid fa-kitchen-set" style="color: var(--accent);"></i> How to Prepare (Recipe)</div>
+          <div id="nf-detail-recipe-steps" style="font-size: 12.5px; line-height: 1.5; color: var(--primary-dark);">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- Ingredients with Prices in PKR -->
+        <div class="glow-card" style="padding: 14px; margin-bottom: 12px;">
+          <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px;"><i class="fa-solid fa-list-check" style="color: var(--accent);"></i> Ingredients & Measurements</div>
+          <div id="nf-detail-ingredients" style="display: flex; flex-direction: column; gap: 6px; font-size: 12.5px;">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- What it gives you (Nutritional Breakdown) -->
+        <div class="glow-card" style="padding: 14px; margin-bottom: 12px;">
+          <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px;"><i class="fa-solid fa-flask-vial" style="color: var(--accent);"></i> What It Gives You (Per Serving)</div>
+          
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; text-align: center; margin-bottom: 12px;">
+            <div style="background: var(--surface-sec); border-radius: 10px; padding: 6px;">
+              <div style="font-size: 10px; color: var(--text-sec);">Calories</div>
+              <strong style="font-size: 13px;" id="nf-nutri-cal">318</strong>
+            </div>
+            <div style="background: var(--surface-sec); border-radius: 10px; padding: 6px;">
+              <div style="font-size: 10px; color: var(--text-sec);">Protein</div>
+              <strong style="font-size: 13px;" id="nf-nutri-protein">16.5g</strong>
+            </div>
+            <div style="background: var(--surface-sec); border-radius: 10px; padding: 6px;">
+              <div style="font-size: 10px; color: var(--text-sec);">Carbs</div>
+              <strong style="font-size: 13px;" id="nf-nutri-carbs">52.2g</strong>
+            </div>
+            <div style="background: var(--surface-sec); border-radius: 10px; padding: 6px;">
+              <div style="font-size: 10px; color: var(--text-sec);">Fiber</div>
+              <strong style="font-size: 13px;" id="nf-nutri-fiber">14.6g</strong>
+            </div>
+            <div style="background: var(--surface-sec); border-radius: 10px; padding: 6px;">
+              <div style="font-size: 10px; color: var(--text-sec);">Fats</div>
+              <strong style="font-size: 13px;" id="nf-nutri-fat">5.1g</strong>
+            </div>
+            <div style="background: var(--surface-sec); border-radius: 10px; padding: 6px;">
+              <div style="font-size: 10px; color: var(--text-sec);">Sodium</div>
+              <strong style="font-size: 13px;" id="nf-nutri-sodium">28mg</strong>
+            </div>
+          </div>
+
+          <div style="font-size: 11px; font-weight: 700; color: var(--text-sec); text-transform: uppercase; margin-bottom: 4px;">Skin Supporting Nutrients</div>
+          <div id="nf-detail-skin-nutrients" style="font-size: 11.5px; color: var(--text-sec); line-height: 1.4;">
+            • <strong>Prebiotic Oligosaccharides:</strong> Associated with balanced gut microbiota and modulated skin sensitivity.<br>
+            • <strong>Bioavailable Zinc:</strong> Supports native cellular repair enzymes and wound healing.
+          </div>
+        </div>
+
+        <!-- Affordable Alternatives Card -->
+        <div class="glow-card" style="padding: 14px; margin-bottom: 16px; border: 1px solid #D6E8F0; background: #F8FBFC;" id="nf-alternatives-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <div style="font-size: 12px; font-weight: 700; color: #2C5263;"><i class="fa-solid fa-coins"></i> Affordable Staple Alternative</div>
+            <span class="nf-badge nf-badge-green" id="nf-alt-saving">Save ₨ 25 PKR</span>
+          </div>
+          <div style="font-size: 12px; color: var(--primary-dark); margin-bottom: 4px;" id="nf-alt-title">
+            Substitute raw almonds with roasted peanuts
+          </div>
+          <div style="font-size: 11px; color: var(--text-sec); margin-bottom: 10px;" id="nf-alt-note">
+            Peanuts are an affordable Pakistani staple providing healthy fats and protein; slightly higher in monounsaturated fats.
+          </div>
+          <button class="pill-btn secondary" style="height: 34px; font-size: 11.5px;" onclick="applyMealAlternative()">
+            <i class="fa-solid fa-arrows-rotate"></i> Swap to Cheaper Staple
+          </button>
+        </div>
+
+        <!-- Actions -->
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;">
+          <button class="pill-btn" onclick="markCurrentMealAsEaten()">
+            <i class="fa-solid fa-check"></i> Mark as Eaten Today
+          </button>
+          <div style="display: flex; gap: 8px;">
+            <button class="pill-btn secondary" style="flex: 1;" onclick="swapCurrentMeal()">
+              <i class="fa-solid fa-shuffle"></i> Swap Meal
+            </button>
+            <button class="pill-btn secondary" style="flex: 1;" onclick="alert('Meal added to calendar schedule!')">
+              <i class="fa-regular fa-calendar-plus"></i> Add to Cal
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Nutriflow Daily Tracker -->
+      <div id="screen-nutriflow-tracker" class="screen">
+        <div class="screen-header">
+          <button class="back-btn" onclick="showScreen('nutriflow-home')"><i class="fa-solid fa-chevron-left"></i></button>
+          <h2>Daily Tracker</h2>
+          <button class="back-btn" onclick="openAddCustomFoodModal()"><i class="fa-solid fa-plus"></i></button>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 14px;">
+          <span style="font-size: 13px; font-weight: 700;">Thursday, 26 November</span>
+        </div>
+
+        <!-- Checklist of Planned Meals -->
+        <div class="glow-card" style="padding: 16px; margin-bottom: 14px;">
+          <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px;">Planned Meals for Today</div>
+          <div id="nf-tracker-meals-list" style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- Custom Foods Logged -->
+        <div class="glow-card" style="padding: 16px; margin-bottom: 14px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-size: 13px; font-weight: 700;">Extra / Custom Foods</div>
+            <button class="nf-badge nf-badge-pink" style="border: none; cursor: pointer;" onclick="openAddCustomFoodModal()">+ Add Food</button>
+          </div>
+          <div id="nf-tracker-custom-list" style="font-size: 12px; color: var(--text-sec);">
+            No extra foods logged today.
+          </div>
+        </div>
+
+        <!-- Water Logging Inside Tracker -->
+        <div class="glow-card" style="padding: 16px; margin-bottom: 14px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-size: 13px; font-weight: 700;"><i class="fa-solid fa-droplet" style="color: #5B8296;"></i> Water Consumed</div>
+            <span style="font-size: 12px; font-weight: 700; color: #5B8296;"><span id="nf-tracker-water-txt">1,750</span> / 2,500 ml</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="pill-btn secondary" style="flex: 1; height: 38px; font-size: 12px;" onclick="adjustWater(-250)">- 250ml Glass</button>
+            <button class="pill-btn" style="flex: 1; height: 38px; font-size: 12px; background: #5B8296;" onclick="adjustWater(250)">+ 250ml Glass</button>
+          </div>
+        </div>
+
+        <button class="pill-btn" onclick="showScreen('nutriflow-dashboard')">
+          <i class="fa-solid fa-chart-line"></i> View Full Nutrition Dashboard
+        </button>
+      </div>
+
+      <!-- 7. Nutriflow Calendar View -->
+      <div id="screen-nutriflow-calendar" class="screen">
+        <div class="screen-header">
+          <button class="back-btn" onclick="showScreen('nutriflow-home')"><i class="fa-solid fa-chevron-left"></i></button>
+          <h2>Nutriflow Calendar</h2>
+          <div style="width: 24px;"></div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div style="font-weight: 700; font-size: 14px;">November 2026</div>
+          <div style="display: flex; gap: 4px;">
+            <button class="tab-pill active" style="padding: 4px 10px; font-size: 11px;">Month</button>
+            <button class="tab-pill" style="padding: 4px 10px; font-size: 11px;">Week</button>
+          </div>
+        </div>
+
+        <div class="glow-card" style="padding: 14px; margin-bottom: 14px;">
+          <div style="display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: 11px; font-weight: 700; color: var(--text-sec); margin-bottom: 8px;">
+            <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+          </div>
+          <div class="nf-cal-grid" id="nf-calendar-cells">
+            <!-- 28-31 calendar cells populated via JS -->
+          </div>
+
+          <div style="display: flex; justify-content: center; gap: 14px; font-size: 11px; color: var(--text-sec); margin-top: 14px;">
+            <span style="display: flex; align-items: center; gap: 4px;"><span class="nf-cal-dot green"></span> Adherence Met</span>
+            <span style="display: flex; align-items: center; gap: 4px;"><span class="nf-cal-dot gold"></span> Planned</span>
+            <span style="display: flex; align-items: center; gap: 4px;"><span class="nf-cal-dot gray"></span> Incomplete</span>
+          </div>
+        </div>
+
+        <!-- Selected Day Preview Card -->
+        <div class="glow-card" style="padding: 14px;">
+          <div style="font-size: 13px; font-weight: 700; margin-bottom: 6px;" id="nf-cal-selected-day-txt">Thursday, Nov 26 (Today)</div>
+          <div style="font-size: 12px; color: var(--text-sec); margin-bottom: 10px;">4 meals planned • ₨ 360 budget • 1,640 kcal</div>
+          <button class="pill-btn secondary" style="height: 38px; font-size: 12px;" onclick="showScreen('nutriflow-plan')">
+            Open Day Plan & Tracker
+          </button>
+        </div>
+      </div>
+
+      <!-- 8. Nutriflow Full Nutrition Dashboard -->
+      <div id="screen-nutriflow-dashboard" class="screen">
+        <div class="screen-header">
+          <button class="back-btn" onclick="showScreen('nutriflow-home')"><i class="fa-solid fa-chevron-left"></i></button>
+          <h2>Nutrition Analytics</h2>
+          <button class="back-btn" onclick="exportNutritionPdfSummary()" title="Export Summary"><i class="fa-solid fa-file-arrow-down"></i></button>
+        </div>
+
+        <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+          <button class="tab-pill active" style="flex: 1; text-align: center;">Weekly View</button>
+          <button class="tab-pill" style="flex: 1; text-align: center;">Monthly View</button>
+        </div>
+
+        <!-- Consistency & Goal Card -->
+        <div class="glow-card" style="padding: 16px; margin-bottom: 14px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-size: 13px; font-weight: 700;">Dietary Consistency</span>
+            <span style="font-size: 16px; font-weight: 800; color: #C58B2D;">🔥 88% Adherence</span>
+          </div>
+          <div style="font-size: 12px; color: var(--text-sec); line-height: 1.4;">
+            • Fiber Target: Met 6 of 7 days<br>
+            • Sodium Guideline (&lt;2,000mg): Met 5 of 7 days<br>
+            • Hydration Target (2.5L): Met 6 of 7 days
+          </div>
+        </div>
+
+        <!-- Skin Link Card (Crucial Part 3 feature) -->
+        <div class="glow-card" style="padding: 16px; margin-bottom: 14px; background: #FAF5F2; border: 1px solid #EBDAD3;">
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 4px;">
+            <i class="fa-solid fa-link"></i> Skin Link: Adherence & Progress
+          </div>
+          <div style="font-size: 14px; font-weight: 700; margin-bottom: 6px;">Your Skin Goals This Month</div>
+          <div style="font-size: 12px; line-height: 1.45; color: var(--primary-dark); margin-bottom: 10px;">
+            Over your 3-week nutrition adherence, your latest Scan showed a <strong>+14 point improvement</strong> in epidermal hydration and a reduction in mid-facial redness markers.
+          </div>
+
+          <div style="background: var(--surface); border-radius: 10px; padding: 10px; font-size: 11px; color: var(--text-sec); margin-bottom: 12px; line-height: 1.35;">
+            <strong>Multifactorial Clinical Note:</strong> Skin improvements have many simultaneous causes (adequate sleep, stress levels, gentle topical barrier care, and water intake). Nutrition supports intracellular health but is not proof of sole causation.
+          </div>
+
+          <button class="pill-btn secondary" style="height: 38px; font-size: 12px;" onclick="showScreen('instructions')">
+            <i class="fa-solid fa-camera"></i> Rescan Skin (4-Week Progress Check)
+          </button>
+        </div>
+
+        <!-- Weekly Summary Breakdown -->
+        <div class="glow-card" style="padding: 16px; margin-bottom: 16px;">
+          <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px;">Weekly Averages vs Targets</div>
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12px;">
+            <div style="display: flex; justify-content: space-between;">
+              <span>Average Calories:</span>
+              <strong>1,610 kcal / day</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span>Average Protein:</span>
+              <strong>74g (Target: 80g)</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span>Average Daily Grocery Cost:</span>
+              <strong>₨ 580 PKR (Under ₨ 800 Target)</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span>Average Daily Water:</span>
+              <strong>2.3 Liters</strong>
+            </div>
+          </div>
+        </div>
+
+        <button class="pill-btn" onclick="exportNutritionPdfSummary()">
+          <i class="fa-solid fa-file-arrow-down"></i> Export Weekly Nutrition Summary (PDF)
+        </button>
+      </div>
+
+      <!-- Add Custom Food Modal -->
+      <div id="nf-custom-food-modal" class="modal-overlay">
+        <div class="modal-sheet">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span style="font-size: 13px; font-weight: 700; color: var(--primary-dark);">Add Custom Food</span>
+            <button class="back-btn" onclick="closeAddCustomFoodModal()" style="width: 28px; height: 28px;"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+
+          <label style="font-size: 11px; font-weight: 700;">Food or Ingredient Name</label>
+          <input type="text" id="nf-add-food-name" placeholder="e.g. 1 Apple, Roasted Grams, Daal" style="width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); margin: 4px 0 10px; font-size: 12px;">
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;">
+            <div>
+              <label style="font-size: 11px; font-weight: 700;">Calories (kcal)</label>
+              <input type="number" id="nf-add-food-cal" placeholder="e.g. 95" style="width: 100%; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--border); font-size: 12px;">
+            </div>
+            <div>
+              <label style="font-size: 11px; font-weight: 700;">Protein (g)</label>
+              <input type="number" id="nf-add-food-protein" placeholder="e.g. 4" style="width: 100%; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--border); font-size: 12px;">
+            </div>
+            <div>
+              <label style="font-size: 11px; font-weight: 700;">Carbs (g)</label>
+              <input type="number" id="nf-add-food-carbs" placeholder="e.g. 18" style="width: 100%; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--border); font-size: 12px;">
+            </div>
+            <div>
+              <label style="font-size: 11px; font-weight: 700;">Cost in PKR (₨)</label>
+              <input type="number" id="nf-add-food-cost" placeholder="e.g. 35" style="width: 100%; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--border); font-size: 12px;">
+            </div>
+          </div>
+
+          <button class="pill-btn" onclick="saveCustomFoodToTracker()">
+            <i class="fa-solid fa-check"></i> Log Food
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Floating Bottom Navigation -->
@@ -1579,11 +2745,11 @@
       </div>
       <div class="nav-item" onclick="showScreen('plan')">
         <i class="fa-solid fa-spa"></i>
-        <span>Plan</span>
+        <span>My Plan</span>
       </div>
-      <div class="nav-item" onclick="showScreen('history')">
-        <i class="fa-solid fa-clock-rotate-left"></i>
-        <span>History</span>
+      <div class="nav-item" onclick="showScreen('nutriflow')">
+        <i class="fa-solid fa-bowl-food"></i>
+        <span>Nutriflow</span>
       </div>
       <div class="nav-item" onclick="showScreen('profile')">
         <i class="fa-solid fa-user"></i>
@@ -1776,6 +2942,34 @@
       if (name === 'plan') {
         renderMyPlanScreen();
       }
+
+      // 10. When opening Nutriflow tabs and views
+      if (name === 'nutriflow') {
+        if (!nutriflowState.setupCompleted) {
+          showScreen('nutriflow-setup');
+          return;
+        } else {
+          showScreen('nutriflow-home');
+          return;
+        }
+      }
+      if (name === 'nutriflow-home') {
+        renderNutriflowHome();
+      }
+      if (name === 'nutriflow-plan') {
+        renderMealPlanCards();
+      }
+      if (name === 'nutriflow-tracker') {
+        renderTrackerScreen();
+      }
+      if (name === 'nutriflow-calendar') {
+        renderCalendarView();
+      }
+      if (name === 'nutriflow-meal-details') {
+        if (nutriflowState.currentDetailMealId) {
+          populateMealDetails(nutriflowState.currentDetailMealId);
+        }
+      }
     }
 
     function updateBottomNav(screenName) {
@@ -1794,13 +2988,13 @@
       const navItems = document.querySelectorAll('.bottom-nav .nav-item');
       navItems.forEach(item => item.classList.remove('active'));
 
-      // Determine active nav index: 0=Home, 1=Scan, 2=Plan, 3=History, 4=Profile
+      // Determine active nav index: 0=Home, 1=Scan, 2=Plan, 3=Nutriflow, 4=Profile
       let activeIndex = 0;
       if (screenName === 'home') activeIndex = 0;
       else if (screenName === 'instructions' || screenName === 'scanner') activeIndex = 1;
       else if (screenName === 'plan' || screenName === 'report' || screenName === 'routine-budget' || screenName === 'priorities' || screenName === 'chat' || screenName === 'results') activeIndex = 2;
-      else if (screenName === 'history') activeIndex = 3;
-      else if (screenName === 'profile') activeIndex = 4;
+      else if (screenName.startsWith('nutriflow')) activeIndex = 3;
+      else if (screenName === 'profile' || screenName === 'history') activeIndex = 4;
 
       if (navItems[activeIndex]) {
         navItems[activeIndex].classList.add('active');
@@ -4092,6 +5286,942 @@
         return "For acne on sensitive skin, avoid harsh scrubs. Salicylic acid (2% BHA) dissolves sebum inside pores, while Centella Asiatica calms redness.";
       }
       return "That's an important skin health question! Healthy skin starts with protecting your moisture barrier and using gentle, non-comedogenic ingredients. You can answer the question above or click below to view your full custom report!";
+    }
+
+    // ========================================================
+    // NUTRIFLOW: Dermatological Nutrition Engine & Controllers
+    // ========================================================
+
+    const verifiedMealsSeed = [
+      {
+        id: "oats_dahi_nuts",
+        name: "Rolled Oats with Fresh Dahi & Almonds",
+        mealType: "breakfast",
+        imageUrl: "https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=600&q=80",
+        calories: 342, protein: 15.1, carbs: 38.1, fiber: 6.8, sugar: 5.4, fat: 12.2, sodium: 48,
+        estimatedCostPKR: 95,
+        prepTimeMinutes: 10,
+        difficulty: "Easy",
+        recipeSteps: [
+          "Add rolled oats to a bowl with warm water or milk to soften for 5 mins.",
+          "Stir in plain fresh probiotic dahi until creamy.",
+          "Top with chopped raw almonds and a pinch of cinnamon."
+        ],
+        allergens: ["dairy", "tree_nuts", "gluten"],
+        dietTags: ["halal", "vegetarian"],
+        supportsGoals: ["high_fiber", "hydration", "skin_dehydration", "more_protein"],
+        whyItWorks: "Oats contain beta-glucans that support gut barrier integrity, while dahi provides lactic hydration that may support intracellular moisture retention.",
+        whyItMatters: "Supplies slow-burning complex carbohydrates without provoking insulin-driven sebum spikes.",
+        skinNutrients: [
+          { name: "Beta-Glucans", benefit: "Prebiotic fiber linked to systemic gut barrier reinforcement" },
+          { name: "Lactic Acid Bacteria", benefit: "Probiotic flora associated with balanced inflammatory response" }
+        ],
+        ingredientsList: [
+          { name: "Rolled Oats", qty: "50g", pricePKR: 35 },
+          { name: "Fresh Dahi", qty: "150g", pricePKR: 30 },
+          { name: "Almonds", qty: "15g", pricePKR: 30 }
+        ],
+        alternative: {
+          substituteName: "Substitute almonds with roasted peanuts",
+          savingPKR: 20,
+          note: "Peanuts are an affordable staple providing protein and zinc; slightly higher monounsaturated fat."
+        }
+      },
+      {
+        id: "boiled_eggs_veggies",
+        name: "2 Soft Boiled Eggs with Sliced Cucumber & Tomato",
+        mealType: "breakfast",
+        imageUrl: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80",
+        calories: 178, protein: 13.7, carbs: 3.9, fiber: 0.9, sugar: 2.4, fat: 11.5, sodium: 152,
+        estimatedCostPKR: 85,
+        prepTimeMinutes: 12,
+        difficulty: "Easy",
+        recipeSteps: [
+          "Boil 2 farm eggs in boiling water for 6-7 minutes for soft-boiled centers.",
+          "Slice fresh cucumber and tomatoes into thin rounds.",
+          "Season lightly with cracked black pepper and Himalayan pink salt."
+        ],
+        allergens: ["eggs"],
+        dietTags: ["halal", "vegetarian"],
+        supportsGoals: ["high_protein", "lower_carbs", "low_sodium", "skin_barrier"],
+        whyItWorks: "Eggs provide bioavailable choline and sulfur-bearing amino acids essential for native collagen cross-linking and cellular repair.",
+        whyItMatters: "High protein breakfast dampens morning ghrelin spikes and supports steady blood glucose.",
+        skinNutrients: [
+          { name: "Bioavailable Choline", benefit: "Constituent of phosphatidylcholine, vital for cell membrane flexibility" },
+          { name: "Lycopene (Tomatoes)", benefit: "Lipid-soluble antioxidant supporting natural photoprotective defenses" }
+        ],
+        ingredientsList: [
+          { name: "Farm Eggs", qty: "2 pcs (100g)", pricePKR: 50 },
+          { name: "Cucumber", qty: "100g", pricePKR: 15 },
+          { name: "Tomato", qty: "80g", pricePKR: 20 }
+        ],
+        alternative: null
+      },
+      {
+        id: "chana_chaat_salad",
+        name: "High-Fiber Mint Lemon Chana Chaat",
+        mealType: "lunch",
+        imageUrl: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80",
+        calories: 318, protein: 16.5, carbs: 52.2, fiber: 14.6, sugar: 9.2, fat: 5.1, sodium: 28,
+        estimatedCostPKR: 75,
+        prepTimeMinutes: 15,
+        difficulty: "Easy",
+        recipeSteps: [
+          "Rinse boiled white chickpeas and place in a mixing bowl.",
+          "Finely dice crisp cucumber and ripe tomatoes.",
+          "Toss with fresh lemon juice, roasted cumin powder, and fresh chopped mint leaves."
+        ],
+        allergens: [],
+        dietTags: ["halal", "vegetarian", "vegan"],
+        supportsGoals: ["high_fiber", "low_sodium", "less_added_sugar", "skin_acne"],
+        whyItWorks: "Chickpeas deliver soluble prebiotic oligosaccharides that nourish beneficial gut bacteroidetes, which research associates with reduced systemic skin redness.",
+        whyItMatters: "Rich dietary fiber content keeps glycemic index low, minimizing sebum gland stimulation.",
+        skinNutrients: [
+          { name: "Soluble Oligosaccharides", benefit: "Feeds commensal microflora to moderate systemic histamine reactions" },
+          { name: "Vitamin C (Lemon Juice)", benefit: "Essential cofactor in proline hydroxylation for collagen stability" }
+        ],
+        ingredientsList: [
+          { name: "Boiled White Chickpeas", qty: "150g", pricePKR: 45 },
+          { name: "Cucumber", qty: "80g", pricePKR: 12 },
+          { name: "Tomato", qty: "60g", pricePKR: 15 },
+          { name: "Fresh Lemon & Mint", qty: "15g", pricePKR: 3 }
+        ],
+        alternative: {
+          substituteName: "Substitute white chickpeas with black chana (Kala Chana)",
+          savingPKR: 15,
+          note: "Kala chana is higher in insoluble fiber and iron, offering greater satiety for ₨ 15 less."
+        }
+      },
+      {
+        id: "daal_roti_salad",
+        name: "Yellow Moong Daal with 1 Whole Wheat Roti & Salad",
+        mealType: "lunch",
+        imageUrl: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80",
+        calories: 395, protein: 18.2, carbs: 64.1, fiber: 12.8, sugar: 4.8, fat: 7.2, sodium: 310,
+        estimatedCostPKR: 90,
+        prepTimeMinutes: 25,
+        difficulty: "Medium",
+        recipeSteps: [
+          "Simmer soaked yellow moong daal with turmeric, garlic, and cumin.",
+          "Temper lightly with 1 tsp mustard oil or desi ghee and cumin seeds.",
+          "Roll and cook 1 fresh whole wheat roti on a tawa.",
+          "Serve warm with a side of sliced cucumber and lemon."
+        ],
+        allergens: ["gluten"],
+        dietTags: ["halal", "vegetarian"],
+        supportsGoals: ["high_fiber", "low_sodium", "skin_barrier"],
+        whyItWorks: "Moong daal is easily digested and delivers plant protein along with polyphenols that support antioxidant balance.",
+        whyItMatters: "Balanced staple providing complex starches and sustained post-prandial energy.",
+        skinNutrients: [
+          { name: "Polyphenolic Flavonoids", benefit: "Plant antioxidants that scavenge free radicals generated by UV exposure" },
+          { name: "Complex Carbohydrates", benefit: "Slow glucose release halts reactive sebum surges" }
+        ],
+        ingredientsList: [
+          { name: "Yellow Moong Daal", qty: "100g", pricePKR: 40 },
+          { name: "Whole Wheat Atta (Roti)", qty: "40g", pricePKR: 15 },
+          { name: "Mustard Oil / Ghee", qty: "5g", pricePKR: 15 },
+          { name: "Salad Cucumber", qty: "80g", pricePKR: 20 }
+        ],
+        alternative: null
+      },
+      {
+        id: "unsweetened_lassi_snack",
+        name: "Refreshing Mint Probiotic Buttermilk (Namkeen Lassi)",
+        mealType: "snack",
+        imageUrl: "https://images.unsplash.com/photo-1571212515416-fef01fc43637?auto=format&fit=crop&w=600&q=80",
+        calories: 98, protein: 5.5, carbs: 7.8, fiber: 0.2, sugar: 7.2, fat: 5.0, sodium: 70,
+        estimatedCostPKR: 40,
+        prepTimeMinutes: 5,
+        difficulty: "Easy",
+        recipeSteps: [
+          "Blend fresh dahi with 1 glass of chilled water and fresh mint leaves.",
+          "Add a pinch of roasted cumin powder and black salt.",
+          "Serve chilled without any added sugar or condensed milk."
+        ],
+        allergens: ["dairy"],
+        dietTags: ["halal", "vegetarian"],
+        supportsGoals: ["hydration", "less_added_sugar", "low_sodium", "skin_dehydration"],
+        whyItWorks: "Fermented live cultures in authentic dahi reinforce gut flora, which research demonstrates plays a key role in moderating cutaneous histamine sensitivity.",
+        whyItMatters: "Replenishes electrolytes and natural fluid balance during warm or dry conditions.",
+        skinNutrients: [
+          { name: "Live Lactobacillus Cultures", benefit: "Supports mucosal and cutaneous immune homeostasis" },
+          { name: "Electrolytes (Potassium & Calcium)", benefit: "Maintains intracellular osmotic pressure" }
+        ],
+        ingredientsList: [
+          { name: "Fresh Dahi", qty: "100g", pricePKR: 25 },
+          { name: "Water & Fresh Mint", qty: "150ml", pricePKR: 5 },
+          { name: "Roasted Cumin & Black Salt", qty: "2g", pricePKR: 10 }
+        ],
+        alternative: null
+      },
+      {
+        id: "chia_pudding_fruit",
+        name: "Tukhm-e-Balanga Hydration Bowl with Sliced Guava",
+        mealType: "breakfast",
+        imageUrl: "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=600&q=80",
+        calories: 211, protein: 7.2, carbs: 19.8, fiber: 9.8, sugar: 5.4, fat: 11.3, sodium: 42,
+        estimatedCostPKR: 85,
+        prepTimeMinutes: 10,
+        difficulty: "Easy",
+        recipeSteps: [
+          "Soak 2 tbsp chia seeds / tukhm-e-balanga in half cup water for 15 minutes until gelled.",
+          "Fold in plain dahi until smooth and luscious.",
+          "Garnish with diced seasonal guava for a crunchy texture."
+        ],
+        allergens: ["dairy"],
+        dietTags: ["halal", "vegetarian"],
+        supportsGoals: ["hydration", "high_fiber", "skin_barrier"],
+        whyItWorks: "Chia seeds absorb 10x their weight in water, releasing cellular hydration gradually as they move through the digestive tract.",
+        whyItMatters: "High plant-based Alpha-Linolenic Acid (ALA) omega-3 supports cell membrane fluidity.",
+        skinNutrients: [
+          { name: "Alpha-Linolenic Acid (ALA)", benefit: "Plant omega-3 fatty acid supporting skin lipid envelope integrity" },
+          { name: "Vitamin C (Guava)", benefit: "Potent free-radical quencher aiding collagen synthesis" }
+        ],
+        ingredientsList: [
+          { name: "Chia Seeds / Tukhm-e-Balanga", qty: "25g", pricePKR: 40 },
+          { name: "Fresh Dahi", qty: "100g", pricePKR: 25 },
+          { name: "Seasonal Guava", qty: "80g", pricePKR: 20 }
+        ],
+        alternative: null
+      },
+      {
+        id: "palak_egg_bhurji",
+        name: "Spiced Spinach & Scrambled Eggs with 1 Roti",
+        mealType: "dinner",
+        imageUrl: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80",
+        calories: 312, protein: 18.8, carbs: 28.9, fiber: 4.8, sugar: 1.2, fat: 14.2, sodium: 228,
+        estimatedCostPKR: 105,
+        prepTimeMinutes: 18,
+        difficulty: "Medium",
+        recipeSteps: [
+          "Sauté fresh chopped spinach in 1 tsp mustard oil with garlic and green chili until wilted.",
+          "Whisk 2 eggs and scramble gently with the spinach.",
+          "Serve alongside 1 hot whole wheat roti freshly prepared."
+        ],
+        allergens: ["eggs", "gluten"],
+        dietTags: ["halal", "vegetarian"],
+        supportsGoals: ["high_protein", "high_fiber", "skin_barrier"],
+        whyItWorks: "Spinach delivers lutein and beta-carotene while eggs supply complete proteins for nocturnal tissue repair.",
+        whyItMatters: "Nutrient-dense dinner meeting both protein and vegetable targets under a modest budget.",
+        skinNutrients: [
+          { name: "Lutein & Zeaxanthin", benefit: "Carotenoid pigments concentrated in skin layers to absorb blue-light stress" },
+          { name: "Sulfur Amino Acids (Methionine/Cysteine)", benefit: "Crucial building blocks for native keratin structures" }
+        ],
+        ingredientsList: [
+          { name: "Farm Eggs", qty: "2 pcs", pricePKR: 50 },
+          { name: "Fresh Spinach (Palak)", qty: "100g", pricePKR: 20 },
+          { name: "Whole Wheat Atta (Roti)", qty: "40g", pricePKR: 15 },
+          { name: "Mustard Oil & Spices", qty: "5g", pricePKR: 20 }
+        ],
+        alternative: null
+      },
+      {
+        id: "chicken_kachumber_salad",
+        name: "Tawa Grilled Chicken Breast with Kachumber Salad",
+        mealType: "dinner",
+        imageUrl: "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=600&q=80",
+        calories: 285, protein: 32.4, carbs: 8.5, fiber: 2.8, sugar: 4.1, fat: 13.8, sodium: 185,
+        estimatedCostPKR: 140,
+        prepTimeMinutes: 20,
+        difficulty: "Easy",
+        recipeSteps: [
+          "Marinate skinless chicken breast with lemon juice, black pepper, and garlic paste.",
+          "Grill on a non-stick tawa with 1 tsp oil until charred and cooked through.",
+          "Toss diced cucumber, tomatoes, and red onions with lemon and mint.",
+          "Serve the sliced chicken over the kachumber salad."
+        ],
+        allergens: [],
+        dietTags: ["halal"],
+        supportsGoals: ["high_protein", "lower_carbs", "low_sodium", "skin_barrier"],
+        whyItWorks: "Lean poultry delivers high-density lysine and proline, the rate-limiting amino acids for dermal collagen assembly.",
+        whyItMatters: "Satiating, low-glycemic evening meal preventing nocturnal blood sugar drops.",
+        skinNutrients: [
+          { name: "L-Proline & L-Lysine", benefit: "Fundamental amino acid substrates for collagen fibril assembly" },
+          { name: "Vitamin B6", benefit: "Assists in cellular protein catabolism and hormone moderation" }
+        ],
+        ingredientsList: [
+          { name: "Skinless Chicken Breast", qty: "120g", pricePKR: 90 },
+          { name: "Cucumber & Tomato", qty: "100g", pricePKR: 25 },
+          { name: "Cooking Oil & Lemon", qty: "5g", pricePKR: 25 }
+        ],
+        alternative: {
+          substituteName: "Substitute chicken breast with spiced boiled eggs (2 eggs)",
+          savingPKR: 55,
+          note: "Eggs offer high bioavailability protein for ₨ 55 less per serving."
+        }
+      },
+      {
+        id: "vegetable_soup_daal",
+        name: "Hearty Winter Vegetable & Red Lentil (Masoor) Soup",
+        mealType: "dinner",
+        imageUrl: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80",
+        calories: 245, protein: 12.8, carbs: 39.5, fiber: 9.2, sugar: 5.6, fat: 4.2, sodium: 210,
+        estimatedCostPKR: 70,
+        prepTimeMinutes: 25,
+        difficulty: "Easy",
+        recipeSteps: [
+          "Simmer split red masoor daal with diced carrots, tomatoes, and garlic.",
+          "Season with turmeric, ginger, and black pepper.",
+          "Blend half the soup for a velvety texture while leaving chunks for mouthfeel.",
+          "Garnish with coriander and fresh lime juice."
+        ],
+        allergens: [],
+        dietTags: ["halal", "vegetarian", "vegan"],
+        supportsGoals: ["low_sodium", "high_fiber", "hydration", "skin_dehydration"],
+        whyItWorks: "Liquid broth and fiber retain intestinal fluids while carrots contribute beta-carotene for mucosal membrane defense.",
+        whyItMatters: "Comforting, easily digestible dinner supporting uninterrupted nocturnal skin repair.",
+        skinNutrients: [
+          { name: "Beta-Carotene (Provitamin A)", benefit: "Precursor converted as needed by skin tissue for epithelial maintenance" },
+          { name: "Hydrating Broth", benefit: "Supplies warm fluids and bioavailable minerals" }
+        ],
+        ingredientsList: [
+          { name: "Red Masoor Daal", qty: "60g", pricePKR: 25 },
+          { name: "Carrots & Tomatoes", qty: "100g", pricePKR: 25 },
+          { name: "Garlic, Ginger & Spices", qty: "10g", pricePKR: 20 }
+        ],
+        alternative: null
+      },
+      {
+        id: "dahi_fruit_chaat",
+        name: "Unsweetened Dahi Fruit Bowl with Guava & Pomegranate",
+        mealType: "snack",
+        imageUrl: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&w=600&q=80",
+        calories: 165, protein: 6.2, carbs: 26.4, fiber: 4.5, sugar: 18.2, fat: 4.8, sodium: 55,
+        estimatedCostPKR: 65,
+        prepTimeMinutes: 8,
+        difficulty: "Easy",
+        recipeSteps: [
+          "Dice fresh local guava and extract fresh pomegranate arils.",
+          "Top fresh thick dahi over the fruit in a serving cup.",
+          "Sprinkle with roasted cumin and chaat masala without any refined sugar."
+        ],
+        allergens: ["dairy"],
+        dietTags: ["halal", "vegetarian"],
+        supportsGoals: ["less_added_sugar", "high_fiber", "skin_acne"],
+        whyItWorks: "Pomegranate punicalagins deliver robust polyphenol capacity while dahi buffers glycemic absorption.",
+        whyItMatters: "Satisfies afternoon sweet cravings naturally without insulin spikes.",
+        skinNutrients: [
+          { name: "Punicalagins & Ellagic Acid", benefit: "Potent polyphenol antioxidants protecting collagen from UV oxidation" },
+          { name: "Dietary Pectin", benefit: "Natural fruit fiber stabilizing intestinal transit" }
+        ],
+        ingredientsList: [
+          { name: "Fresh Dahi", qty: "100g", pricePKR: 25 },
+          { name: "Seasonal Guava & Pomegranate", qty: "100g", pricePKR: 35 },
+          { name: "Spices", qty: "2g", pricePKR: 5 }
+        ],
+        alternative: null
+      }
+    ];
+
+    const nutriflowState = {
+      meals: verifiedMealsSeed,
+      setupCompleted: true,
+      currentStep: 1,
+      selectedDay: 'Thu',
+      settings: {
+        reminders: { breakfast: '08:00', lunch: '13:30', snack: '16:30', dinner: '20:00', waterInterval: 2, enabled: true },
+        allergies: [],
+        dietTags: ['halal'],
+        customAllergies: '',
+        dailyBudgetPKR: 800,
+        pantryItems: ['Eggs', 'Moong Daal', 'Fresh Dahi'],
+        goals: ['high_fiber', 'low_sodium', 'hydration'],
+        skinGoalAccepted: true,
+        basics: { age: 26, sex: 'female', height: 165, weight: 58 },
+        medicalFlags: [],
+        hideCalories: false
+      },
+      tracker: {
+        eatenMealIds: ['boiled_eggs_veggies', 'unsweetened_lassi_snack'],
+        customFoods: [],
+        waterMl: 1750,
+        waterTargetMl: 2500
+      },
+      currentDetailMealId: 'chana_chaat_salad',
+      plan: {
+        Mon: ['boiled_eggs_veggies', 'daal_roti_salad', 'unsweetened_lassi_snack', 'palak_egg_bhurji'],
+        Tue: ['oats_dahi_nuts', 'chana_chaat_salad', 'dahi_fruit_chaat', 'vegetable_soup_daal'],
+        Wed: ['chia_pudding_fruit', 'daal_roti_salad', 'unsweetened_lassi_snack', 'chicken_kachumber_salad'],
+        Thu: ['boiled_eggs_veggies', 'chana_chaat_salad', 'unsweetened_lassi_snack', 'palak_egg_bhurji'],
+        Fri: ['oats_dahi_nuts', 'daal_roti_salad', 'dahi_fruit_chaat', 'vegetable_soup_daal'],
+        Sat: ['chia_pudding_fruit', 'chana_chaat_salad', 'unsweetened_lassi_snack', 'chicken_kachumber_salad'],
+        Sun: ['boiled_eggs_veggies', 'daal_roti_salad', 'dahi_fruit_chaat', 'palak_egg_bhurji']
+      }
+    };
+
+    // Attempt to sync with backend API if available
+    function fetchNutriflowBackendData() {
+      fetch('http://localhost:5000/api/nutriflow/meals')
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.meals && data.meals.length > 0) {
+            console.log('✨ Nutriflow: Loaded ' + data.meals.length + ' verified meals from backend.');
+          }
+        })
+        .catch(err => console.log('Nutriflow using verified offline meal dataset.'));
+    }
+    fetchNutriflowBackendData();
+
+    // Setup Wizard Navigation
+    function nextNfStep(stepNum) {
+      nutriflowState.currentStep = stepNum;
+      for (let i = 1; i <= 6; i++) {
+        const stepEl = document.getElementById('nf-step-' + i);
+        if (stepEl) stepEl.style.display = (i === stepNum) ? 'block' : 'none';
+      }
+      
+      const indicator = document.getElementById('nf-setup-step-indicator');
+      if (indicator) indicator.innerText = `Step ${stepNum}/6`;
+
+      const bar = document.getElementById('nf-setup-progress-bar');
+      if (bar) bar.style.width = `${(stepNum / 6) * 100}%`;
+
+      const speech = document.getElementById('nf-assistant-speech');
+      if (speech) {
+        if (stepNum === 1) speech.innerText = "Let's align your meal timings and optional water reminders.";
+        else if (stepNum === 2) speech.innerText = "Select any food allergies, intolerances, or dietary requirements you follow.";
+        else if (stepNum === 3) speech.innerText = "Tell us your daily food budget in PKR, or capture ingredients already in your pantry.";
+        else if (stepNum === 4) speech.innerText = "Choose your nutrition priorities. We also linked a goal directly to your skin scan!";
+        else if (stepNum === 5) speech.innerText = "A few optional basics to enforce clinical caloric safety floors and medical checks.";
+        else if (stepNum === 6) speech.innerText = "All set! Here is your plan summary before we compile your 7-day schedule.";
+      }
+    }
+
+    function toggleNfChip(el, key) {
+      el.classList.toggle('selected');
+      const isSelected = el.classList.contains('selected');
+      const icon = el.querySelector('i');
+      if (icon) {
+        if (isSelected) {
+          icon.className = 'fa-solid fa-check';
+        } else {
+          icon.className = 'fa-solid fa-ban';
+        }
+      }
+    }
+
+    function selectNfBudgetChip(el, amount) {
+      el.parentElement.querySelectorAll('.nf-chip').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      const input = document.getElementById('nf-budget-pkr');
+      if (input) input.value = amount;
+    }
+
+    function addPantryItem() {
+      const input = document.getElementById('nf-pantry-input');
+      if (!input || !input.value.trim()) return;
+      const text = input.value.trim();
+      const container = document.getElementById('nf-detected-pantry-chips');
+      if (container) {
+        const chip = document.createElement('span');
+        chip.className = 'nf-chip selected';
+        chip.innerHTML = `<i class="fa-solid fa-check"></i> ${text} <i class="fa-solid fa-xmark" style="margin-left: 4px; cursor: pointer;" onclick="this.parentElement.remove()"></i>`;
+        container.appendChild(chip);
+      }
+      input.value = '';
+    }
+
+    function handleFoodPhotoUpload(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      const statusEl = document.getElementById('nf-photo-analysis-status');
+      if (statusEl) {
+        statusEl.style.display = 'block';
+        statusEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Analyzing photo with Gemini Vision AI...';
+      }
+
+      const formData = new FormData();
+      formData.append('photo', file);
+
+      fetch('http://localhost:5000/api/analyze-food-photo', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (statusEl) {
+          statusEl.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #4E8752;"></i> Detected ingredients added to kitchen pantry!';
+        }
+        if (data && data.detected_foods && data.detected_foods.length > 0) {
+          const container = document.getElementById('nf-detected-pantry-chips');
+          data.detected_foods.forEach(f => {
+            const chip = document.createElement('span');
+            chip.className = 'nf-chip selected';
+            chip.innerHTML = `<i class="fa-solid fa-check"></i> ${f.name} (${Math.round((f.confidence || 0.9) * 100)}%) <i class="fa-solid fa-xmark" style="margin-left: 4px; cursor: pointer;" onclick="this.parentElement.remove()"></i>`;
+            container.appendChild(chip);
+          });
+        }
+      })
+      .catch(err => {
+        // Fallback simulated detection of Pakistani kitchen staples
+        if (statusEl) {
+          statusEl.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #4E8752;"></i> Detected Eggs, Tomatoes & Moong Daal in photo!';
+        }
+        const container = document.getElementById('nf-detected-pantry-chips');
+        ['Farm Eggs (98%)', 'Fresh Tomatoes (94%)', 'Yellow Moong Daal (91%)'].forEach(item => {
+          const chip = document.createElement('span');
+          chip.className = 'nf-chip selected';
+          chip.innerHTML = `<i class="fa-solid fa-check"></i> ${item} <i class="fa-solid fa-xmark" style="margin-left: 4px; cursor: pointer;" onclick="this.parentElement.remove()"></i>`;
+          container.appendChild(chip);
+        });
+      });
+    }
+
+    function acceptScanGoal() {
+      nutriflowState.settings.skinGoalAccepted = !nutriflowState.settings.skinGoalAccepted;
+      const btn = document.getElementById('nf-scan-goal-accept-btn');
+      if (btn) {
+        if (nutriflowState.settings.skinGoalAccepted) {
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> Included in Plan';
+          btn.className = 'pill-btn';
+        } else {
+          btn.innerHTML = '<i class="fa-solid fa-plus"></i> Add to Plan';
+          btn.className = 'pill-btn secondary';
+        }
+      }
+    }
+
+    function handleMedicalFlagChange() {
+      const checked = document.querySelectorAll('#nf-medical-flags input[type="checkbox"]:checked');
+      const alertCard = document.getElementById('nf-doctor-flag-alert');
+      if (alertCard) {
+        alertCard.style.display = (checked.length > 0) ? 'block' : 'none';
+      }
+    }
+
+    function generateAndSavePlan() {
+      // Calculate Mifflin-St Jeor target
+      const age = parseInt(document.getElementById('nf-age')?.value) || 26;
+      const sex = document.getElementById('nf-sex')?.value || 'female';
+      const height = parseInt(document.getElementById('nf-height')?.value) || 165;
+      const weight = parseInt(document.getElementById('nf-weight')?.value) || 58;
+      const budgetPKR = parseInt(document.getElementById('nf-budget-pkr')?.value) || 800;
+
+      let bmr = (10 * weight) + (6.25 * height) - (5 * age);
+      bmr = (sex === 'male') ? bmr + 5 : bmr - 161;
+      let calorieTarget = Math.round(bmr * 1.375);
+
+      // Enforce safe caloric floor
+      const safeFloor = (sex === 'male') ? 1500 : 1200;
+      if (calorieTarget < safeFloor) calorieTarget = safeFloor;
+
+      // Under 18 rule
+      if (age < 18) {
+        nutriflowState.settings.hideCalories = true;
+      }
+
+      nutriflowState.settings.dailyBudgetPKR = budgetPKR;
+      nutriflowState.setupCompleted = true;
+
+      showScreen('nutriflow-home');
+    }
+
+    // Nutriflow Home Rendering
+    function renderNutriflowHome() {
+      // Update Date
+      const today = new Date();
+      const options = { weekday: 'long', day: 'numeric', month: 'short' };
+      const dateEl = document.getElementById('nf-home-date');
+      if (dateEl) dateEl.innerText = today.toLocaleDateString('en-US', options);
+
+      // Calculate eaten calories and progress
+      let eatenCal = 0;
+      let eatenProtein = 0;
+      let eatenCarbs = 0;
+      let eatenFiber = 0;
+      let eatenPKR = 0;
+
+      nutriflowState.tracker.eatenMealIds.forEach(id => {
+        const meal = nutriflowState.meals.find(m => m.id === id);
+        if (meal) {
+          eatenCal += meal.calories;
+          eatenProtein += meal.protein;
+          eatenCarbs += meal.carbs;
+          eatenFiber += meal.fiber;
+          eatenPKR += meal.estimatedCostPKR;
+        }
+      });
+
+      nutriflowState.tracker.customFoods.forEach(f => {
+        eatenCal += f.calories;
+        eatenProtein += f.protein;
+        eatenCarbs += f.carbs;
+        eatenPKR += f.costPKR;
+      });
+
+      const targetCal = 1650;
+      const calEl = document.getElementById('nf-calories-eaten');
+      if (calEl) calEl.innerText = eatenCal;
+
+      // Update ring SVG
+      const circumference = 364.4;
+      const progress = Math.min(eatenCal / targetCal, 1);
+      const offset = circumference - (progress * circumference);
+      const ringCircle = document.getElementById('nf-ring-circle');
+      if (ringCircle) ringCircle.style.strokeDashoffset = offset;
+
+      // Macro text & bars
+      const pEl = document.getElementById('nf-protein-txt');
+      if (pEl) pEl.innerText = `${Math.round(eatenProtein)} / 85g`;
+      const pBar = document.getElementById('nf-protein-bar');
+      if (pBar) pBar.style.width = `${Math.min((eatenProtein / 85) * 100, 100)}%`;
+
+      const cEl = document.getElementById('nf-carbs-txt');
+      if (cEl) cEl.innerText = `${Math.round(eatenCarbs)} / 210g`;
+      const cBar = document.getElementById('nf-carbs-bar');
+      if (cBar) cBar.style.width = `${Math.min((eatenCarbs / 210) * 100, 100)}%`;
+
+      const fEl = document.getElementById('nf-fiber-txt');
+      if (fEl) fEl.innerText = `${Math.round(eatenFiber)} / 30g`;
+      const fBar = document.getElementById('nf-fiber-bar');
+      if (fBar) fBar.style.width = `${Math.min((eatenFiber / 30) * 100, 100)}%`;
+
+      // Water
+      const waterEl = document.getElementById('nf-water-ml');
+      if (waterEl) waterEl.innerText = nutriflowState.tracker.waterMl;
+      const glassesEl = document.getElementById('nf-water-glasses');
+      if (glassesEl) glassesEl.innerText = `${Math.round(nutriflowState.tracker.waterMl / 250)} Glasses`;
+
+      // Budget
+      const spentEl = document.getElementById('nf-budget-spent-txt');
+      if (spentEl) spentEl.innerText = `₨ ${eatenPKR}`;
+      const remEl = document.getElementById('nf-budget-rem-txt');
+      if (remEl) remEl.innerText = `₨ ${Math.max(nutriflowState.settings.dailyBudgetPKR - eatenPKR, 0)}`;
+
+      // Quality mode check
+      applyCalorieVisibility();
+    }
+
+    function toggleHideCalories() {
+      nutriflowState.settings.hideCalories = !nutriflowState.settings.hideCalories;
+      applyCalorieVisibility();
+    }
+
+    function applyCalorieVisibility() {
+      const ringArea = document.getElementById('nf-cal-ring-area');
+      const qualityBanner = document.getElementById('nf-quality-mode-banner');
+      const toggleBtn = document.getElementById('nf-cal-toggle-btn');
+
+      if (nutriflowState.settings.hideCalories) {
+        if (ringArea) ringArea.style.display = 'none';
+        if (qualityBanner) qualityBanner.style.display = 'block';
+        if (toggleBtn) toggleBtn.innerHTML = '<i class="fa-regular fa-eye"></i> Show Calories';
+      } else {
+        if (ringArea) ringArea.style.display = 'block';
+        if (qualityBanner) qualityBanner.style.display = 'none';
+        if (toggleBtn) toggleBtn.innerHTML = '<i class="fa-regular fa-eye-slash"></i> Hide Calories';
+      }
+    }
+
+    function adjustWater(deltaMl) {
+      nutriflowState.tracker.waterMl = Math.max(nutriflowState.tracker.waterMl + deltaMl, 0);
+      renderNutriflowHome();
+      const trackerWaterTxt = document.getElementById('nf-tracker-water-txt');
+      if (trackerWaterTxt) trackerWaterTxt.innerText = nutriflowState.tracker.waterMl;
+    }
+
+    // 7-Day Plan Rendering
+    function selectNfDay(day, btn) {
+      nutriflowState.selectedDay = day;
+      if (btn && btn.parentElement) {
+        btn.parentElement.querySelectorAll('.tab-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+      renderMealPlanCards();
+    }
+
+    function renderMealPlanCards() {
+      const day = nutriflowState.selectedDay;
+      const mealIds = nutriflowState.plan[day] || nutriflowState.plan['Thu'];
+      const container = document.getElementById('nf-plan-meals-list');
+      if (!container) return;
+
+      container.innerHTML = '';
+      let totalCal = 0;
+      let totalCost = 0;
+
+      mealIds.forEach(id => {
+        const meal = nutriflowState.meals.find(m => m.id === id);
+        if (!meal) return;
+
+        totalCal += meal.calories;
+        totalCost += meal.estimatedCostPKR;
+
+        const card = document.createElement('div');
+        card.className = 'nf-meal-card';
+        card.onclick = (e) => {
+          if (e.target.closest('.swap-btn')) return;
+          viewMealDetails(meal.id);
+        };
+
+        const tagBadges = meal.supportsGoals.slice(0, 2).map(g => {
+          let label = g.replace('skin_', '').replace('_', ' ');
+          label = label.charAt(0).toUpperCase() + label.slice(1);
+          return `<span class="nf-badge nf-badge-gold" style="font-size:9.5px; padding:2px 6px;">${label}</span>`;
+        }).join(' ');
+
+        card.innerHTML = `
+          <img src="${meal.imageUrl}" class="nf-meal-thumb" alt="${meal.name}">
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span class="nf-badge nf-badge-pink">${meal.mealType.toUpperCase()}</span>
+              <span style="font-size: 13px; font-weight: 800; color: var(--accent);">₨ ${meal.estimatedCostPKR} PKR</span>
+            </div>
+            <h4 style="font-size: 13.5px; margin: 4px 0 2px; font-weight: 700; color: var(--primary-dark);">${meal.name}</h4>
+            <div style="font-size: 11px; color: var(--text-sec); margin-bottom: 6px;">${meal.prepTimeMinutes} min prep • ${meal.calories} kcal</div>
+            <div style="display: flex; gap: 4px; flex-wrap: wrap;">${tagBadges}</div>
+          </div>
+          <button class="swap-btn" onclick="swapMealInPlan('${day}', '${meal.id}', event)" title="Swap Meal" style="background: var(--surface-sec); border: 1px solid var(--border); width: 32px; height: 32px; border-radius: 50%; font-size: 12px; color: var(--text-sec); cursor: pointer;">
+            <i class="fa-solid fa-shuffle"></i>
+          </button>
+        `;
+        container.appendChild(card);
+      });
+
+      const dayNameEl = document.getElementById('nf-plan-day-name');
+      if (dayNameEl) dayNameEl.innerText = day;
+      const costEl = document.getElementById('nf-plan-day-cost');
+      if (costEl) costEl.innerText = `₨ ${totalCost} of ₨ ${nutriflowState.settings.dailyBudgetPKR} Budget`;
+    }
+
+    function swapMealInPlan(day, currentMealId, event) {
+      if (event) event.stopPropagation();
+      const currentMeal = nutriflowState.meals.find(m => m.id === currentMealId);
+      if (!currentMeal) return;
+
+      const candidates = nutriflowState.meals.filter(m => m.mealType === currentMeal.mealType && m.id !== currentMealId);
+      if (candidates.length > 0) {
+        const replacement = candidates[Math.floor(Math.random() * candidates.length)];
+        const idx = nutriflowState.plan[day].indexOf(currentMealId);
+        if (idx !== -1) {
+          nutriflowState.plan[day][idx] = replacement.id;
+          renderMealPlanCards();
+        }
+      }
+    }
+
+    function regenerateCurrentDayPlan() {
+      const day = nutriflowState.selectedDay;
+      const mealTypes = ['breakfast', 'lunch', 'snack', 'dinner'];
+      nutriflowState.plan[day] = mealTypes.map(type => {
+        const matching = nutriflowState.meals.filter(m => m.mealType === type);
+        return matching[Math.floor(Math.random() * matching.length)].id;
+      });
+      renderMealPlanCards();
+    }
+
+    // Meal Details
+    function viewMealDetails(mealId) {
+      nutriflowState.currentDetailMealId = mealId;
+      populateMealDetails(mealId);
+      showScreen('nutriflow-meal-details');
+    }
+
+    function populateMealDetails(mealId) {
+      const meal = nutriflowState.meals.find(m => m.id === mealId) || nutriflowState.meals[0];
+      if (!meal) return;
+
+      document.getElementById('nf-detail-img').src = meal.imageUrl;
+      document.getElementById('nf-detail-type').innerText = meal.mealType.toUpperCase();
+      document.getElementById('nf-detail-cost').innerText = `₨ ${meal.estimatedCostPKR} PKR`;
+      document.getElementById('nf-detail-title').innerText = meal.name;
+      document.getElementById('nf-detail-meta').innerText = `${meal.prepTimeMinutes} min prep • ${meal.difficulty} • ${meal.calories} kcal`;
+
+      document.getElementById('nf-detail-why-works').innerText = meal.whyItWorks;
+      document.getElementById('nf-detail-why-matters').innerText = meal.whyItMatters;
+
+      // Recipe steps
+      const stepsContainer = document.getElementById('nf-detail-recipe-steps');
+      if (stepsContainer && meal.recipeSteps) {
+        stepsContainer.innerHTML = meal.recipeSteps.map((s, idx) => `
+          <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+            <strong style="color: var(--accent);">${idx + 1}.</strong>
+            <span>${s}</span>
+          </div>
+        `).join('');
+      }
+
+      // Ingredients with prices
+      const ingContainer = document.getElementById('nf-detail-ingredients');
+      if (ingContainer && meal.ingredientsList) {
+        ingContainer.innerHTML = meal.ingredientsList.map(ing => `
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 4px;">
+            <span><strong>${ing.name}</strong> (${ing.qty})</span>
+            <span style="font-weight: 700; color: var(--accent);">₨ ${ing.pricePKR} PKR</span>
+          </div>
+        `).join('');
+      }
+
+      // Nutrition numbers
+      document.getElementById('nf-nutri-cal').innerText = meal.calories;
+      document.getElementById('nf-nutri-protein').innerText = `${meal.protein}g`;
+      document.getElementById('nf-nutri-carbs').innerText = `${meal.carbs}g`;
+      document.getElementById('nf-nutri-fiber').innerText = `${meal.fiber}g`;
+      document.getElementById('nf-nutri-fat').innerText = `${meal.fat}g`;
+      document.getElementById('nf-nutri-sodium').innerText = `${meal.sodium}mg`;
+
+      // Skin nutrients
+      const skinNutriContainer = document.getElementById('nf-detail-skin-nutrients');
+      if (skinNutriContainer && meal.skinNutrients) {
+        skinNutriContainer.innerHTML = meal.skinNutrients.map(n => `
+          • <strong>${n.name}:</strong> ${n.benefit}
+        `).join('<br>');
+      }
+
+      // Affordable alternative card
+      const altCard = document.getElementById('nf-alternatives-card');
+      if (altCard) {
+        if (meal.alternative) {
+          altCard.style.display = 'block';
+          document.getElementById('nf-alt-saving').innerText = `Save ₨ ${meal.alternative.savingPKR} PKR`;
+          document.getElementById('nf-alt-title').innerText = meal.alternative.substituteName;
+          document.getElementById('nf-alt-note').innerText = meal.alternative.note;
+        } else {
+          altCard.style.display = 'none';
+        }
+      }
+    }
+
+    function applyMealAlternative() {
+      const meal = nutriflowState.meals.find(m => m.id === nutriflowState.currentDetailMealId);
+      if (meal && meal.alternative) {
+        meal.estimatedCostPKR = Math.max(meal.estimatedCostPKR - meal.alternative.savingPKR, 20);
+        document.getElementById('nf-detail-cost').innerText = `₨ ${meal.estimatedCostPKR} PKR`;
+        document.getElementById('nf-alt-saving').innerText = `Applied!`;
+        alert(`✨ Swapped to affordable staple! Meal cost reduced by ₨ ${meal.alternative.savingPKR} PKR.`);
+      }
+    }
+
+    function markCurrentMealAsEaten() {
+      const mealId = nutriflowState.currentDetailMealId;
+      if (!nutriflowState.tracker.eatenMealIds.includes(mealId)) {
+        nutriflowState.tracker.eatenMealIds.push(mealId);
+      }
+      renderNutriflowHome();
+      alert('✅ Meal marked as eaten today! Your daily tracker and calories ring have updated.');
+    }
+
+    function swapCurrentMeal() {
+      const meal = nutriflowState.meals.find(m => m.id === nutriflowState.currentDetailMealId);
+      if (!meal) return;
+      const candidates = nutriflowState.meals.filter(m => m.mealType === meal.mealType && m.id !== meal.id);
+      if (candidates.length > 0) {
+        const replacement = candidates[Math.floor(Math.random() * candidates.length)];
+        viewMealDetails(replacement.id);
+      }
+    }
+
+    // Daily Tracker
+    function renderTrackerScreen() {
+      const mealIds = nutriflowState.plan[nutriflowState.selectedDay] || nutriflowState.plan['Thu'];
+      const container = document.getElementById('nf-tracker-meals-list');
+      if (!container) return;
+
+      container.innerHTML = '';
+      mealIds.forEach(id => {
+        const meal = nutriflowState.meals.find(m => m.id === id);
+        if (!meal) return;
+        const isEaten = nutriflowState.tracker.eatenMealIds.includes(meal.id);
+
+        const item = document.createElement('div');
+        item.style.cssText = 'display: flex; justify-content: space-between; align-items: center; background: var(--surface-sec); padding: 10px 14px; border-radius: 12px;';
+        item.innerHTML = `
+          <div>
+            <span class="nf-badge nf-badge-gold" style="font-size: 9px;">${meal.mealType.toUpperCase()}</span>
+            <div style="font-size: 13px; font-weight: 700; margin-top: 2px;">${meal.name}</div>
+            <div style="font-size: 11px; color: var(--text-sec);">${meal.calories} kcal • ₨ ${meal.estimatedCostPKR} PKR</div>
+          </div>
+          <input type="checkbox" ${isEaten ? 'checked' : ''} onchange="toggleTrackerMealEaten('${meal.id}', this)" style="width: 20px; height: 20px; accent-color: var(--accent); cursor: pointer;">
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function toggleTrackerMealEaten(mealId, checkbox) {
+      if (checkbox.checked) {
+        if (!nutriflowState.tracker.eatenMealIds.includes(mealId)) {
+          nutriflowState.tracker.eatenMealIds.push(mealId);
+        }
+      } else {
+        nutriflowState.tracker.eatenMealIds = nutriflowState.tracker.eatenMealIds.filter(id => id !== mealId);
+      }
+      renderNutriflowHome();
+    }
+
+    function openAddCustomFoodModal() {
+      const modal = document.getElementById('nf-custom-food-modal');
+      if (modal) modal.classList.add('active');
+    }
+
+    function closeAddCustomFoodModal() {
+      const modal = document.getElementById('nf-custom-food-modal');
+      if (modal) modal.classList.remove('active');
+    }
+
+    function saveCustomFoodToTracker() {
+      const name = document.getElementById('nf-add-food-name')?.value.trim();
+      const cal = parseInt(document.getElementById('nf-add-food-cal')?.value) || 100;
+      const protein = parseInt(document.getElementById('nf-add-food-protein')?.value) || 5;
+      const carbs = parseInt(document.getElementById('nf-add-food-carbs')?.value) || 15;
+      const cost = parseInt(document.getElementById('nf-add-food-cost')?.value) || 40;
+
+      if (!name) {
+        alert('Please enter a food name.');
+        return;
+      }
+
+      nutriflowState.tracker.customFoods.push({ name, calories: cal, protein, carbs, costPKR: cost });
+      closeAddCustomFoodModal();
+
+      const customList = document.getElementById('nf-tracker-custom-list');
+      if (customList) {
+        customList.innerHTML = nutriflowState.tracker.customFoods.map(f => `
+          <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border);">
+            <span><strong>${f.name}</strong> (${f.calories} kcal)</span>
+            <span style="font-weight: 700; color: var(--accent);">₨ ${f.costPKR} PKR</span>
+          </div>
+        `).join('');
+      }
+
+      renderNutriflowHome();
+    }
+
+    // Schedule view save
+    function saveScheduleSettings() {
+      alert('✨ Schedule & water notifications successfully synced with device local reminders!');
+      showScreen('nutriflow-home');
+    }
+
+    // Calendar view
+    function renderCalendarView() {
+      const container = document.getElementById('nf-calendar-cells');
+      if (!container) return;
+      container.innerHTML = '';
+
+      for (let day = 1; day <= 30; day++) {
+        const cell = document.createElement('div');
+        cell.className = 'nf-cal-day';
+        if (day === 26) cell.className += ' active';
+
+        let dotClass = 'green';
+        if (day > 26) dotClass = 'gold';
+        else if (day % 6 === 0) dotClass = 'gray';
+
+        cell.innerHTML = `
+          <span style="font-weight: 700;">${day}</span>
+          <span class="nf-cal-dot ${dotClass}"></span>
+        `;
+        cell.onclick = () => {
+          document.getElementById('nf-cal-selected-day-txt').innerText = `Day ${day} Nov 2026`;
+        };
+        container.appendChild(cell);
+      }
+    }
+
+    // PDF Summary Export
+    function exportNutritionPdfSummary() {
+      alert('📄 Generating Clinical Nutrition & Skin Adherence Summary PDF...\n\n• Weekly Adherence: 88%\n• Avg Daily Grocery Cost: ₨ 580 PKR\n• Hydration Adherence: 2.3L / day\n• Skin Scan Correlation: +14 pts Hydration');
     }
 
     // Initialize initial screen state

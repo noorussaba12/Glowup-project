@@ -266,7 +266,7 @@ class _MyPlanScreenState extends ConsumerState<MyPlanScreen> {
           if (index == 0) context.go('/home');
           if (index == 1) context.push('/instructions');
           if (index == 2) {}
-          if (index == 3) context.push('/history');
+          if (index == 3) context.push('/nutriflow');
           if (index == 4) context.push('/profile');
         },
       ),

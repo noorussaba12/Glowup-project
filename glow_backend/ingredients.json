@@ -1,0 +1,678 @@
+[
+  {
+    "id": "eggs",
+    "name": "Fresh Farm Eggs",
+    "category": "protein",
+    "pricePerUnitPKR": 30,
+    "unit": "piece",
+    "priceUpdatedAt": "2026-11-20",
+    "nutritionPer100g": {
+      "calories": 143,
+      "protein": 12.6,
+      "carbs": 0.7,
+      "fiber": 0,
+      "sugar": 0.4,
+      "fat": 9.5,
+      "sodium": 142
+    },
+    "allergens": [
+      "eggs"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian"
+    ],
+    "roleTags": [
+      "protein",
+      "vitamin_d",
+      "choline"
+    ],
+    "alternatives": [
+      "boiled_eggs"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "chicken_breast",
+    "name": "Skinless Chicken Breast",
+    "category": "protein",
+    "pricePerUnitPKR": 900,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-22",
+    "nutritionPer100g": {
+      "calories": 165,
+      "protein": 31,
+      "carbs": 0,
+      "fiber": 0,
+      "sugar": 0,
+      "fat": 3.6,
+      "sodium": 74
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal"
+    ],
+    "roleTags": [
+      "lean_protein",
+      "zinc",
+      "niacin"
+    ],
+    "alternatives": [
+      "tofu",
+      "eggs"
+    ],
+    "verified": true,
+    "sourceNote": "Pakistan Poultry Assoc / USDA"
+  },
+  {
+    "id": "dahi_plain",
+    "name": "Plain Fresh Yogurt (Dahi)",
+    "category": "dairy",
+    "pricePerUnitPKR": 220,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-24",
+    "nutritionPer100g": {
+      "calories": 61,
+      "protein": 3.5,
+      "carbs": 4.7,
+      "fiber": 0,
+      "sugar": 4.7,
+      "fat": 3.3,
+      "sodium": 46
+    },
+    "allergens": [
+      "dairy"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian"
+    ],
+    "roleTags": [
+      "probiotics",
+      "calcium",
+      "hydration"
+    ],
+    "alternatives": [
+      "greek_yogurt",
+      "soya_curd"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "oats_rolled",
+    "name": "Whole Rolled Oats (Jaee)",
+    "category": "grains",
+    "pricePerUnitPKR": 450,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-15",
+    "nutritionPer100g": {
+      "calories": 389,
+      "protein": 16.9,
+      "carbs": 66.3,
+      "fiber": 10.6,
+      "sugar": 0,
+      "fat": 6.9,
+      "sodium": 2
+    },
+    "allergens": [
+      "gluten"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "fiber",
+      "beta_glucan",
+      "complex_carbs"
+    ],
+    "alternatives": [
+      "dalia",
+      "quinoa"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "chickpeas_chana",
+    "name": "White Chickpeas (Kabuli Chana)",
+    "category": "legumes",
+    "pricePerUnitPKR": 380,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-18",
+    "nutritionPer100g": {
+      "calories": 364,
+      "protein": 19.3,
+      "carbs": 60.6,
+      "fiber": 17.4,
+      "sugar": 10.7,
+      "fat": 6,
+      "sodium": 24
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "fiber",
+      "plant_protein",
+      "iron"
+    ],
+    "alternatives": [
+      "kala_chana",
+      "kidney_beans"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "daal_moong",
+    "name": "Yellow Moong Lentils",
+    "category": "legumes",
+    "pricePerUnitPKR": 320,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-19",
+    "nutritionPer100g": {
+      "calories": 347,
+      "protein": 23.8,
+      "carbs": 63.4,
+      "fiber": 16.3,
+      "sugar": 6.6,
+      "fat": 1.2,
+      "sodium": 15
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "plant_protein",
+      "folate",
+      "potassium"
+    ],
+    "alternatives": [
+      "masoor_daal"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "atta_whole_wheat",
+    "name": "Chakki Whole Wheat Flour",
+    "category": "grains",
+    "pricePerUnitPKR": 130,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-24",
+    "nutritionPer100g": {
+      "calories": 340,
+      "protein": 13.2,
+      "carbs": 72,
+      "fiber": 10.7,
+      "sugar": 0.4,
+      "fat": 2.5,
+      "sodium": 5
+    },
+    "allergens": [
+      "gluten"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "fiber",
+      "b_vitamins",
+      "energy"
+    ],
+    "alternatives": [
+      "jowar_flour"
+    ],
+    "verified": true,
+    "sourceNote": "Pakistan Millers Assoc"
+  },
+  {
+    "id": "cucumber",
+    "name": "Fresh Salad Cucumber (Kheera)",
+    "category": "vegetables",
+    "pricePerUnitPKR": 90,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-25",
+    "nutritionPer100g": {
+      "calories": 15,
+      "protein": 0.7,
+      "carbs": 3.6,
+      "fiber": 0.5,
+      "sugar": 1.7,
+      "fat": 0.1,
+      "sodium": 2
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "hydration",
+      "silica",
+      "potassium"
+    ],
+    "alternatives": [
+      "zucchini"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "tomato",
+    "name": "Fresh Tomatoes (Tamatar)",
+    "category": "vegetables",
+    "pricePerUnitPKR": 120,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-25",
+    "nutritionPer100g": {
+      "calories": 18,
+      "protein": 0.9,
+      "carbs": 3.9,
+      "fiber": 1.2,
+      "sugar": 2.6,
+      "fat": 0.2,
+      "sodium": 5
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "lycopene",
+      "vitamin_c",
+      "antioxidants"
+    ],
+    "alternatives": [
+      "bell_pepper"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "spinach_palak",
+    "name": "Fresh Spinach (Palak)",
+    "category": "vegetables",
+    "pricePerUnitPKR": 80,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-23",
+    "nutritionPer100g": {
+      "calories": 23,
+      "protein": 2.9,
+      "carbs": 3.6,
+      "fiber": 2.2,
+      "sugar": 0.4,
+      "fat": 0.4,
+      "sodium": 79
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "iron",
+      "vitamin_a",
+      "vitamin_k",
+      "folate"
+    ],
+    "alternatives": [
+      "methi_leaves"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "almonds_raw",
+    "name": "Raw Almonds (Badaam)",
+    "category": "nuts",
+    "pricePerUnitPKR": 2200,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-10",
+    "nutritionPer100g": {
+      "calories": 579,
+      "protein": 21.2,
+      "carbs": 21.6,
+      "fiber": 12.5,
+      "sugar": 4.4,
+      "fat": 49.9,
+      "sodium": 1
+    },
+    "allergens": [
+      "tree_nuts"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "healthy_fat",
+      "vitamin_e",
+      "magnesium"
+    ],
+    "alternatives": [
+      "peanuts",
+      "flaxseeds"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "peanuts_roasted",
+    "name": "Roasted Peanuts (Moongphali)",
+    "category": "nuts",
+    "pricePerUnitPKR": 550,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-20",
+    "nutritionPer100g": {
+      "calories": 567,
+      "protein": 25.8,
+      "carbs": 16.1,
+      "fiber": 8.5,
+      "sugar": 4.7,
+      "fat": 49.2,
+      "sodium": 18
+    },
+    "allergens": [
+      "peanuts"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "healthy_fat",
+      "protein",
+      "resveratrol"
+    ],
+    "alternatives": [
+      "almonds",
+      "sunflower_seeds"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "chia_seeds",
+    "name": "Chia Seeds / Tukhm-e-Balanga",
+    "category": "seeds",
+    "pricePerUnitPKR": 1400,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-12",
+    "nutritionPer100g": {
+      "calories": 486,
+      "protein": 16.5,
+      "carbs": 42.1,
+      "fiber": 34.4,
+      "sugar": 0,
+      "fat": 30.7,
+      "sodium": 16
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "omega_3",
+      "fiber",
+      "hydration"
+    ],
+    "alternatives": [
+      "flaxseeds",
+      "basil_seeds"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "lemon_fresh",
+    "name": "Fresh Lemons (Leemo)",
+    "category": "fruits",
+    "pricePerUnitPKR": 180,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-25",
+    "nutritionPer100g": {
+      "calories": 29,
+      "protein": 1.1,
+      "carbs": 9.3,
+      "fiber": 2.8,
+      "sugar": 2.5,
+      "fat": 0.3,
+      "sodium": 2
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "vitamin_c",
+      "flavonoids",
+      "citric_acid"
+    ],
+    "alternatives": [
+      "lime",
+      "amla"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "guava_amrood",
+    "name": "Seasonal Fresh Guava (Amrood)",
+    "category": "fruits",
+    "pricePerUnitPKR": 140,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-24",
+    "nutritionPer100g": {
+      "calories": 68,
+      "protein": 2.6,
+      "carbs": 14.3,
+      "fiber": 5.4,
+      "sugar": 8.9,
+      "fat": 1,
+      "sodium": 2
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "vitamin_c",
+      "fiber",
+      "lycopene"
+    ],
+    "alternatives": [
+      "papaya",
+      "oranges"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "olive_oil_extra",
+    "name": "Extra Virgin Olive Oil",
+    "category": "oils",
+    "pricePerUnitPKR": 2800,
+    "unit": "liter",
+    "priceUpdatedAt": "2026-11-05",
+    "nutritionPer100g": {
+      "calories": 884,
+      "protein": 0,
+      "carbs": 0,
+      "fiber": 0,
+      "sugar": 0,
+      "fat": 100,
+      "sodium": 2
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "polyphenols",
+      "monounsaturated_fat"
+    ],
+    "alternatives": [
+      "mustard_oil"
+    ],
+    "verified": true,
+    "sourceNote": "USDA FoodData Central"
+  },
+  {
+    "id": "mustard_oil",
+    "name": "Pure Mustard Oil (Sarson ka Tel)",
+    "category": "oils",
+    "pricePerUnitPKR": 600,
+    "unit": "liter",
+    "priceUpdatedAt": "2026-11-15",
+    "nutritionPer100g": {
+      "calories": 884,
+      "protein": 0,
+      "carbs": 0,
+      "fiber": 0,
+      "sugar": 0,
+      "fat": 100,
+      "sodium": 0
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "omega_3",
+      "monounsaturated_fat"
+    ],
+    "alternatives": [
+      "sesame_oil"
+    ],
+    "verified": true,
+    "sourceNote": "Verified Pakistani Local Market"
+  },
+  {
+    "id": "TODO_brown_rice",
+    "name": "TODO: Brown Basmati Rice (Verify Wholesale Price)",
+    "category": "grains",
+    "pricePerUnitPKR": 280,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-26",
+    "nutritionPer100g": {
+      "calories": 370,
+      "protein": 7.9,
+      "carbs": 77.2,
+      "fiber": 3.5,
+      "sugar": 0.8,
+      "fat": 2.9,
+      "sodium": 7
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "fiber",
+      "manganese",
+      "complex_carbs"
+    ],
+    "alternatives": [
+      "white_basmati"
+    ],
+    "verified": false,
+    "sourceNote": "TODO: Owner verify price"
+  },
+  {
+    "id": "TODO_mutton_lean",
+    "name": "TODO: Lean Goat Meat (Mutton)",
+    "category": "protein",
+    "pricePerUnitPKR": 2200,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-26",
+    "nutritionPer100g": {
+      "calories": 143,
+      "protein": 20.6,
+      "carbs": 0,
+      "fiber": 0,
+      "sugar": 0,
+      "fat": 6,
+      "sodium": 86
+    },
+    "allergens": [],
+    "dietTags": [
+      "halal"
+    ],
+    "roleTags": [
+      "heme_iron",
+      "b12",
+      "protein"
+    ],
+    "alternatives": [
+      "beef_lean",
+      "chicken"
+    ],
+    "verified": false,
+    "sourceNote": "TODO: Owner verify price"
+  },
+  {
+    "id": "TODO_walnuts_swat",
+    "name": "TODO: Swat Walnuts in Shell",
+    "category": "nuts",
+    "pricePerUnitPKR": 1800,
+    "unit": "kg",
+    "priceUpdatedAt": "2026-11-26",
+    "nutritionPer100g": {
+      "calories": 654,
+      "protein": 15.2,
+      "carbs": 13.7,
+      "fiber": 6.7,
+      "sugar": 2.6,
+      "fat": 65.2,
+      "sodium": 2
+    },
+    "allergens": [
+      "tree_nuts"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "roleTags": [
+      "omega_3",
+      "alpha_linolenic_acid"
+    ],
+    "alternatives": [
+      "flaxseeds"
+    ],
+    "verified": false,
+    "sourceNote": "TODO: Owner verify price"
+  }
+]

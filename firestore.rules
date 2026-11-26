@@ -1,0 +1,73 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && request.auth.token.admin == true;
+    }
+
+    // User profile and personal clinical data
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      // Part 1: Scans & Routine Plans
+      match /scans/{scanId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      match /plans/{planId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // Part 3: Nutriflow Diet & Nutrition System
+      match /nutriflow/{document=**} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // Subcollections inside Nutriflow
+      match /nutriflow/settings {
+        allow read, write: if isOwner(userId);
+      }
+
+      match /nutriflow/plans/{planId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      match /nutriflow/logs/{date} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // Verified Staple Food & Ingredient Catalog
+    match /ingredients/{ingredientId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // Verified Clinical Meal Database
+    match /meals/{mealId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // Skincare Products & Orders (Part 2)
+    match /products/{productId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    match /orders/{orderId} {
+      allow read, create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isAdmin();
+    }
+  }
+}

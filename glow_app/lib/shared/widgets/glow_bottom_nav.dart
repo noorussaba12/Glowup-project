@@ -20,7 +20,7 @@ class GlowBottomNavBar extends ConsumerWidget {
       _NavItem(icon: Icons.home_outlined, activeIcon: Icons.home_rounded, label: 'Home'),
       _NavItem(icon: Icons.camera_alt_outlined, activeIcon: Icons.camera_alt_rounded, label: 'Scan'),
       _NavItem(icon: Icons.spa_outlined, activeIcon: Icons.spa_rounded, label: 'Plan'),
-      _NavItem(icon: Icons.calendar_today_outlined, activeIcon: Icons.calendar_today_rounded, label: 'History'),
+      _NavItem(icon: Icons.restaurant_outlined, activeIcon: Icons.restaurant_rounded, label: 'Nutriflow'),
       _NavItem(icon: Icons.person_outline_rounded, activeIcon: Icons.person_rounded, label: 'Profile'),
     ];
 

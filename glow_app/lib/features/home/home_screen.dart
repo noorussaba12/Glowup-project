@@ -50,7 +50,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       return;
     }
     if (index == 3) {
-      context.push('/history');
+      context.push('/nutriflow');
       return;
     }
     if (index == 4) {

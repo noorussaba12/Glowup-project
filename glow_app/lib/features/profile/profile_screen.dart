@@ -318,7 +318,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
           if (index == 0) context.go('/home');
           if (index == 1) context.push('/instructions');
           if (index == 2) context.push('/plan');
-          if (index == 3) context.push('/history');
+          if (index == 3) context.push('/nutriflow');
           if (index == 4) {}
         },
       ),

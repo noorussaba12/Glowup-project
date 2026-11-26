@@ -1,0 +1,800 @@
+[
+  {
+    "id": "oats_dahi_nuts",
+    "name": "Rolled Oats with Fresh Dahi & Almonds",
+    "mealType": "breakfast",
+    "imageUrl": "https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "oats_rolled",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "dahi_plain",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "almonds_raw",
+        "quantity": 15,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 342,
+      "protein": 15.1,
+      "carbs": 38.1,
+      "fiber": 6.8,
+      "sugar": 5.4,
+      "fat": 12.2,
+      "sodium": 48
+    },
+    "estimatedCostPKR": 95,
+    "prepTimeMinutes": 10,
+    "difficulty": "Easy",
+    "recipeSteps": [
+      "Add rolled oats to a bowl with warm water or milk to soften for 5 mins.",
+      "Stir in plain fresh probiotic dahi until creamy.",
+      "Top with chopped raw almonds and a pinch of cinnamon."
+    ],
+    "allergens": [
+      "dairy",
+      "tree_nuts",
+      "gluten"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian"
+    ],
+    "supportsGoals": [
+      "high_fiber",
+      "hydration",
+      "skin_dehydration",
+      "more_protein"
+    ],
+    "whyItWorks": "Oats contain beta-glucans that support gut barrier integrity, while dahi provides lactic hydration that may support intracellular moisture retention.",
+    "whyItMatters": "Supplies slow-burning complex carbohydrates without provoking insulin-driven sebum spikes.",
+    "skinNutrients": [
+      {
+        "nutrient": "Beta-Glucan & Vitamin E",
+        "benefitNote": "Supports stratum corneum barrier lipid retention"
+      }
+    ],
+    "sourceNote": "USDA FoodData Central",
+    "verified": true
+  },
+  {
+    "id": "boiled_eggs_veggies",
+    "name": "2 Soft Boiled Eggs with Sliced Cucumber & Tomato",
+    "mealType": "breakfast",
+    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "eggs",
+        "quantity": 2,
+        "unit": "pieces"
+      },
+      {
+        "ingredientId": "cucumber",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "tomato",
+        "quantity": 60,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 178,
+      "protein": 13.7,
+      "carbs": 3.9,
+      "fiber": 0.9,
+      "sugar": 2.4,
+      "fat": 11.5,
+      "sodium": 152
+    },
+    "estimatedCostPKR": 85,
+    "prepTimeMinutes": 12,
+    "difficulty": "Easy",
+    "recipeSteps": [
+      "Boil 2 farm eggs in boiling water for 6-7 minutes for soft-boiled centers.",
+      "Slice fresh cucumber and tomatoes into thin rounds.",
+      "Season lightly with cracked black pepper and Himalayan pink salt."
+    ],
+    "allergens": [
+      "eggs"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian"
+    ],
+    "supportsGoals": [
+      "high_protein",
+      "lower_carbs",
+      "low_sodium",
+      "skin_barrier"
+    ],
+    "whyItWorks": "Eggs provide bioavailable choline and sulfur-bearing amino acids essential for native collagen cross-linking and cellular repair.",
+    "whyItMatters": "High protein breakfast dampens morning ghrelin spikes and supports steady blood glucose.",
+    "skinNutrients": [
+      {
+        "nutrient": "Choline & Lutein",
+        "benefitNote": "Protects cellular membranes and neutralizes blue-light oxidation"
+      }
+    ],
+    "sourceNote": "USDA FoodData Central",
+    "verified": true
+  },
+  {
+    "id": "chana_chaat_salad",
+    "name": "High-Fiber Mint Lemon Chana Chaat",
+    "mealType": "lunch",
+    "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "chickpeas_chana",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "cucumber",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "tomato",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "lemon_fresh",
+        "quantity": 15,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 318,
+      "protein": 16.5,
+      "carbs": 52.2,
+      "fiber": 14.6,
+      "sugar": 9.2,
+      "fat": 5.1,
+      "sodium": 28
+    },
+    "estimatedCostPKR": 75,
+    "prepTimeMinutes": 15,
+    "difficulty": "Easy",
+    "recipeSteps": [
+      "Rinse boiled white chickpeas and place in a mixing bowl.",
+      "Finely dice crisp cucumber and ripe tomatoes.",
+      "Toss with fresh lemon juice, cumin powder, and fresh mint leaves."
+    ],
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "supportsGoals": [
+      "high_fiber",
+      "low_sodium",
+      "less_added_sugar",
+      "skin_acne"
+    ],
+    "whyItWorks": "Chickpeas deliver soluble prebiotic oligosaccharides that nourish beneficial gut bacteroidetes, which research associates with reduced systemic skin redness.",
+    "whyItMatters": "Rich dietary fiber content keeps glycemic index low, minimizing sebum gland stimulation.",
+    "skinNutrients": [
+      {
+        "nutrient": "Zinc & Folate",
+        "benefitNote": "Supports natural cellular renewal and post-blemish tissue repair"
+      }
+    ],
+    "sourceNote": "USDA FoodData Central",
+    "verified": true
+  },
+  {
+    "id": "daal_roti_salad",
+    "name": "Yellow Moong Daal with 1 Whole Wheat Roti",
+    "mealType": "lunch",
+    "imageUrl": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "daal_moong",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "atta_whole_wheat",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "cucumber",
+        "quantity": 50,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 351,
+      "protein": 19.9,
+      "carbs": 67.5,
+      "fiber": 14.2,
+      "sugar": 4.8,
+      "fat": 1.8,
+      "sodium": 15
+    },
+    "estimatedCostPKR": 65,
+    "prepTimeMinutes": 25,
+    "difficulty": "Medium",
+    "recipeSteps": [
+      "Simmer yellow moong daal with turmeric, ginger, and garlic until tender.",
+      "Roll 40g whole wheat atta dough thin and cook on a hot tawa without oil.",
+      "Serve steaming daal with fresh cucumber slices on the side."
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "supportsGoals": [
+      "high_fiber",
+      "more_protein",
+      "low_sodium",
+      "skin_barrier"
+    ],
+    "whyItWorks": "Moong daal is exceptionally gentle on the digestive tract, delivering potassium and amino acids that support hydration equilibrium.",
+    "whyItMatters": "Traditional Pakistani staple modified for low oil and zero added saturated ghee.",
+    "skinNutrients": [
+      {
+        "nutrient": "Plant Protein & Potassium",
+        "benefitNote": "Helps maintain intracellular fluid balance and cellular tone"
+      }
+    ],
+    "sourceNote": "USDA FoodData Central",
+    "verified": true
+  },
+  {
+    "id": "grilled_chicken_salad",
+    "name": "Pan-Seared Lemon Herb Chicken Breast with Fresh Salad",
+    "mealType": "dinner",
+    "imageUrl": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "chicken_breast",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "cucumber",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "tomato",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "mustard_oil",
+        "quantity": 5,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 302,
+      "protein": 47.2,
+      "carbs": 3.3,
+      "fiber": 0.9,
+      "sugar": 2.4,
+      "fat": 9.6,
+      "sodium": 118
+    },
+    "estimatedCostPKR": 165,
+    "prepTimeMinutes": 20,
+    "difficulty": "Medium",
+    "recipeSteps": [
+      "Marinate chicken breast with crushed garlic, lemon juice, black pepper, and 1 tsp mustard oil.",
+      "Sear in a hot pan for 6-8 minutes per side until thoroughly cooked.",
+      "Slice and serve with freshly cut cucumber and tomato wedges."
+    ],
+    "allergens": [],
+    "dietTags": [
+      "halal"
+    ],
+    "supportsGoals": [
+      "high_protein",
+      "lower_carbs",
+      "low_sodium",
+      "less_added_sugar",
+      "skin_pores"
+    ],
+    "whyItWorks": "Lean chicken breast provides lysine and proline, the rate-limiting amino acids for pro-collagen peptide synthesis.",
+    "whyItMatters": "Concentrated bioavailable protein helps maintain lean muscle mass while keeping insulin levels low.",
+    "skinNutrients": [
+      {
+        "nutrient": "Lysine & Zinc",
+        "benefitNote": "Essential cofactors in epidermal collagen synthesis and wound healing"
+      }
+    ],
+    "sourceNote": "USDA FoodData Central",
+    "verified": true
+  },
+  {
+    "id": "fruit_chaat_unsweetened",
+    "name": "Raw Vitamin C Seasonal Fruit Chaat (No Added Sugar)",
+    "mealType": "snack",
+    "imageUrl": "https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "guava_amrood",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "cucumber",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "lemon_fresh",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 93,
+      "protein": 3.6,
+      "carbs": 20.1,
+      "fiber": 6.8,
+      "sugar": 11.9,
+      "fat": 1.3,
+      "sodium": 4
+    },
+    "estimatedCostPKR": 45,
+    "prepTimeMinutes": 8,
+    "difficulty": "Easy",
+    "recipeSteps": [
+      "Chop crisp seasonal guava and seedless cucumber into bite-sized cubes.",
+      "Drizzle freshly squeezed lemon juice over fruit.",
+      "Sprinkle roasted cumin and chat masala lightly without any added refined sugar or artificial syrup."
+    ],
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "supportsGoals": [
+      "high_fiber",
+      "less_added_sugar",
+      "skin_pigmentation",
+      "hydration"
+    ],
+    "whyItWorks": "Guava contains over 3 times the Vitamin C of an orange, providing ascorbic acid that may support natural melanin regulation and photoprotection.",
+    "whyItMatters": "100% natural fructose buffered by soluble fiber prevents rapid blood sugar spikes.",
+    "skinNutrients": [
+      {
+        "nutrient": "Vitamin C & Lycopene",
+        "benefitNote": "Potent antioxidant scavenging reactive oxygen species from UV exposure"
+      }
+    ],
+    "sourceNote": "USDA FoodData Central",
+    "verified": true
+  },
+  {
+    "id": "vegetable_soup",
+    "name": "Clear Hydrating Turmeric Vegetable Broth",
+    "mealType": "dinner",
+    "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "spinach_palak",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "tomato",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "cucumber",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "daal_moong",
+        "quantity": 25,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 136,
+      "protein": 8.9,
+      "carbs": 22.1,
+      "fiber": 5.3,
+      "sugar": 3.8,
+      "fat": 1.1,
+      "sodium": 72
+    },
+    "estimatedCostPKR": 55,
+    "prepTimeMinutes": 20,
+    "difficulty": "Easy",
+    "recipeSteps": [
+      "Finely chop fresh spinach and ripe tomatoes.",
+      "Simmer with 25g moong lentils in 3 cups of water with sliced ginger and turmeric.",
+      "Cook until broth is aromatic and translucent. Season with lemon juice."
+    ],
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "supportsGoals": [
+      "low_sodium",
+      "hydration",
+      "high_fiber",
+      "skin_dehydration"
+    ],
+    "whyItWorks": "Warm broths enhance peripheral micro-circulation and deliver bio-available water directly to epidermal layers before sleep.",
+    "whyItMatters": "Light, easily digestible dinner supporting uninterrupted nocturnal skin regeneration cycles.",
+    "skinNutrients": [
+      {
+        "nutrient": "Curcumin & Folate",
+        "benefitNote": "Anti-inflammatory support for facial erythema and capillary calm"
+      }
+    ],
+    "sourceNote": "USDA FoodData Central",
+    "verified": true
+  },
+  {
+    "id": "unsweetened_lassi_snack",
+    "name": "Refreshing Mint Probiotic Buttermilk (Namkeen Lassi)",
+    "mealType": "snack",
+    "imageUrl": "https://images.unsplash.com/photo-1571212515416-fef01fc43637?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "dahi_plain",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "cucumber",
+        "quantity": 40,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 98,
+      "protein": 5.5,
+      "carbs": 7.8,
+      "fiber": 0.2,
+      "sugar": 7.2,
+      "fat": 5,
+      "sodium": 70
+    },
+    "estimatedCostPKR": 40,
+    "prepTimeMinutes": 5,
+    "difficulty": "Easy",
+    "recipeSteps": [
+      "Blend fresh dahi with 1 glass of chilled water and fresh mint leaves.",
+      "Add a pinch of roasted cumin powder and black salt.",
+      "Serve chilled without any added sugar or condensed milk."
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian"
+    ],
+    "supportsGoals": [
+      "hydration",
+      "less_added_sugar",
+      "low_sodium",
+      "skin_dehydration"
+    ],
+    "whyItWorks": "Fermented live cultures in authentic dahi reinforce gut flora, which research demonstrates plays a key role in moderating cutaneous histamine sensitivity.",
+    "whyItMatters": "Replenishes electrolytes and natural water during hot or dry conditions.",
+    "skinNutrients": [
+      {
+        "nutrient": "Lactobacillus & Calcium",
+        "benefitNote": "Gut-skin axis support for inflammatory barrier tolerance"
+      }
+    ],
+    "sourceNote": "USDA FoodData Central",
+    "verified": true
+  },
+  {
+    "id": "chia_pudding_fruit",
+    "name": "Tukhm-e-Balanga Hydration Bowl with Sliced Guava",
+    "mealType": "breakfast",
+    "imageUrl": "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "chia_seeds",
+        "quantity": 25,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "dahi_plain",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "guava_amrood",
+        "quantity": 60,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 211,
+      "protein": 7.2,
+      "carbs": 19.8,
+      "fiber": 9.8,
+      "sugar": 5.4,
+      "fat": 11.3,
+      "sodium": 42
+    },
+    "estimatedCostPKR": 85,
+    "prepTimeMinutes": 10,
+    "difficulty": "Easy",
+    "recipeSteps": [
+      "Soak 2 tbsp chia seeds / tukhm-e-balanga in half cup water for 15 minutes until gelled.",
+      "Fold in plain dahi until smooth and luscious.",
+      "Garnish with diced seasonal guava for a crunchy texture."
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian"
+    ],
+    "supportsGoals": [
+      "hydration",
+      "high_fiber",
+      "skin_barrier"
+    ],
+    "whyItWorks": "Chia seeds absorb 10x their weight in water, releasing cellular hydration gradually as they move through the digestive tract.",
+    "whyItMatters": "High plant-based Alpha-Linolenic Acid (ALA) omega-3 supports cell membrane fluidity.",
+    "skinNutrients": [
+      {
+        "nutrient": "Omega-3 ALA & Mucilage",
+        "benefitNote": "Improves cellular membrane resilience and lipid bilayer moisture retention"
+      }
+    ],
+    "sourceNote": "USDA FoodData Central",
+    "verified": true
+  },
+  {
+    "id": "palak_egg_bhurji",
+    "name": "Spiced Spinach & Scrambled Eggs with 1 Roti",
+    "mealType": "dinner",
+    "imageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "eggs",
+        "quantity": 2,
+        "unit": "pieces"
+      },
+      {
+        "ingredientId": "spinach_palak",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "atta_whole_wheat",
+        "quantity": 35,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "mustard_oil",
+        "quantity": 4,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 312,
+      "protein": 18.8,
+      "carbs": 28.9,
+      "fiber": 4.8,
+      "sugar": 1.2,
+      "fat": 14.2,
+      "sodium": 228
+    },
+    "estimatedCostPKR": 105,
+    "prepTimeMinutes": 18,
+    "difficulty": "Medium",
+    "recipeSteps": [
+      "Sauté fresh chopped spinach in 1 tsp mustard oil with garlic and green chili until wilted.",
+      "Whisk 2 eggs and scramble gently with the spinach.",
+      "Serve alongside 1 hot whole wheat roti freshly prepared."
+    ],
+    "allergens": [
+      "eggs",
+      "gluten"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian"
+    ],
+    "supportsGoals": [
+      "high_protein",
+      "high_fiber",
+      "skin_barrier"
+    ],
+    "whyItWorks": "Spinach delivers lutein and beta-carotene while eggs supply complete proteins for nocturnal tissue repair.",
+    "whyItMatters": "Nutrient-dense dinner meeting both protein and vegetable targets under a modest budget.",
+    "skinNutrients": [
+      {
+        "nutrient": "Lutein & Vitamin A",
+        "benefitNote": "Supports normal cellular keratinization and skin barrier thickness"
+      }
+    ],
+    "sourceNote": "USDA FoodData Central",
+    "verified": true
+  },
+  {
+    "id": "TODO_brown_rice_daal",
+    "name": "TODO: Brown Rice with Daal Bowl",
+    "mealType": "lunch",
+    "imageUrl": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "TODO_brown_rice",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "daal_moong",
+        "quantity": 50,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 395,
+      "protein": 16.6,
+      "carbs": 78.2,
+      "fiber": 10.2,
+      "sugar": 3.8,
+      "fat": 2.3,
+      "sodium": 12
+    },
+    "estimatedCostPKR": 95,
+    "prepTimeMinutes": 30,
+    "difficulty": "Medium",
+    "recipeSteps": [
+      "TODO: Cook brown rice for 25 mins",
+      "TODO: Cook daal moong"
+    ],
+    "allergens": [],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "supportsGoals": [
+      "high_fiber",
+      "skin_barrier"
+    ],
+    "whyItWorks": "TODO: Verify glycemic load and portion sizes with registered dietitian.",
+    "whyItMatters": "Traditional combination providing all 9 essential amino acids in plant-based ratio.",
+    "skinNutrients": [
+      {
+        "nutrient": "TODO: Complex Carbs",
+        "benefitNote": "Sustained energy release"
+      }
+    ],
+    "sourceNote": "TODO: Owner to verify",
+    "verified": false
+  },
+  {
+    "id": "TODO_lean_mutton_broth",
+    "name": "TODO: Clear Mutton Yakhni with Herbs",
+    "mealType": "dinner",
+    "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "TODO_mutton_lean",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "ingredientId": "tomato",
+        "quantity": 40,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 150,
+      "protein": 21,
+      "carbs": 1.6,
+      "fiber": 0.5,
+      "sugar": 1,
+      "fat": 6.1,
+      "sodium": 88
+    },
+    "estimatedCostPKR": 240,
+    "prepTimeMinutes": 45,
+    "difficulty": "Medium",
+    "recipeSteps": [
+      "TODO: Pressure cook goat meat with whole spices and ginger",
+      "TODO: Strain and serve hot"
+    ],
+    "allergens": [],
+    "dietTags": [
+      "halal"
+    ],
+    "supportsGoals": [
+      "high_protein",
+      "skin_barrier"
+    ],
+    "whyItWorks": "TODO: Verify collagen extraction yields and sodium control with clinical dietitian.",
+    "whyItMatters": "Traditional bone and meat broth rich in naturally extracted gelatin and minerals.",
+    "skinNutrients": [
+      {
+        "nutrient": "TODO: Bioactive Collagen Peptides",
+        "benefitNote": "Dermal extracellular matrix support"
+      }
+    ],
+    "sourceNote": "TODO: Owner to verify",
+    "verified": false
+  },
+  {
+    "id": "TODO_walnut_snack",
+    "name": "TODO: Raw Swat Walnuts & Mint Infusion",
+    "mealType": "snack",
+    "imageUrl": "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=600&q=80",
+    "ingredients": [
+      {
+        "ingredientId": "TODO_walnuts_swat",
+        "quantity": 25,
+        "unit": "g"
+      }
+    ],
+    "nutritionPerServing": {
+      "calories": 164,
+      "protein": 3.8,
+      "carbs": 3.4,
+      "fiber": 1.7,
+      "sugar": 0.7,
+      "fat": 16.3,
+      "sodium": 1
+    },
+    "estimatedCostPKR": 85,
+    "prepTimeMinutes": 2,
+    "difficulty": "Easy",
+    "recipeSteps": [
+      "TODO: Crack and eat fresh walnuts raw without roasting or salt"
+    ],
+    "allergens": [
+      "tree_nuts"
+    ],
+    "dietTags": [
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
+    "supportsGoals": [
+      "lower_carbs",
+      "skin_barrier"
+    ],
+    "whyItWorks": "TODO: Verify local market pricing for seasonal northern Pakistani walnuts.",
+    "whyItMatters": "High source of plant-based polyunsaturated fatty acids.",
+    "skinNutrients": [
+      {
+        "nutrient": "TODO: ALA Omega-3",
+        "benefitNote": "Cell membrane lipid integrity"
+      }
+    ],
+    "sourceNote": "TODO: Owner to verify",
+    "verified": false
+  }
+]
