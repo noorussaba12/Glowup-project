@@ -256,12 +256,34 @@ async function callGeminiVisionAnalysis(imagePath, questionnaire, apiKey) {
   const base64Image = imageBytes.toString('base64');
 
   const systemPrompt = `You are a certified clinical cosmetic dermatological AI.
-Carefully examine the user's face photo and perform an accurate, comprehensive skin analysis for EVERY part of the user's face.
+
+STEP 1 — STRICT FACE & OBSTRUCTION VALIDATION (MANDATORY):
+First, carefully inspect the image to verify if a CLEAR, UNOBSTRUCTED HUMAN FACE is visible.
+You MUST REJECT the image ("usable": false) if ANY of the following is true:
+1. The person is wearing ANY face mask (medical/surgical mask, N95, cloth mask, sheet mask, clay/mud mask, or niqab/scarf covering the nose, mouth, or cheeks).
+2. There is NO real human face visible (e.g., blank wall, hand, object, animal, ceiling, dark screen, or blurry/unrecognizable photo).
+3. Hands, sunglasses, hair, or heavy shadows are blocking key facial zones (forehead, under-eyes, cheeks, nose, or chin).
+
+If rejected, return ONLY this JSON:
+{
+  "image_quality": {
+    "usable": false,
+    "face_detected": false,
+    "mask_detected": true,
+    "rejection_reason": "Clear explanation of why rejected (e.g., 'A face mask or facial covering is blocking your skin. Please remove your mask so we can scan your uncovered face.' or 'No clear human face detected in the frame.')",
+    "issues": ["Mask or obstruction detected"]
+  }
+}
+
+STEP 2 — FULL CLINICAL SKIN ANALYSIS (ONLY IF UNOBSTRUCTED FACE IS VISIBLE):
+Perform an accurate, comprehensive skin analysis for EVERY part of the user's face.
 
 Return ONLY valid raw JSON matching this exact structure:
 {
   "image_quality": {
     "usable": true,
+    "face_detected": true,
+    "mask_detected": false,
     "issues": []
   },
   "overall_score": 82,
@@ -377,47 +399,65 @@ Return ONLY valid raw JSON matching this exact structure:
 Ensure all scores (0-100) and statuses accurately reflect the visible pixels in the photo.
 Do NOT diagnose medical diseases. Do not recommend prescription drugs. Output valid raw JSON only without markdown codeblocks.`;
 
-  const modelName = process.env.AI_MODEL_NAME || 'gemini-3-flash-preview';
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+  const preferredModel = process.env.AI_MODEL_NAME || 'gemini-flash-latest';
+  const modelChain = [...new Set([preferredModel, 'gemini-flash-latest', 'gemini-3.1-flash-lite', 'gemini-3-flash-preview'])];
 
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [
-        {
-          parts: [
-            { text: systemPrompt },
+  let lastError = null;
+  for (const modelName of modelChain) {
+    try {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        signal: AbortSignal.timeout(18000),
+        body: JSON.stringify({
+          contents: [
             {
-              inlineData: {
-                mimeType: 'image/jpeg',
-                data: base64Image,
-              },
-            },
-            {
-              text: `User Questionnaire context: ${JSON.stringify(questionnaire)}`,
+              parts: [
+                { text: systemPrompt },
+                {
+                  inlineData: {
+                    mimeType: 'image/jpeg',
+                    data: base64Image,
+                  },
+                },
+                {
+                  text: `User Questionnaire context: ${JSON.stringify(questionnaire)}`,
+                },
+              ],
             },
           ],
-        },
-      ],
-      generationConfig: {
-        responseMimeType: 'application/json',
-        temperature: 0.2,
-      },
-    }),
-  });
+          generationConfig: {
+            responseMimeType: 'application/json',
+            temperature: 0.15,
+          },
+        }),
+      });
 
-  if (!response.ok) {
-    const errText = await response.text();
-    throw new Error(`Gemini API HTTP ${response.status}: ${errText}`);
+      if (!response.ok) {
+        const errText = await response.text();
+        lastError = new Error(`${modelName} HTTP ${response.status}: ${errText}`);
+        console.warn(`Vision model ${modelName} failed (${response.status}), trying next model...`);
+        continue;
+      }
+
+      const data = await response.json();
+      const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!rawText) {
+        lastError = new Error(`Empty response from ${modelName}`);
+        continue;
+      }
+
+      const parsed = JSON.parse(rawText.replace(/```json/g, '').replace(/```/g, '').trim());
+      console.log(`✅ Vision analysis succeeded using model: ${modelName} | usable: ${parsed?.image_quality?.usable}`);
+      return parsed;
+    } catch (err) {
+      lastError = err;
+      console.warn(`Vision model ${modelName} error:`, err.message);
+    }
   }
 
-  const data = await response.json();
-  const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!rawText) throw new Error('Empty response from vision model');
-
-  const parsed = JSON.parse(rawText.replace(/```json/g, '').replace(/```/g, '').trim());
-  return parsed;
+  throw lastError || new Error('All Gemini Vision models failed');
 }
 
 /**
@@ -425,6 +465,19 @@ Do NOT diagnose medical diseases. Do not recommend prescription drugs. Output va
  * Dynamically computes real skin metrics from client image pixels and file attributes.
  */
 function generateClinicalDermAnalysis(questionnaire, file, clientMetrics) {
+  // Reject if client pixel metrics indicate no uncovered face / mask / dark frame
+  if (clientMetrics && typeof clientMetrics.skinPixelRatio === 'number' && clientMetrics.skinPixelRatio < 0.16) {
+    return {
+      image_quality: {
+        usable: false,
+        face_detected: false,
+        mask_detected: true,
+        rejection_reason: 'No uncovered human face detected in the frame. Please remove any mask or facial covering and ensure clear lighting.',
+        issues: ['Insufficient uncovered facial skin detected']
+      }
+    };
+  }
+
   let dehydrationScore = 58;
   let darkCircleScore = 54;
   let poreScore = 48;

@@ -1381,17 +1381,41 @@
 
           <!-- Section 7.5: Prescriptive Skincare Formulations Matched to Face Scan -->
           <div style="border: 1.5px solid var(--accent); border-radius: 14px; padding: 14px 16px; margin-bottom: 20px; background: rgba(197, 139, 125, 0.04);">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">
               <div>
                 <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: var(--accent); text-transform: uppercase;">
-                  <i class="fa-solid fa-prescription-bottle-medical"></i> Prescribed Formulations (Matched to Face Scan)
+                  <i class="fa-solid fa-prescription-bottle-medical"></i> Prescribed Formulations (Matched to Face Scan & Budget)
                 </div>
                 <div style="font-size: 11px; color: var(--text-sec); margin-top: 2px;">
-                  100% Unbiased Clinical Formulations chosen specifically to resolve your diagnosed facial zone findings.
+                  Matched to your diagnosed facial zones and budget tier — no forced expensive brands.
                 </div>
               </div>
               <span style="font-size: 9.5px; font-weight: 700; color: #2E6B5A; background: rgba(78,141,124,0.15); padding: 3px 8px; border-radius: 8px; border: 1px solid #4E8D7C; white-space: nowrap;">
-                <i class="fa-solid fa-circle-check"></i> Clinically Matched
+                <i class="fa-solid fa-circle-check"></i> Budget Matched
+              </span>
+            </div>
+
+            <!-- Interactive Budget Tier Selector on Doctor Report -->
+            <div style="display: flex; gap: 6px; margin-bottom: 10px; overflow-x: auto; padding-bottom: 2px;">
+              <button id="report-tier-btn-budget" class="tab-pill active" onclick="switchReportBudgetTier('budget', this)" style="font-size: 10px; padding: 5px 10px; white-space: nowrap;">
+                🟢 Pharmacy / Pocket-Friendly (₨ 450 – 1,450)
+              </button>
+              <button id="report-tier-btn-balanced" class="tab-pill" onclick="switchReportBudgetTier('balanced', this)" style="font-size: 10px; padding: 5px 10px; white-space: nowrap;">
+                🟡 Balanced Clinical (₨ 1.8k – 3.5k)
+              </button>
+              <button id="report-tier-btn-premium" class="tab-pill" onclick="switchReportBudgetTier('premium', this)" style="font-size: 10px; padding: 5px 10px; white-space: nowrap;">
+                🟣 Imported Derm / Luxury (₨ 3.8k+)
+              </button>
+            </div>
+
+            <!-- Estimated Cost Banner -->
+            <div style="display: flex; justify-content: space-between; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; margin-bottom: 10px; font-size: 11px;">
+              <div>
+                <strong style="color: var(--primary-dark);">Complete Routine Total:</strong>
+                <span id="report-total-cost-badge" style="color: #2E6B5A; font-weight: 800; font-size: 12.5px; margin-left: 4px;">₨ 4,800 PKR</span>
+              </div>
+              <span id="report-pharmacy-note" style="font-size: 9.5px; color: var(--text-sec); background: var(--surface-sec); padding: 2px 7px; border-radius: 6px;">
+                Pakistani Pharmacy Available
               </span>
             </div>
 
@@ -1489,15 +1513,15 @@
             <label style="font-size: 12.5px; font-weight: 700; color: var(--primary-dark);">
               <i class="fa-solid fa-wallet" style="color: var(--accent); margin-right: 4px;"></i> Select Monthly Budget (PKR)
             </label>
-            <span id="budget-current-label" style="font-size: 12px; font-weight: 800; color: var(--accent);">₨ 5,000 – 10,000</span>
+            <span id="budget-current-label" style="font-size: 12px; font-weight: 800; color: var(--accent);">₨ 2,500 – 5,500</span>
           </div>
 
           <!-- 3 PKR Budget Quick Tier Buttons -->
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 10px 0 12px;">
-            <button id="tier-btn-budget" class="tab-pill" style="font-size: 10px; padding: 7px 4px; text-align: center;" onclick="selectBudgetTier('budget')">
+            <button id="tier-btn-budget" class="tab-pill active" style="font-size: 10px; padding: 7px 4px; text-align: center;" onclick="selectBudgetTier('budget')">
               <strong>Pharmacy / Student</strong><br><span style="font-size: 9px; opacity: 0.85;">₨ 2.5k – 5k</span>
             </button>
-            <button id="tier-btn-balanced" class="tab-pill active" style="font-size: 10px; padding: 7px 4px; text-align: center;" onclick="selectBudgetTier('balanced')">
+            <button id="tier-btn-balanced" class="tab-pill" style="font-size: 10px; padding: 7px 4px; text-align: center;" onclick="selectBudgetTier('balanced')">
               <strong>Clinical Balance</strong><br><span style="font-size: 9px; opacity: 0.85;">₨ 5k – 10k</span>
             </button>
             <button id="tier-btn-premium" class="tab-pill" style="font-size: 10px; padding: 7px 4px; text-align: center;" onclick="selectBudgetTier('premium')">
@@ -1507,7 +1531,7 @@
 
           <!-- Interactive Budget Slider in PKR -->
           <div style="margin-top: 6px;">
-            <input type="range" id="budget-slider" min="2500" max="25000" step="500" value="8500" style="width: 100%; accent-color: var(--accent); cursor: pointer;" oninput="handleBudgetSliderChange(this.value)">
+            <input type="range" id="budget-slider" min="2500" max="25000" step="500" value="4800" style="width: 100%; accent-color: var(--accent); cursor: pointer;" oninput="handleBudgetSliderChange(this.value)">
             <div style="display: flex; justify-content: space-between; font-size: 10px; color: var(--text-muted); margin-top: 4px;">
               <span>₨ 2,500 PKR</span>
               <span>₨ 12,000 PKR</span>
@@ -3366,6 +3390,7 @@
           let totalR = 0, totalG = 0, totalB = 0;
           let underEyeLuma = 0, cheekLuma = 0;
           let underEyeCount = 0, cheekCount = 0;
+          let centerSkinCount = 0, centerTotalCount = 0;
 
           // Sample every 4th pixel for speed & accuracy
           for (let i = 0; i < d.length; i += 16) {
@@ -3373,8 +3398,19 @@
             totalR += r; totalG += g; totalB += b;
 
             const pxIndex = i / 4;
+            const x = pxIndex % sampleW;
             const y = Math.floor(pxIndex / sampleW);
-            const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+            const luma = 0.299 * r + 0.587 * g + 0.114 * avgB;
+
+            // Check central facial oval for human skin tone (YCbCr model across all Fitzpatrick types)
+            if (x >= sampleW * 0.22 && x <= sampleW * 0.78 && y >= sampleH * 0.18 && y <= sampleH * 0.82) {
+              centerTotalCount++;
+              const cb = 128 - 0.168736 * r - 0.331264 * g + 0.5 * b;
+              const cr = 128 + 0.5 * r - 0.418688 * g - 0.081312 * b;
+              if (cb >= 77 && cb <= 127 && cr >= 133 && cr <= 175 && r > 40) {
+                centerSkinCount++;
+              }
+            }
 
             // Approximate facial zones based on vertical position
             if (y > sampleH * 0.35 && y < sampleH * 0.50) {
@@ -3390,7 +3426,8 @@
           const avgR = totalR / count;
           const avgG = totalG / count;
           const avgB = totalB / count;
-          const avgLuma = 0.299 * avgR + 0.587 * avgG + 0.114 * avgB;
+          const avgLuma = 0.299 * avgR + 0.587 * avgG + 0.114 * b;
+          const skinPixelRatio = centerTotalCount > 0 ? (centerSkinCount / centerTotalCount) : 0.5;
 
           const rRatio = avgR / (Math.max(10, (avgG + avgB) / 2));
           const dcRatio = (cheekCount > 0 && underEyeCount > 0) ? (cheekLuma / cheekCount) / (Math.max(1, underEyeLuma / underEyeCount)) : 1.05;
@@ -3399,7 +3436,8 @@
             brightness: Math.round(avgLuma),
             rednessRatio: parseFloat(rRatio.toFixed(3)),
             darkCircleRatio: parseFloat(dcRatio.toFixed(3)),
-            textureVariance: parseFloat((0.25 + (avgR % 20) / 60).toFixed(2))
+            textureVariance: parseFloat((0.25 + (avgR % 20) / 60).toFixed(2)),
+            skinPixelRatio: parseFloat(skinPixelRatio.toFixed(3))
           };
         }
       } catch (e) {
@@ -3494,6 +3532,21 @@
       }, 2600);
 
       setTimeout(() => {
+        if (analysisResult && analysisResult.image_quality && analysisResult.image_quality.usable === false) {
+          const reason = analysisResult.image_quality.rejection_reason || 'No uncovered human face detected. Please remove any face mask or obstruction and try again in clear lighting.';
+          const isMask = analysisResult.image_quality.mask_detected;
+          alert((isMask ? '🎭 Face Mask / Covering Detected!\n\n' : '⚠️ Invalid Face Photo!\n\n') + reason);
+          showScreen('scan');
+          return;
+        }
+
+        // Also guard if offline and skinPixelRatio is extremely low
+        if (clientMetrics && typeof clientMetrics.skinPixelRatio === 'number' && clientMetrics.skinPixelRatio < 0.16) {
+          alert('⚠️ No Uncovered Face Detected!\n\nPlease remove any mask, sunglasses, or obstructions and position your face clearly inside the scan frame.');
+          showScreen('scan');
+          return;
+        }
+
         latestScanResult = analysisResult;
         renderSkinResults(analysisResult, activeCapturedDataUrl);
         showScreen('results');
@@ -3782,27 +3835,62 @@
       });
     }
 
-        function renderReportPrescribedProducts(result) {
+        function switchReportBudgetTier(tier, btnEl) {
+      activeReportBudgetTier = tier;
+      ['budget', 'balanced', 'premium'].forEach(t => {
+        const b = document.getElementById('report-tier-btn-' + t);
+        if (b) {
+          if (t === tier) b.classList.add('active');
+          else b.classList.remove('active');
+        }
+      });
+      // Sync routine screen tier as well
+      selectedBudgetTier = tier;
+      autoSelectProductsForTier(tier);
+      renderReportPrescribedProducts(latestScanResult, tier);
+    }
+
+    function renderReportPrescribedProducts(result, tierOverride) {
       const container = document.getElementById('report-prescribed-products-list');
       if (!container) return;
       container.innerHTML = '';
 
+      const targetTier = tierOverride || activeReportBudgetTier || 'budget';
       const res = result || latestScanResult;
       const allProds = [...CLINICAL_PRODUCTS_CATALOG, ...customAddedProducts];
       const scoredCatalog = allProds.map(p => scoreProductForScan(p, res));
 
-      // Select top product for cleanser, serum, moisturizer, sunscreen, and eyecare
+      // Select top product for cleanser, serum, moisturizer, sunscreen, and eyecare STRICTLY within budget tier
       const steps = ['cleanser', 'serum', 'moisturizer', 'sunscreen'];
       const underEye = (res && res.facial_parts && res.facial_parts.under_eyes) || {};
       if (underEye.score < 76 || underEye.severity === 'moderate' || underEye.severity === 'high') {
         steps.push('eyecare');
       }
 
+      let totalCostPkr = 0;
+      const usedBrands = new Set();
+
       steps.forEach((step, idx) => {
-        const inStep = scoredCatalog.filter(p => p.step === step);
-        inStep.sort((a, b) => (b.matchScore || 0) - (a.matchScore || 0));
+        // Filter strictly by step AND selected budget tier
+        let inStep = scoredCatalog.filter(p => p.step === step && p.tier === targetTier);
+        if (inStep.length === 0) {
+          inStep = scoredCatalog.filter(p => p.step === step);
+        }
+        // Sort by matchScore descending, with slight preference for brand diversity
+        inStep.sort((a, b) => {
+          const scoreDiff = (b.matchScore || 0) - (a.matchScore || 0);
+          if (Math.abs(scoreDiff) <= 1) {
+            const aUsed = usedBrands.has(a.brand) ? 1 : 0;
+            const bUsed = usedBrands.has(b.brand) ? 1 : 0;
+            return aUsed - bUsed;
+          }
+          return scoreDiff;
+        });
+
         const topProd = inStep[0];
         if (!topProd) return;
+        usedBrands.add(topProd.brand);
+        totalCostPkr += (topProd.pricePkr || 0);
 
         const card = document.createElement('div');
         card.style.cssText = 'background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; display: flex; gap: 12px; align-items: center; box-shadow: 0 2px 6px rgba(0,0,0,0.03);';
@@ -3836,6 +3924,15 @@
         `;
         container.appendChild(card);
       });
+
+      const costBadge = document.getElementById('report-total-cost-badge');
+      const pharmNote = document.getElementById('report-pharmacy-note');
+      if (costBadge) costBadge.innerText = `₨ ${totalCostPkr.toLocaleString()} PKR Total`;
+      if (pharmNote) {
+        if (targetTier === 'budget') pharmNote.innerText = 'Local Pakistani Pharmacy Friendly';
+        else if (targetTier === 'balanced') pharmNote.innerText = 'Mid-Range Clinical Import';
+        else pharmNote.innerText = 'Premium Imported Dermatology';
+      }
     }
 
     function updateDoctorReportScreen(result) {
@@ -3991,7 +4088,7 @@
     "routineType": "AM & PM",
     "pricePkr": 3250,
     "rating": "9.8 / 10",
-    "tier": "balanced",
+    "tier": "premium",
     "forIssue": "Dehydration & Barrier Sensitivity",
     "whyBest": "Contains 3 essential bio-identical ceramides (1, 3, 6-II) and hyaluronic acid with MVE slow-release technology to remove impurities without stripping lipid bilayers or causing tightness.",
     "keyIngredients": "Ceramide NP, Ceramide AP, Ceramide EOP, Hyaluronic Acid, Glycerin",
@@ -4008,7 +4105,7 @@
     "routineType": "AM & PM",
     "pricePkr": 3250,
     "rating": "9.7 / 10",
-    "tier": "balanced",
+    "tier": "premium",
     "forIssue": "Excess Sebum & Enlarged Pores",
     "whyBest": "Dispenses as clear gel and transforms into light foam to dissolve excess surface sebum while preserving epidermal ceramides with soothing niacinamide.",
     "keyIngredients": "3 Essential Ceramides, Niacinamide (Vitamin B3), Hyaluronic Acid",
@@ -4025,7 +4122,7 @@
     "routineType": "AM & PM",
     "pricePkr": 3450,
     "rating": "9.9 / 10",
-    "tier": "balanced",
+    "tier": "premium",
     "forIssue": "Bumpy Texture & Blackheads",
     "whyBest": "Formulated with beta hydroxy acid (Salicylic Acid) to gently micro-exfoliate dead keratinocytes from within pores without physical beads that micro-tear skin.",
     "keyIngredients": "0.5% Salicylic Acid, Gluconolactone (PHA), 3 Ceramides, Niacinamide",
@@ -4331,7 +4428,7 @@
     "routineType": "AM & PM",
     "pricePkr": 3450,
     "rating": "9.9 / 10",
-    "tier": "balanced",
+    "tier": "premium",
     "forIssue": "Normal to Dry Dehydrated Barrier",
     "whyBest": "Lightweight, oil-free moisturizer with 3 essential bio-identical ceramides and MVE delivery technology providing continuous 24-hour hydration without heavy residue.",
     "keyIngredients": "Ceramide NP, Ceramide AP, Ceramide EOP, Hyaluronic Acid, Glycerin",
@@ -4586,7 +4683,7 @@
     "routineType": "AM Daily",
     "pricePkr": 4100,
     "rating": "9.7 / 10",
-    "tier": "balanced",
+    "tier": "premium",
     "forIssue": "Ultra-Sensitive Skin Reactive to Chemical Filters",
     "whyBest": "100% mineral sunscreen (Zinc Oxide & Titanium Dioxide) with a universal sheer tint that offsets mineral white cast while delivering 3 essential ceramides.",
     "keyIngredients": "Zinc Oxide, Titanium Dioxide, 3 Essential Ceramides, Niacinamide, Hyaluronic Acid",
@@ -4646,6 +4743,108 @@
     "image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=400&q=80"
   },
   {
+    "id": "rivaj_teatree_facewash",
+    "name": "Rivaj UK Tea Tree & Salicylic Acid Foaming Face Wash (150ml)",
+    "brand": "Rivaj UK",
+    "step": "cleanser",
+    "stepName": "Step 1: Clarifying Tea Tree Foaming Wash",
+    "routineType": "AM & PM",
+    "pricePkr": 750,
+    "rating": "9.4 / 10",
+    "tier": "budget",
+    "forIssue": "Excess Sebum, Blackheads & Acne Control",
+    "whyBest": "Affordable drugstore staple across Pakistan. Formulated with pure Australian tea tree oil and salicylic acid to dissolve follicular sebum and prevent T-zone breakouts.",
+    "keyIngredients": "Tea Tree Oil (Melaleuca Alternifolia), 0.5% Salicylic Acid, Glycerin",
+    "clinicalTested": "Dermatologically Tested • Anti-Bacterial • Paraben-Free",
+    "howToUse": "Pump small amount onto wet palms, lather and massage over T-zone for 45 seconds, then rinse with cool water.",
+    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "bio_one_clarifying_wash",
+    "name": "Bio-One Glycolic & Salicylic Clarifying Cleanser (100ml)",
+    "brand": "Bio-One Pakistan",
+    "step": "cleanser",
+    "stepName": "Step 1: Micro-Exfoliating Pharmacy Wash",
+    "routineType": "AM & PM",
+    "pricePkr": 980,
+    "rating": "9.6 / 10",
+    "tier": "budget",
+    "forIssue": "Clogged Pores, Dull Complexion & Rough Texture",
+    "whyBest": "Widely prescribed by Pakistani dermatologists as an affordable chemical exfoliating wash. Combines Glycolic Acid (AHA) and Salicylic Acid (BHA) to refine enlarged pores.",
+    "keyIngredients": "1% Glycolic Acid, 0.5% Salicylic Acid, Allantoin, Vitamin E",
+    "clinicalTested": "Pharmaceutical Grade • Balanced pH 5.5 • Non-Comedogenic",
+    "howToUse": "Massage onto damp skin for 30-45 seconds avoiding direct eyes. Rinse thoroughly with lukewarm water.",
+    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "saeed_ghani_rose_hyaluronic_mist",
+    "name": "Saeed Ghani Pure Rose Water & Hyaluronic Glow Mist (120ml)",
+    "brand": "Saeed Ghani",
+    "step": "serum",
+    "stepName": "Step 2: Herbal Humectant Hydration Prep",
+    "routineType": "AM & PM",
+    "pricePkr": 450,
+    "rating": "9.3 / 10",
+    "tier": "budget",
+    "forIssue": "Surface Dehydration, Heat Sensations & Dullness",
+    "whyBest": "Pakistan's trusted traditional rose hydrosol distilled with botanical hyaluronic acid. Binds water molecules to the stratum corneum before moisturizer.",
+    "keyIngredients": "100% Steam-Distilled Rose Damascena Hydrosol, Hyaluronic Acid, Aloe Vera Extract",
+    "clinicalTested": "100% Pure Botanical • Alcohol-Free • Zero Artificial Fragrance",
+    "howToUse": "Mist generously over clean face and neck. Press gently with palms while skin is still damp.",
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "bio_one_glycolic_serum",
+    "name": "Bio-One Glycolic & Niacinamide Lightening Serum (30ml)",
+    "brand": "Bio-One Pakistan",
+    "step": "serum",
+    "stepName": "Step 2: Pharmacy Active Barrier Serum",
+    "routineType": "PM Daily",
+    "pricePkr": 1250,
+    "rating": "9.5 / 10",
+    "tier": "budget",
+    "forIssue": "Post-Acne Dark Marks, Uneven Tone & Pores",
+    "whyBest": "Affordable pharmacy serum manufactured under ISO dermatological standards in Pakistan. Fades pigmentation and refines skin surface at a fraction of imported serum costs.",
+    "keyIngredients": "5% Niacinamide (Vitamin B3), Glycolic Acid, Alpha Arbutin, Licorice Extract",
+    "clinicalTested": "Tested for Pakistani Complexions • Non-Sticky • Hypoallergenic",
+    "howToUse": "Apply 3-4 drops at night onto clean dry face. Follow with barrier moisturizer.",
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "dermive_dry_skin_cream",
+    "name": "Dermive Moisturizing Cream with Essential Ceramides (100g)",
+    "brand": "Jenpharm Pakistan",
+    "step": "moisturizer",
+    "stepName": "Step 3: Ceramide Barrier Repair Cream",
+    "routineType": "AM & PM",
+    "pricePkr": 1250,
+    "rating": "9.8 / 10",
+    "tier": "budget",
+    "forIssue": "Severe Barrier Breakdown, Flaking & TEWL Dehydration",
+    "whyBest": "Premier Pakistani medical alternative to imported CeraVe cream. Delivers bio-identical ceramides and physiological lipids to seal the epidermal barrier against moisture loss.",
+    "keyIngredients": "Ceramide Complex (NP, AP), Hyaluronic Acid, Colloidal Oatmeal, USP Emollients",
+    "clinicalTested": "Dermatologist Endorsed Across Pakistan • Fragrance-Free • Non-Greasy",
+    "howToUse": "Apply a coin-sized amount to face and neck morning and night to lock in hydration.",
+    "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "skin_aqua_clear_white",
+    "name": "Skin Aqua Clear White Sunscreen SPF 50+ PA++++ (30g)",
+    "brand": "Rohto Mentholatum Pakistan",
+    "step": "sunscreen",
+    "stepName": "Step 4: Water-Light Daily Sun Milk",
+    "routineType": "AM Daily",
+    "pricePkr": 1350,
+    "rating": "9.8 / 10",
+    "tier": "budget",
+    "forIssue": "High Humidity, Oily Shine & White Cast Avoidance",
+    "whyBest": "Pakistan's #1 daily sunscreen. Ultra-light watery milk texture absorbs in 5 seconds with zero white cast, zero stickiness, and provides maximum SPF 50+ defense.",
+    "keyIngredients": "Water-Fit UV Filters, Hyaluronic Acid, Vitamin C Derivatives, Collagen Peptides",
+    "clinicalTested": "Allergy Tested • Sweat & Water Resistant • Matte Primer Finish",
+    "howToUse": "Shake well and apply 2 finger lengths evenly over face and neck before sun exposure.",
+    "image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=400&q=80"
+  },
+  {
     "id": "the_ordinary_caffeine_egcg",
     "name": "The Ordinary Caffeine Solution 5% + EGCG (30ml)",
     "brand": "The Ordinary",
@@ -4671,7 +4870,7 @@
     "routineType": "AM & PM",
     "pricePkr": 3650,
     "rating": "9.8 / 10",
-    "tier": "balanced",
+    "tier": "premium",
     "forIssue": "Thin Periorbital Barrier, Fine Lines & Dark Circles",
     "whyBest": "Combines 3 bio-identical ceramides with a patented marine and botanical complex to fortify delicate under-eye barrier, restore cellular turgor, and reduce venous pooling.",
     "keyIngredients": "Ceramides (1, 3, 6-II), Marine Botanical Complex, Niacinamide, MVE Technology",
@@ -4765,8 +4964,9 @@
       }
     };
 
-    let selectedBudgetTier = 'balanced';
-    let selectedBudgetPkr = 8500;
+    let selectedBudgetTier = 'budget';
+    let selectedBudgetPkr = 5000;
+    let activeReportBudgetTier = 'budget';
     let userSelectedProductIds = [];
     let customAddedProducts = [];
     let activeModalProduct = null;
