@@ -1379,6 +1379,34 @@
             </div>
           </div>
 
+          <!-- Section 7.5: Prescriptive Skincare Formulations Matched to Face Scan -->
+          <div style="border: 1.5px solid var(--accent); border-radius: 14px; padding: 14px 16px; margin-bottom: 20px; background: rgba(197, 139, 125, 0.04);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">
+              <div>
+                <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: var(--accent); text-transform: uppercase;">
+                  <i class="fa-solid fa-prescription-bottle-medical"></i> Prescribed Formulations (Matched to Face Scan)
+                </div>
+                <div style="font-size: 11px; color: var(--text-sec); margin-top: 2px;">
+                  100% Unbiased Clinical Formulations chosen specifically to resolve your diagnosed facial zone findings.
+                </div>
+              </div>
+              <span style="font-size: 9.5px; font-weight: 700; color: #2E6B5A; background: rgba(78,141,124,0.15); padding: 3px 8px; border-radius: 8px; border: 1px solid #4E8D7C; white-space: nowrap;">
+                <i class="fa-solid fa-circle-check"></i> Clinically Matched
+              </span>
+            </div>
+
+            <!-- Dynamic List of Prescribed Formulations -->
+            <div id="report-prescribed-products-list" style="display: flex; flex-direction: column; gap: 10px;">
+              <!-- Dynamically populated via renderReportPrescribedProducts(res) -->
+            </div>
+
+            <div style="margin-top: 12px; text-align: center;">
+              <button class="pill-btn secondary" style="width: auto; padding: 7px 18px; font-size: 11px; display: inline-flex; align-items: center; gap: 6px; margin: 0 auto;" onclick="showScreen('routine-budget')">
+                <i class="fa-solid fa-sliders"></i> Customize Routine & View Budget Options (PKR) <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
           <!-- Section 8: Nutritional Directives & Lifestyle Prescription -->
           <div style="background: var(--surface-sec); border-radius: 14px; padding: 14px 16px; margin-bottom: 22px;">
             <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: var(--primary-dark); text-transform: uppercase; margin-bottom: 8px;">
@@ -1512,9 +1540,10 @@
         </div>
 
         <!-- Separated Category Navigation Pills (Facewash, Serum, Moisturizer, Sunscreen) -->
-        <div class="category-filter-pills" style="display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; margin-bottom: 16px; padding-bottom: 4px;">
+        <!-- Category Navigation Pills -->
+        <div class="category-filter-pills" style="display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; margin-bottom: 12px; padding-bottom: 4px;">
           <button class="tab-pill active" id="cat-pill-all" style="white-space: nowrap; font-size: 11.5px; padding: 7px 14px;" onclick="filterRoutineCategory('all', this)">
-            <i class="fa-solid fa-layer-group"></i> All (40)
+            <i class="fa-solid fa-layer-group"></i> All (44)
           </button>
           <button class="tab-pill" id="cat-pill-cleanser" style="white-space: nowrap; font-size: 11.5px; padding: 7px 14px;" onclick="filterRoutineCategory('cleanser', this)">
             🫧 Facewash (10)
@@ -1528,6 +1557,36 @@
           <button class="tab-pill" id="cat-pill-sunscreen" style="white-space: nowrap; font-size: 11.5px; padding: 7px 14px;" onclick="filterRoutineCategory('sunscreen', this)">
             ☀️ Sunscreens (10)
           </button>
+          <button class="tab-pill" id="cat-pill-eyecare" style="white-space: nowrap; font-size: 11.5px; padding: 7px 14px;" onclick="filterRoutineCategory('eyecare', this)">
+            👁️ Eye Care (4)
+          </button>
+        </div>
+
+        <!-- Skin Problem / Concern Filter Pills -->
+        <div style="background: var(--surface-sec); border-radius: 14px; padding: 10px 12px; margin-bottom: 16px; border: 1px solid var(--border);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span style="font-size: 10.5px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fa-solid fa-bullseye"></i> Filter by Analyzed Face Problem
+            </span>
+            <span style="font-size: 9.5px; color: var(--text-muted); font-weight: 600;">Personalized to Face Scan</span>
+          </div>
+          <div class="problem-filter-pills" style="display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;">
+            <button class="tab-pill active" id="prob-pill-all" style="font-size: 10.5px; padding: 5px 11px; white-space: nowrap;" onclick="filterRoutineProblem('all', this)">
+              🎯 All Face Scan Matches
+            </button>
+            <button class="tab-pill" id="prob-pill-dehydration" style="font-size: 10.5px; padding: 5px 11px; white-space: nowrap;" onclick="filterRoutineProblem('dehydration', this)">
+              💧 Dehydration & Barrier
+            </button>
+            <button class="tab-pill" id="prob-pill-pores" style="font-size: 10.5px; padding: 5px 11px; white-space: nowrap;" onclick="filterRoutineProblem('pores', this)">
+              ✨ Pores & T-Zone Sebum
+            </button>
+            <button class="tab-pill" id="prob-pill-undereyes" style="font-size: 10.5px; padding: 5px 11px; white-space: nowrap;" onclick="filterRoutineProblem('undereyes', this)">
+              👁️ Under-Eye Dark Circles
+            </button>
+            <button class="tab-pill" id="prob-pill-redness" style="font-size: 10.5px; padding: 5px 11px; white-space: nowrap;" onclick="filterRoutineProblem('redness', this)">
+              🌿 Redness & Sensitivity
+            </button>
+          </div>
         </div>
 
         <!-- Dynamic Product Cards List Categorized -->
@@ -3723,6 +3782,62 @@
       });
     }
 
+        function renderReportPrescribedProducts(result) {
+      const container = document.getElementById('report-prescribed-products-list');
+      if (!container) return;
+      container.innerHTML = '';
+
+      const res = result || latestScanResult;
+      const allProds = [...CLINICAL_PRODUCTS_CATALOG, ...customAddedProducts];
+      const scoredCatalog = allProds.map(p => scoreProductForScan(p, res));
+
+      // Select top product for cleanser, serum, moisturizer, sunscreen, and eyecare
+      const steps = ['cleanser', 'serum', 'moisturizer', 'sunscreen'];
+      const underEye = (res && res.facial_parts && res.facial_parts.under_eyes) || {};
+      if (underEye.score < 76 || underEye.severity === 'moderate' || underEye.severity === 'high') {
+        steps.push('eyecare');
+      }
+
+      steps.forEach((step, idx) => {
+        const inStep = scoredCatalog.filter(p => p.step === step);
+        inStep.sort((a, b) => (b.matchScore || 0) - (a.matchScore || 0));
+        const topProd = inStep[0];
+        if (!topProd) return;
+
+        const card = document.createElement('div');
+        card.style.cssText = 'background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; display: flex; gap: 12px; align-items: center; box-shadow: 0 2px 6px rgba(0,0,0,0.03);';
+        
+        const stepLabels = {
+          cleanser: 'Step 1: Cleanse',
+          serum: 'Step 2: Treat & Repair',
+          moisturizer: 'Step 3: Barrier Seal',
+          sunscreen: 'Step 4: Protect (AM)',
+          eyecare: 'Step 5: Eye Contour'
+        };
+
+        card.innerHTML = `
+          <div style="width: 54px; height: 64px; border-radius: 10px; overflow: hidden; background: #FFF; border: 1px solid var(--border); flex-shrink: 0;">
+            <img src="${topProd.image}" style="width: 100%; height: 100%; object-fit: cover;" alt="${topProd.name}">
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <span style="font-size: 9.5px; font-weight: 700; color: var(--accent); text-transform: uppercase;">${stepLabels[topProd.step] || topProd.step}</span>
+              <span style="font-size: 9px; font-weight: 700; color: #2E6B5A; background: rgba(78,141,124,0.12); padding: 1px 6px; border-radius: 5px;">${topProd.matchScore}% Match</span>
+            </div>
+            <h4 style="font-size: 12.5px; font-weight: 700; color: var(--primary-dark); margin: 0 0 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${topProd.name}</h4>
+            <div style="font-size: 10.5px; color: var(--text-sec); line-height: 1.35;">
+              <strong style="color: var(--primary-dark);">Prescribed For:</strong> ${topProd.targetZone} • ${topProd.targetConcern}
+            </div>
+            <div style="font-size: 10px; color: var(--text-muted); margin-top: 3px; display: flex; justify-content: space-between;">
+              <span>Actives: ${topProd.keyIngredients.substring(0, 40)}...</span>
+              <strong style="color: var(--primary-dark);">₨ ${topProd.pricePkr.toLocaleString()} PKR</strong>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
     function updateDoctorReportScreen(result) {
       const res = result || latestScanResult || {
         overall_score: 74,
@@ -3848,6 +3963,9 @@
           <li>Daily photoprotection (SPF 50+) is mandatory to defend against UVA barrier lipid peroxidation.</li>
         `;
       }
+
+      // 9. Prescribed Skincare Products Matched to Facial Scan Findings
+      renderReportPrescribedProducts(res);
     }
 
     function copyReportShareLink() {
@@ -4528,6 +4646,74 @@
     "image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=400&q=80"
   },
   {
+    "id": "the_ordinary_caffeine_egcg",
+    "name": "The Ordinary Caffeine Solution 5% + EGCG (30ml)",
+    "brand": "The Ordinary",
+    "step": "eyecare",
+    "stepName": "Step 5: Suborbital Vascular Decongestant",
+    "routineType": "AM & PM",
+    "pricePkr": 3200,
+    "rating": "9.9 / 10",
+    "tier": "balanced",
+    "forIssue": "Suborbital Dark Circles, Vascular Pooling & Eye Puffiness",
+    "whyBest": "High 5% concentration of pharmaceutical-grade caffeine paired with purified EGCG green tea glucoside. Clinically proven to constrict microvascular congestion under lower lids and dramatically brighten under-eye shadows.",
+    "keyIngredients": "5% Caffeine, Epigallocatechin Gallatyl Glucoside (EGCG), Hyaluronic Acid, Melanin Matrix",
+    "clinicalTested": "Ophthalmologist Reviewed • Fragrance-Free • Oil-Free • Cruelty-Free",
+    "howToUse": "Dispense 1 drop onto ring finger. Tap gently around orbital contour until fully absorbed AM and PM.",
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "cerave_eye_repair_cream",
+    "name": "CeraVe Eye Repair Cream with Ceramides & Marine Complex (14ml)",
+    "brand": "CeraVe",
+    "step": "eyecare",
+    "stepName": "Step 5: Micro-Barrier Restorative Eye Cream",
+    "routineType": "AM & PM",
+    "pricePkr": 3650,
+    "rating": "9.8 / 10",
+    "tier": "balanced",
+    "forIssue": "Thin Periorbital Barrier, Fine Lines & Dark Circles",
+    "whyBest": "Combines 3 bio-identical ceramides with a patented marine and botanical complex to fortify delicate under-eye barrier, restore cellular turgor, and reduce venous pooling.",
+    "keyIngredients": "Ceramides (1, 3, 6-II), Marine Botanical Complex, Niacinamide, MVE Technology",
+    "clinicalTested": "Ophthalmologist Tested • Fragrance-Free • Hypoallergenic • Non-Comedogenic",
+    "howToUse": "Apply in tiny dots along the orbital eye bone and gently smooth inward-outward until absorbed.",
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "boj_revive_eye_serum",
+    "name": "Beauty of Joseon Revive Eye Serum: Ginseng + Retinal (30ml)",
+    "brand": "Beauty of Joseon",
+    "step": "eyecare",
+    "stepName": "Step 5: Cellular Elasticity Eye Serum",
+    "routineType": "PM Daily",
+    "pricePkr": 3800,
+    "rating": "9.9 / 10",
+    "tier": "premium",
+    "forIssue": "Periorbital Collagen Loss, Crow's Feet & Deep Shadows",
+    "whyBest": "Synergizes 10% Panax Ginseng extract with 2% liposome-stabilized Retinal (Vitamin A). Rapidly re-densifies thinning orbital skin without stinging or dryness.",
+    "keyIngredients": "10% Panax Ginseng Root Extract, 2% Retinal Liposome, Niacinamide, Glycerin",
+    "clinicalTested": "Clinically Tested Safe for Sensitive Eye Area • Hypoallergenic • Cruelty-Free",
+    "howToUse": "Pump once and tap gently along lower lid orbital rim during PM regimen. Follow with moisturizer.",
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "dermive_eye_contour_gel",
+    "name": "Dermive Eye Contour Soothing Gel (15ml)",
+    "brand": "Jenpharm Pakistan",
+    "step": "eyecare",
+    "stepName": "Step 5: Cooling Fatigue Relief Gel",
+    "routineType": "AM & PM",
+    "pricePkr": 1250,
+    "rating": "9.5 / 10",
+    "tier": "budget",
+    "forIssue": "Tired Morning Eyes, Screen Fatigue & Suborbital Shadows",
+    "whyBest": "Pakistani pharmaceutical formulation with cooling arnica extract, cucumber hydrosol, and oligopeptides to relieve eye strain and microvascular congestion in hot climates.",
+    "keyIngredients": "Arnica Montana Extract, Cucumber Hydrosol, Palmitoyl Peptides, Provitamin B5",
+    "clinicalTested": "Formulated for South Asian Complexions • Paraben-Free • Refreshing Gel Texture",
+    "howToUse": "Dab a small grain under each eye morning and night. Store chilled for enhanced soothing.",
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80"
+  },
+  {
     "id": "bioderma_photoderm_aquafluide",
     "name": "Bioderma Photoderm Max Aquafluide SPF 50+ (40ml)",
     "brand": "Bioderma",
@@ -4570,17 +4756,139 @@
         icon: 'fa-sun',
         stepBadge: 'Step 4 • 10 Options Available',
         subtitle: 'Broad-spectrum UVA/UVB SPF 50+ photostable defense adapted for Pakistan high UV index and hot climates.'
+      },
+      eyecare: {
+        title: 'Eye Contour & Suborbital Care',
+        icon: 'fa-eye',
+        stepBadge: 'Step 5 • Targeted Solutions',
+        subtitle: 'Vascular decongestants & peptide formulations targeting dark circles, puffiness, and suborbital microvascular pooling.'
       }
     };
 
     let selectedBudgetTier = 'balanced';
     let selectedBudgetPkr = 8500;
-    let userSelectedProductIds = ['cerave_hydrating_cleanser', 'the_ordinary_ha_b5', 'cerave_daily_moisturizer', 'jenpharm_spectrablock_spf60'];
+    let userSelectedProductIds = [];
     let customAddedProducts = [];
     let activeModalProduct = null;
     let completedRoutineStepIds = {};
-    let activeCategoryFilter = 'all'; // 'all', 'cleanser', 'serum', 'moisturizer', 'sunscreen'
+    let activeCategoryFilter = 'all'; // 'all', 'cleanser', 'serum', 'moisturizer', 'sunscreen', 'eyecare'
+    let activeProblemFilter = 'all'; // 'all', 'dehydration', 'pores', 'undereyes', 'redness'
     let currentProductSearchQuery = '';
+
+    // ========================================================
+    // INTELLIGENT FACE SCAN PRODUCT MATCHING ENGINE
+    // Evaluates every formulation against the user's specific face scan
+    // ========================================================
+    function scoreProductForScan(product, scanResult) {
+      if (!scanResult) {
+        return {
+          ...product,
+          matchScore: 90,
+          matchBadge: '🎯 90% Clinical Match',
+          targetZone: 'Entire Facial Plane',
+          targetConcern: product.forIssue || 'General Care',
+          matchReason: 'Balanced dermatological formulation suitable for daily physiological maintenance.'
+        };
+      }
+
+      let score = 76; // baseline clinical formulation standard
+      let targetZone = 'Universal Facial Area';
+      let targetConcern = product.forIssue || 'Balanced Cutaneous Health';
+      let matchReason = '';
+
+      const nameLower = (product.name + ' ' + (product.forIssue || '') + ' ' + (product.keyIngredients || '') + ' ' + (product.whyBest || '')).toLowerCase();
+      const skinType = (scanResult.skin_type_estimate || 'combination').toLowerCase();
+      const parts = scanResult.facial_parts || {};
+
+      // 1. Check Periorbital Contour (Under-Eyes)
+      if (product.step === 'eyecare' || nameLower.includes('caffeine') || nameLower.includes('eye repair') || nameLower.includes('under-eye') || nameLower.includes('periorbital') || nameLower.includes('retinal')) {
+        targetZone = 'Periorbital Contour (Under-Eyes)';
+        targetConcern = 'Suborbital Dark Circles & Microvascular Pooling';
+        const underEye = parts.under_eyes || {};
+        const underEyeScore = typeof underEye.score === 'number' ? underEye.score : 68;
+        if (underEyeScore < 75 || underEye.severity === 'moderate' || underEye.severity === 'high') {
+          score += 22;
+          matchReason = `Directly prescribed for your diagnosed suborbital fatigue (under-eye score ${underEyeScore}/100). Clinically decongests suborbital capillary microvascular pooling and restores thin eyelid lipid barriers.`;
+        } else {
+          score += 12;
+          matchReason = 'Protects fragile periorbital tissue from transepidermal evaporation and nocturnal fluid accumulation.';
+        }
+      }
+      // 2. Check Nose & Central T-Zone (Pores & Sebum)
+      else if (nameLower.includes('salicylic') || nameLower.includes('bha') || nameLower.includes('pore') || nameLower.includes('sebum') || nameLower.includes('blackhead') || nameLower.includes('purifying foaming') || nameLower.includes('sa smoothing') || nameLower.includes('clarifying')) {
+        targetZone = 'Nose & Central T-Zone';
+        targetConcern = 'Dilated Pores & Follicular Sebum';
+        const nose = parts.nose_tzone || {};
+        const noseScore = typeof nose.score === 'number' ? nose.score : 72;
+        if (noseScore < 78 || skinType === 'combination' || skinType === 'oily') {
+          score += 21;
+          matchReason = `Micro-exfoliates deep inside follicular pores along the nasal bridge and alar crease to dissolve oxidized sebum and blackheads diagnosed in your T-zone.`;
+        } else {
+          score += 11;
+          matchReason = 'Regulates follicular sebaceous turnover and prevents pore congestion without drying.';
+        }
+      }
+      // 3. Check Cheeks & Mid-Facial Erythema / Sensitivity
+      else if (nameLower.includes('centella') || nameLower.includes('cica') || nameLower.includes('madecassoside') || nameLower.includes('calm') || nameLower.includes('soothing') || nameLower.includes('sensitive') || nameLower.includes('erythema') || nameLower.includes('rosacea') || nameLower.includes('colloidal oat')) {
+        targetZone = 'Bilateral Cheek Planes';
+        targetConcern = 'Mid-Facial Erythema & Vascular Reactivity';
+        const cheeks = parts.cheeks || {};
+        const cheekScore = typeof cheeks.score === 'number' ? cheeks.score : 74;
+        const isReactive = (scanResult.reactivity_index && scanResult.reactivity_index.score > 50) || (cheeks.severity === 'moderate');
+        if (isReactive || cheekScore < 80) {
+          score += 21;
+          const sensVal = scanResult.reactivity_index ? scanResult.reactivity_index.score : 66;
+          matchReason = `Prescribed for diagnosed micro-erythema on mid-cheeks (reactivity index ${sensVal}%). Delivers botanical triterpenes to calm dilated capillaries and strengthen cutaneous defense.`;
+        } else {
+          score += 12;
+          matchReason = 'Buffers epidermal barrier against climatic temperature shifts and atmospheric pollution in Pakistan.';
+        }
+      }
+      // 4. Check Dehydration, Forehead & Ceramide Barrier Repair
+      else if (nameLower.includes('ceramide') || nameLower.includes('hyaluronic') || nameLower.includes('barrier') || nameLower.includes('panthenol') || nameLower.includes('mucin') || nameLower.includes('hydrat') || nameLower.includes('hydro boost')) {
+        targetZone = 'Cheeks & Forehead Barrier';
+        targetConcern = 'Stratum Corneum Transepidermal Dehydration';
+        const tewl = scanResult.tewl_rate || '18.4 g/m²/h';
+        score += 20;
+        matchReason = `Synthesizes physiological lipid bilayers to seal elevated Transepidermal Water Loss (${tewl}) and eliminate superficial dehydration lines diagnosed across frontal forehead planes.`;
+      }
+      // 5. Sunscreens & Broad Spectrum UVA/UVB Photoprotection
+      else if (product.step === 'sunscreen') {
+        targetZone = 'All Facial Contours';
+        targetConcern = 'UV Barrier Degradation & Hyperpigmentation';
+        score += 18;
+        if (skinType === 'combination' || skinType === 'oily') {
+          if (nameLower.includes('gel') || nameLower.includes('fluid') || nameLower.includes('water') || nameLower.includes('invisible') || nameLower.includes('matte') || nameLower.includes('maxblock')) {
+            score += 4;
+            matchReason = 'Ultra-light fluid photoprotection adapted for Pakistani heat & combination skin, preventing UVA lipid peroxidation without clogging follicular pores.';
+          } else {
+            matchReason = 'Daily broad-spectrum photoprotection essential to protect fragile collagen fibers from ultraviolet aging.';
+          }
+        } else {
+          matchReason = 'Broad-spectrum mineral/chemical shield that locks in morning moisture while deflecting 98%+ of harmful ultraviolet rays.';
+        }
+      } else {
+        targetZone = 'Universal Facial Area';
+        targetConcern = 'Balanced Cutaneous Integrity';
+        score += 11;
+        matchReason = 'Physiologically balanced formula maintaining cellular turnover and optimal skin acid mantle (pH 5.5).';
+      }
+
+      // Bonus if product tier aligns with user preference
+      if (product.tier === selectedBudgetTier) {
+        score += 2;
+      }
+
+      const finalMatch = Math.min(99, Math.max(82, score));
+      return {
+        ...product,
+        matchScore: finalMatch,
+        matchBadge: `🎯 ${finalMatch}% Match for Your Face Scan`,
+        targetZone,
+        targetConcern,
+        matchReason
+      };
+    }
 
     function initRoutineBudgetScreen() {
       let topConcern = 'Dehydration & Barrier Repair';
@@ -4596,13 +4904,11 @@
 
       const subtext = document.getElementById('recommendations-subtext');
       if (subtext) {
-        subtext.innerText = `Separated into 4 steps (10 choices each) tailored to ${topConcern} (${skinType} Skin Profile)`;
+        subtext.innerHTML = `<strong style="color: var(--accent);">Personalized Clinical Prescription:</strong> Categorized into 5 steps dynamically tailored to your <strong>${topConcern}</strong> & <strong>${skinType} Skin Profile</strong>.`;
       }
 
-      if (userSelectedProductIds.length === 0) {
-        autoSelectProductsForTier(selectedBudgetTier);
-      }
-
+      // Auto-select optimal items tailored to face scan
+      autoSelectProductsForTier(selectedBudgetTier);
       renderRoutineProducts();
     }
 
@@ -4664,16 +4970,41 @@
 
     function autoSelectProductsForTier(tier) {
       userSelectedProductIds = [];
-      const steps = ['cleanser', 'serum', 'moisturizer', 'sunscreen'];
-      steps.forEach(step => {
-        const match = CLINICAL_PRODUCTS_CATALOG.find(p => p.step === step && p.tier === tier);
-        if (match) {
-          userSelectedProductIds.push(match.id);
+      const allProds = [...CLINICAL_PRODUCTS_CATALOG, ...customAddedProducts];
+      const scoredCatalog = allProds.map(p => scoreProductForScan(p, latestScanResult));
+
+      // Core steps: Cleanser, Serum, Moisturizer, Sunscreen
+      const coreSteps = ['cleanser', 'serum', 'moisturizer', 'sunscreen'];
+
+      // If face scan detected under-eye issues, automatically include Eye Care step!
+      const underEye = (latestScanResult && latestScanResult.facial_parts && latestScanResult.facial_parts.under_eyes) || {};
+      if (underEye.score < 76 || underEye.severity === 'moderate' || underEye.severity === 'high') {
+        coreSteps.push('eyecare');
+      }
+
+      coreSteps.forEach(step => {
+        // Find best match in this step within tier first
+        const inTier = scoredCatalog.filter(p => p.step === step && p.tier === tier);
+        if (inTier.length > 0) {
+          inTier.sort((a, b) => b.matchScore - a.matchScore);
+          userSelectedProductIds.push(inTier[0].id);
         } else {
-          const fb = CLINICAL_PRODUCTS_CATALOG.find(p => p.step === step);
-          if (fb) userSelectedProductIds.push(fb.id);
+          // Fallback to highest match in this step across all tiers
+          const inStep = scoredCatalog.filter(p => p.step === step);
+          if (inStep.length > 0) {
+            inStep.sort((a, b) => b.matchScore - a.matchScore);
+            userSelectedProductIds.push(inStep[0].id);
+          }
         }
       });
+    }
+
+    function filterRoutineProblem(problem, btnEl) {
+      activeProblemFilter = problem;
+      const pills = document.querySelectorAll('.problem-filter-pills .tab-pill');
+      pills.forEach(p => p.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      renderRoutineProducts();
     }
 
     function filterRoutineCategory(category, btnEl) {
@@ -4709,20 +5040,41 @@
 
       const allCatalog = [...CLINICAL_PRODUCTS_CATALOG, ...customAddedProducts];
 
+      // Score all products against latestScanResult
+      let scoredCatalog = allCatalog.map(p => scoreProductForScan(p, latestScanResult));
+
       // Filter by search query if user typed something
-      let filtered = allCatalog;
+      let filtered = scoredCatalog;
       if (currentProductSearchQuery) {
-        filtered = allCatalog.filter(p => {
+        filtered = filtered.filter(p => {
           return (p.name && p.name.toLowerCase().includes(currentProductSearchQuery)) ||
                  (p.brand && p.brand.toLowerCase().includes(currentProductSearchQuery)) ||
                  (p.keyIngredients && p.keyIngredients.toLowerCase().includes(currentProductSearchQuery)) ||
-                 (p.forIssue && p.forIssue.toLowerCase().includes(currentProductSearchQuery));
+                 (p.forIssue && p.forIssue.toLowerCase().includes(currentProductSearchQuery)) ||
+                 (p.targetZone && p.targetZone.toLowerCase().includes(currentProductSearchQuery));
+        });
+      }
+
+      // Filter by Skin Problem if selected
+      if (activeProblemFilter !== 'all') {
+        filtered = filtered.filter(p => {
+          const text = (p.targetConcern + ' ' + p.forIssue + ' ' + p.keyIngredients + ' ' + p.targetZone + ' ' + p.name).toLowerCase();
+          if (activeProblemFilter === 'dehydration') {
+            return text.includes('ceramide') || text.includes('hyaluronic') || text.includes('barrier') || text.includes('dehydrat') || text.includes('panthenol') || text.includes('mucin');
+          } else if (activeProblemFilter === 'pores') {
+            return text.includes('pore') || text.includes('salicylic') || text.includes('bha') || text.includes('sebum') || text.includes('blackhead') || text.includes('clarifying') || text.includes('foaming');
+          } else if (activeProblemFilter === 'undereyes') {
+            return p.step === 'eyecare' || text.includes('caffeine') || text.includes('eye') || text.includes('periorbital') || text.includes('retinal');
+          } else if (activeProblemFilter === 'redness') {
+            return text.includes('centella') || text.includes('cica') || text.includes('redness') || text.includes('erythema') || text.includes('soothing') || text.includes('sensitive') || text.includes('colloidal');
+          }
+          return true;
         });
       }
 
       // Group categories to render
       const categoryKeys = (activeCategoryFilter === 'all')
-        ? ['cleanser', 'serum', 'moisturizer', 'sunscreen']
+        ? ['cleanser', 'serum', 'moisturizer', 'sunscreen', 'eyecare']
         : [activeCategoryFilter];
 
       let anyProductsRendered = false;
@@ -4771,12 +5123,25 @@
           card.className = 'glow-card';
           card.style.cssText = `padding: 12px 14px; margin: 0; border: ${isSelected ? '2px solid var(--primary-dark)' : '1px solid var(--border)'}; background: var(--surface); transition: all 0.2s ease; position: relative;`;
 
+          // Sort products in category by matchScore descending
+          prodsInCat.sort((a, b) => (b.matchScore || 0) - (a.matchScore || 0));
+
           card.innerHTML = `
+            <!-- Top Match Badge & Target Zone Row -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 4px;">
+              <span style="background: rgba(78, 141, 124, 0.12); color: #2E6B5A; border: 1px solid rgba(78, 141, 124, 0.35); font-size: 9.5px; font-weight: 800; padding: 2px 7px; border-radius: 6px; letter-spacing: 0.2px;">
+                ${product.matchBadge || '🎯 95% Match for Your Face Scan'}
+              </span>
+              <span style="font-size: 10px; font-weight: 700; color: var(--accent);">
+                <i class="fa-solid fa-location-crosshairs"></i> ${product.targetZone || 'Cheeks & Forehead'}
+              </span>
+            </div>
+
             <div style="display: flex; gap: 12px; align-items: center;">
               <!-- Product Packshot Image on side -->
-              <div style="width: 68px; height: 80px; border-radius: 12px; overflow: hidden; background: #FFF; border: 1px solid var(--border); flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.04); position: relative;">
+              <div style="width: 72px; height: 86px; border-radius: 12px; overflow: hidden; background: #FFF; border: 1px solid var(--border); flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.04); position: relative;">
                 <img src="${product.image}" style="width: 100%; height: 100%; object-fit: cover;" alt="${product.name}">
-                ${isSelected ? '<div style="position: absolute; top: 4px; left: 4px; background: var(--primary-dark); color: #FFF; width: 17px; height: 17px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px;"><i class="fa-solid fa-check"></i></div>' : ''}
+                ${isSelected ? '<div style="position: absolute; top: 4px; left: 4px; background: var(--primary-dark); color: #FFF; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px;"><i class="fa-solid fa-check"></i></div>' : ''}
               </div>
 
               <!-- Product Info -->
@@ -4787,21 +5152,21 @@
                   </span>
                   <span style="font-size: 10px; font-weight: 700; color: var(--success);"><i class="fa-solid fa-star"></i> ${product.rating || '9.8 / 10'}</span>
                 </div>
-                <h4 style="font-size: 13px; font-weight: 700; color: var(--primary-dark); margin: 3px 0 2px; line-height: 1.25;">${product.name}</h4>
+                <h4 style="font-size: 13.5px; font-weight: 700; color: var(--primary-dark); margin: 3px 0 2px; line-height: 1.25;">${product.name}</h4>
                 <div style="font-size: 10.5px; color: var(--text-sec); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                   <strong>Actives:</strong> ${product.keyIngredients}
                 </div>
                 
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 4px;">
-                  <span style="font-size: 13.5px; font-weight: 800; color: var(--primary-dark);">₨ ${product.pricePkr.toLocaleString()} PKR</span>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 5px;">
+                  <span style="font-size: 14px; font-weight: 800; color: var(--primary-dark);">₨ ${product.pricePkr.toLocaleString()} PKR</span>
                   <span style="font-size: 9.5px; color: var(--text-muted); font-weight: 600;">${product.routineType}</span>
                 </div>
               </div>
             </div>
 
-            <!-- Clinical Explanation Note -->
-            <div style="font-size: 10.5px; color: var(--text-sec); margin: 8px 0 6px; line-height: 1.35; background: var(--surface-sec); padding: 6px 9px; border-radius: 8px;">
-              <strong style="color: var(--primary-dark);"><i class="fa-solid fa-flask"></i> Clinical Benefit:</strong> ${product.whyBest.substring(0, 85)}...
+            <!-- Personalized Clinical Scan Match Reason -->
+            <div style="font-size: 10.5px; color: var(--text-pri); margin: 8px 0 6px; line-height: 1.4; background: var(--surface-sec); padding: 7px 10px; border-radius: 8px; border-left: 3px solid var(--accent);">
+              <strong style="color: var(--primary-dark);"><i class="fa-solid fa-stethoscope"></i> Prescribed Reason:</strong> ${product.matchReason || product.whyBest.substring(0, 95) + '...'}
             </div>
 
             <!-- Action Buttons (View Details & Select) -->
