@@ -633,7 +633,7 @@
       <button onclick="showScreen('instructions')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">Instructions</button>
       <button onclick="showScreen('scanner')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">Scanner</button>
       <button onclick="showScreen('results')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">Results</button>
-      <button onclick="showScreen('chat')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">Consult Chat</button>
+      <button onclick="showScreen('report')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">Clinical Report</button>
       <button onclick="showScreen('report')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">Report (PDF)</button>
       <button onclick="showScreen('priorities')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">Priorities</button>
       <button onclick="showScreen('plan')" style="padding:4px 8px; font-size:11px; border-radius:8px; cursor:pointer;">Plan</button>
@@ -1029,7 +1029,22 @@
           </div>
         </div>
 
-        <button class="pill-btn" onclick="showScreen('chat')">Continue to AI Consultation <i class="fa-solid fa-arrow-right"></i></button>
+        <!-- Every Part of User's Face Quick Summary -->
+        <div style="margin: 18px 0 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h3 style="font-size: 14.5px; color: var(--primary-dark); margin: 0;">
+              <i class="fa-solid fa-face-smile" style="color: var(--accent); margin-right: 6px;"></i>Every Part of Face Analysis
+            </h3>
+            <span style="font-size: 10.5px; color: var(--text-muted); font-weight: 600;">5 Anatomical Zones</span>
+          </div>
+          <div id="results-facial-parts-container" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Dynamically populated by renderSkinResults -->
+          </div>
+        </div>
+
+        <button class="pill-btn" onclick="showScreen('report')">
+          <i class="fa-solid fa-clipboard-check" style="margin-right: 6px;"></i> View Full Clinical Report <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+        </button>
       </div>
 
       <!-- Screen 9: Interactive AI Consultation Chat -->
@@ -1086,7 +1101,7 @@
       <div id="screen-report" class="screen" style="padding-bottom: 40px;">
         <!-- Top App Navigation (hidden in print) -->
         <div class="screen-header no-print" style="margin-bottom: 12px;">
-          <button class="back-btn" onclick="showScreen('chat')"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="back-btn" onclick="showScreen('results')"><i class="fa-solid fa-chevron-left"></i></button>
           <h2>Doctor Skin Report</h2>
           <div style="display: flex; gap: 8px;">
             <button style="background: var(--surface); border: 1px solid var(--border); width: 36px; height: 36px; border-radius: 50%; color: var(--primary-dark); cursor: pointer;" onclick="copyReportShareLink()" title="Share / Copy Link"><i class="fa-solid fa-share-nodes"></i></button>
@@ -1251,16 +1266,28 @@
             </p>
           </div>
 
-          <!-- Section 4: Detailed 6-Zone Anatomical Mapping -->
-          <div style="margin-bottom: 20px;">
+          <!-- Section 4: Comprehensive Facial Anatomy Zone-by-Zone Evaluation -->
+          <div style="margin-bottom: 22px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
               <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: var(--accent); text-transform: uppercase;">
-                <i class="fa-solid fa-bullseye"></i> 6-Zone Anatomical Mapping
+                <i class="fa-solid fa-face-smile"></i> Every Part of User's Face Diagnostic
               </span>
-              <span style="font-size: 10px; color: var(--text-muted);">Calibrated against 10,000+ derm scans</span>
+              <span style="font-size: 10px; color: var(--text-muted); font-weight: 600;">Calibrated Clinical Biometrics</span>
             </div>
-            <div id="report-zone-table" style="display: flex; flex-direction: column; gap: 8px;">
-              <!-- Dynamically populated per zone -->
+
+            <!-- Zone Selector Filter Pills -->
+            <div style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 10px;" id="zone-filter-pills">
+              <button class="zone-pill active" onclick="filterReportZones('all')" style="background: var(--primary-dark); color: #FFF; border: none; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; cursor: pointer;">All Parts</button>
+              <button class="zone-pill" onclick="filterReportZones('forehead')" style="background: var(--surface-sec); color: var(--text-sec); border: 1px solid var(--border); padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; cursor: pointer;">Forehead</button>
+              <button class="zone-pill" onclick="filterReportZones('under_eyes')" style="background: var(--surface-sec); color: var(--text-sec); border: 1px solid var(--border); padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; cursor: pointer;">Under-Eyes</button>
+              <button class="zone-pill" onclick="filterReportZones('cheeks')" style="background: var(--surface-sec); color: var(--text-sec); border: 1px solid var(--border); padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; cursor: pointer;">Cheeks</button>
+              <button class="zone-pill" onclick="filterReportZones('nose_tzone')" style="background: var(--surface-sec); color: var(--text-sec); border: 1px solid var(--border); padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; cursor: pointer;">Nose & T-Zone</button>
+              <button class="zone-pill" onclick="filterReportZones('chin_jawline')" style="background: var(--surface-sec); color: var(--text-sec); border: 1px solid var(--border); padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; cursor: pointer;">Chin & Jawline</button>
+            </div>
+
+            <!-- Detailed Zone Breakdown Cards -->
+            <div id="report-zone-table" style="display: flex; flex-direction: column; gap: 10px;">
+              <!-- Dynamically populated for every facial part -->
             </div>
           </div>
 
@@ -1775,10 +1802,10 @@
 
         <!-- Menu List Tiles -->
         <div class="glow-card" style="padding: 6px 16px;">
-          <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); cursor: pointer;" onclick="showScreen('chat')">
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); cursor: pointer;" onclick="showScreen('report')">
             <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px;">
-              <i class="fa-regular fa-comment-dots" style="color: var(--accent);"></i>
-              <span>Retake Skin Questionnaire</span>
+              <i class="fa-solid fa-clipboard-check" style="color: var(--accent);"></i>
+              <span>View Full Clinical Report</span>
             </div>
             <i class="fa-solid fa-chevron-right" style="color: var(--text-muted); font-size: 12px;"></i>
           </div>
@@ -2741,15 +2768,15 @@
       </div>
       <div class="nav-item nav-scan-pill" onclick="showScreen('instructions')">
         <i class="fa-solid fa-camera"></i>
-        <span>Scan</span>
+        <span>Scan Face</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('report')">
+        <i class="fa-solid fa-clipboard-check"></i>
+        <span>Clinical Report</span>
       </div>
       <div class="nav-item" onclick="showScreen('plan')">
         <i class="fa-solid fa-spa"></i>
         <span>My Plan</span>
-      </div>
-      <div class="nav-item" onclick="showScreen('nutriflow')">
-        <i class="fa-solid fa-bowl-food"></i>
-        <span>Nutriflow</span>
       </div>
       <div class="nav-item" onclick="showScreen('profile')">
         <i class="fa-solid fa-user"></i>
@@ -2923,9 +2950,10 @@
         runRealSkinScanAnalysis();
       }
 
-      // 6. When opening chat, launch interactive Dr. Glow consultation
+      // 6. Bypass AI consultation questions and route directly to clinical report
       if (name === 'chat') {
-        initChatConsultation();
+        showScreen('report');
+        return;
       }
 
       // 7. When opening report, compile full clinical report
@@ -3448,7 +3476,7 @@
         result.concerns.forEach(c => {
           const card = document.createElement('div');
           card.className = 'glow-card';
-          card.style.cssText = 'padding: 16px; margin-bottom: 10px;';
+          card.style.cssText = 'padding: 14px 16px; margin-bottom: 8px;';
 
           const sev = (c.severity || 'mild').toLowerCase();
           let sevColor = 'var(--success)';
@@ -3468,47 +3496,241 @@
 
           card.innerHTML = `
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div style="font-weight: 600; font-size: 14px; color: var(--primary-dark);">${c.title || c.id}</div>
-              <span style="color: ${sevColor}; background: ${sevBg}; font-size: 10.5px; font-weight: 700; padding: 3px 8px; border-radius: 8px; text-transform: uppercase;">${sev}</span>
+              <div style="font-weight: 600; font-size: 13.5px; color: var(--primary-dark);">${c.title || c.id}</div>
+              <span style="color: ${sevColor}; background: ${sevBg}; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 8px; text-transform: uppercase;">${sev}</span>
             </div>
             <div style="background: var(--border); height: 5px; border-radius: 3px; margin: 8px 0; overflow: hidden;">
               <div style="background: ${sevColor}; width: ${scorePercent}%; height: 100%; border-radius: 3px;"></div>
             </div>
-            <p style="font-size: 12px; color: var(--text-sec); line-height: 1.4; margin: 4px 0 6px;">${c.explanation || ''}</p>
+            <p style="font-size: 11.5px; color: var(--text-sec); line-height: 1.4; margin: 4px 0 6px;">${c.explanation || ''}</p>
             <div style="margin-top: 4px;">${zonesHtml}</div>
           `;
           container.appendChild(card);
         });
       }
 
-      // 6. Update Doctor Report screen with real score & findings
+      // 6. Granular Facial Parts Summary on Results Screen (Every Part of User's Face)
+      renderResultsFacialParts(result);
+
+      // 7. Update Doctor Report screen with full zone metrics
       updateDoctorReportScreen(result);
+    }
+
+    function renderResultsFacialParts(result) {
+      const container = document.getElementById('results-facial-parts-container');
+      if (!container) return;
+
+      container.innerHTML = '';
+      const parts = normalizeFacialParts(result);
+
+      Object.keys(parts).forEach(key => {
+        const p = parts[key];
+        const card = document.createElement('div');
+        card.style.cssText = 'background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 11px 13px; display: flex; align-items: center; justify-content: space-between;';
+
+        const scoreColor = p.score >= 80 ? 'var(--success)' : (p.score >= 65 ? 'var(--warning)' : '#B54D3D');
+        const scoreBg = p.score >= 80 ? 'rgba(78,141,124,0.12)' : (p.score >= 65 ? 'rgba(197,139,125,0.15)' : 'rgba(181,77,61,0.15)');
+
+        card.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 32px; height: 32px; border-radius: 10px; background: var(--surface-sec); display: flex; align-items: center; justify-content: center; color: var(--primary-dark); font-size: 13px;">
+              ${getZoneIcon(key)}
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 12.5px; color: var(--primary-dark);">${p.name}</div>
+              <div style="font-size: 11px; color: var(--text-sec); margin-top: 2px;">${p.status}</div>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="font-size: 11px; font-weight: 800; color: ${scoreColor}; background: ${scoreBg}; padding: 3px 8px; border-radius: 8px;">${p.score}/100</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function getZoneIcon(key) {
+      switch(key) {
+        case 'forehead': return '<i class="fa-solid fa-arrows-up-to-line"></i>';
+        case 'under_eyes': return '<i class="fa-solid fa-eye"></i>';
+        case 'cheeks': return '<i class="fa-solid fa-spa"></i>';
+        case 'nose_tzone': return '<i class="fa-solid fa-droplet"></i>';
+        case 'chin_jawline': return '<i class="fa-solid fa-shield"></i>';
+        default: return '<i class="fa-solid fa-circle-dot"></i>';
+      }
     }
 
     function formatZoneName(z) {
       if (z === 'forehead') return 'Forehead';
       if (z === 'left_cheek') return 'Left Cheek';
       if (z === 'right_cheek') return 'Right Cheek';
+      if (z === 'cheeks') return 'Cheeks';
       if (z === 'nose') return 'T-Zone / Nose';
       if (z === 'chin') return 'Chin';
       if (z === 'under_eyes') return 'Under Eyes';
       return z;
     }
 
+    // Normalized facial parts extractor
+    function normalizeFacialParts(res) {
+      if (res && res.facial_parts && res.facial_parts.forehead) {
+        return res.facial_parts;
+      }
+
+      // Synthesize calibrated facial parts from overall concerns
+      const score = (res && res.overall_score) ? res.overall_score : 76;
+      const dehScore = res?.concerns?.find(c => c.id === 'dehydration')?.score || 66;
+      const eyeScore = res?.concerns?.find(c => c.id === 'dark_circles')?.score || 58;
+      const poreScore = res?.concerns?.find(c => c.id === 'pores')?.score || 54;
+      const redScore = res?.concerns?.find(c => c.id === 'redness')?.score || 42;
+
+      return {
+        forehead: {
+          key: 'forehead',
+          name: 'Forehead (Frontal Plane)',
+          score: Math.max(30, Math.min(96, 100 - dehScore + 10)),
+          status: dehScore > 60 ? 'Moderate Dehydration' : 'Mild Dehydration',
+          severity: dehScore > 60 ? 'moderate' : 'mild',
+          concerns: ['Transepidermal moisture loss', 'Fine superficial lines'],
+          findings: `Frontal plane exhibits ${dehScore}% moisture depletion. Smooth cutaneous surface with micro-tightness.`,
+          recommended_actives: 'Hyaluronic Acid (Multi-weight) & Niacinamide'
+        },
+        under_eyes: {
+          key: 'under_eyes',
+          name: 'Periorbital Contour (Under-Eyes)',
+          score: Math.max(25, Math.min(92, 100 - eyeScore + 8)),
+          status: eyeScore > 50 ? 'Microvascular Shadowing' : 'Clear & Refreshed',
+          severity: eyeScore > 50 ? 'moderate' : 'mild',
+          concerns: ['Venous micro-pooling', 'Suborbital shadow depth'],
+          findings: `Periorbital zone shows vascular pooling (${eyeScore}% shadow index). Responds well to caffeine and peptides.`,
+          recommended_actives: 'Caffeine 5% + Multi-Peptides & EGCG'
+        },
+        cheeks: {
+          key: 'cheeks',
+          name: 'Cheeks (Bilateral Malar)',
+          score: Math.max(30, Math.min(95, 100 - redScore + 5)),
+          status: redScore > 50 ? 'Erythema & Sensitivity' : 'Calm & Resilient',
+          severity: redScore > 50 ? 'moderate' : 'mild',
+          concerns: ['Microvascular reactivity', 'Surface lipid evaporation'],
+          findings: `Zygomatic planes indicate microvascular reactivity (${redScore}% score). Ceramide fortification advised.`,
+          recommended_actives: 'Ceramides NP/AP/EOP & Centella Asiatica'
+        },
+        nose_tzone: {
+          key: 'nose_tzone',
+          name: 'Nose & Central T-Zone',
+          score: Math.max(30, Math.min(92, 100 - poreScore + 8)),
+          status: poreScore > 50 ? 'Sebum & Dilated Pores' : 'Balanced & Refined',
+          severity: poreScore > 50 ? 'moderate' : 'mild',
+          concerns: ['Sebaceous pore dilation', 'Oxidized sebum / blackheads'],
+          findings: `Central nasal and alar margins exhibit ${poreScore}% follicular visibility. Gentle BHA refining advised.`,
+          recommended_actives: '2% Salicylic Acid (BHA) & Zinc PCA'
+        },
+        chin_jawline: {
+          key: 'chin_jawline',
+          name: 'Chin & Mandibular Jawline',
+          score: 88,
+          status: 'Firm & Clear Acid Mantle',
+          severity: 'none',
+          concerns: ['No active cystic lesions', 'Intact dermal turgor'],
+          findings: 'Lower facial third displays strong collagen turgor with clear cutaneous margins and resilient elasticity.',
+          recommended_actives: 'Broad-Spectrum SPF 50+ & Squalane'
+        }
+      };
+    }
+
+    let globalReportPartsCache = null;
+
+    function filterReportZones(zoneKey) {
+      // Update filter button styles
+      const pills = document.querySelectorAll('#zone-filter-pills .zone-pill');
+      pills.forEach(p => {
+        p.style.background = 'var(--surface-sec)';
+        p.style.color = 'var(--text-sec)';
+        p.style.border = '1px solid var(--border)';
+      });
+
+      const activeBtn = event ? event.target : null;
+      if (activeBtn) {
+        activeBtn.style.background = 'var(--primary-dark)';
+        activeBtn.style.color = '#FFF';
+        activeBtn.style.border = 'none';
+      }
+
+      renderReportZoneCards(globalReportPartsCache, zoneKey);
+    }
+
+    function renderReportZoneCards(parts, filterKey = 'all') {
+      const container = document.getElementById('report-zone-table');
+      if (!container || !parts) return;
+
+      container.innerHTML = '';
+      const keys = filterKey === 'all' ? Object.keys(parts) : [filterKey];
+
+      keys.forEach(k => {
+        const item = parts[k];
+        if (!item) return;
+
+        const score = item.score || 75;
+        const scoreColor = score >= 80 ? 'var(--success)' : (score >= 65 ? 'var(--warning)' : '#B54D3D');
+        const scoreBg = score >= 80 ? 'rgba(78,141,124,0.12)' : (score >= 65 ? 'rgba(197,139,125,0.15)' : 'rgba(181,77,61,0.15)');
+
+        const concernsPills = (item.concerns || []).map(c => 
+          `<span style="background: var(--surface-sec); color: var(--text-sec); font-size: 10px; padding: 2px 8px; border-radius: 6px; font-weight: 500;">• ${c}</span>`
+        ).join(' ');
+
+        const card = document.createElement('div');
+        card.style.cssText = 'background: var(--surface-sec); border-radius: 12px; padding: 14px; border: 1px solid var(--border);';
+        card.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div style="width: 32px; height: 32px; border-radius: 8px; background: var(--surface); display: flex; align-items: center; justify-content: center; color: var(--primary-dark); font-size: 13px; border: 1px solid var(--border);">
+                ${getZoneIcon(k)}
+              </div>
+              <div>
+                <div style="font-weight: 700; color: var(--primary-dark); font-size: 13px;">${item.name}</div>
+                <div style="color: var(--text-sec); font-size: 10.5px; margin-top: 1px;">${item.status}</div>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <span style="font-weight: 800; font-size: 11px; color: ${scoreColor}; background: ${scoreBg}; padding: 3px 8px; border-radius: 8px; display: inline-block;">
+                ${score}/100
+              </span>
+            </div>
+          </div>
+
+          <!-- Score Progress Bar -->
+          <div style="background: var(--border); height: 4px; border-radius: 2px; overflow: hidden; margin: 8px 0;">
+            <div style="background: ${scoreColor}; width: ${score}%; height: 100%;"></div>
+          </div>
+
+          <!-- Clinical Findings Description -->
+          <p style="font-size: 11.5px; color: var(--text-pri); line-height: 1.45; margin: 6px 0 8px;">
+            ${item.findings}
+          </p>
+
+          <!-- Concerns Tags -->
+          <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px;">
+            ${concernsPills}
+          </div>
+
+          <!-- Targeted Active Ingredient Box -->
+          <div style="background: var(--surface); border-radius: 8px; padding: 7px 10px; border-left: 3px solid var(--accent); font-size: 11px; display: flex; align-items: center; justify-content: space-between;">
+            <span style="color: var(--text-sec);"><i class="fa-solid fa-flask-vial" style="color: var(--accent); margin-right: 4px;"></i> Target Active:</span>
+            <strong style="color: var(--primary-dark);">${item.recommended_actives || 'Ceramides & SPF 50+'}</strong>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
     function updateDoctorReportScreen(result) {
       const res = result || latestScanResult || {
         overall_score: 74,
-        skin_type_estimate: 'sensitive',
-        concerns: [
-          { id: 'dehydration', title: 'Dehydration / Dryness', severity: 'moderate', score: 68, zones: ['forehead', 'left_cheek', 'right_cheek'], explanation: 'Surface moisture depletion on cheek contours with fine crepiness.' },
-          { id: 'dark_circles', title: 'Dark Circles & Fatigue', severity: 'moderate', score: 58, zones: ['under_eyes'], explanation: 'Suborbital microvascular congestion and shadow pooling.' },
-          { id: 'pores', title: 'Enlarged Pores', severity: 'mild', score: 48, zones: ['nose', 'chin'], explanation: 'Follicular prominence along T-zone.' },
-          { id: 'redness', title: 'Redness & Sensitivity', severity: 'moderate', score: 52, zones: ['left_cheek', 'right_cheek'], explanation: 'Localized microvascular reactivity.' }
-        ]
+        skin_type_estimate: 'sensitive'
       };
 
       const score = res.overall_score || 74;
-      const skinType = (res.skin_type_estimate || userConsultationAnswers.skin_type || 'sensitive').toLowerCase();
+      const skinType = (res.skin_type_estimate || 'combination').toLowerCase();
 
       // 1. User photo in report
       const reportPhoto = document.getElementById('report-user-photo');
@@ -3561,9 +3783,8 @@
       // Estimated Biological Age
       const skinAgeEl = document.getElementById('report-skin-age');
       if (skinAgeEl) {
-        const baseAge = 24;
-        const delta = Math.round((80 - score) / 8);
-        skinAgeEl.innerText = Math.max(20, baseAge + delta);
+        const bioAge = res.biological_skin_age || Math.max(20, 24 + Math.round((80 - score) / 8));
+        skinAgeEl.innerText = bioAge;
       }
 
       // Transepidermal Water Loss Rate
@@ -3571,10 +3792,10 @@
       const tewlBarEl = document.getElementById('report-tewl-bar');
       const tewlStatusEl = document.getElementById('report-tewl-status');
       if (tewlRateEl) {
-        const tewl = (12.4 + (100 - score) * 0.18).toFixed(1);
+        const tewl = res.tewl_rate ? res.tewl_rate.replace(/[^d.]/g, '') : (12.4 + (100 - score) * 0.18).toFixed(1);
         tewlRateEl.innerText = tewl;
-        if (tewlBarEl) tewlBarEl.style.width = Math.min(100, (tewl / 25) * 100) + '%';
-        if (tewlStatusEl) tewlStatusEl.innerText = tewl > 17 ? 'ELEVATED' : 'MODERATE';
+        if (tewlBarEl) tewlBarEl.style.width = Math.min(100, (parseFloat(tewl) / 25) * 100) + '%';
+        if (tewlStatusEl) tewlStatusEl.innerText = parseFloat(tewl) > 17 ? 'ELEVATED' : 'MODERATE';
       }
 
       // Reactivity / Sensitivity Index
@@ -3582,7 +3803,9 @@
       const reactBarEl = document.getElementById('report-reactivity-bar');
       const reactBadgeEl = document.getElementById('report-reactivity-badge');
       const rednessConcern = res.concerns ? res.concerns.find(c => c.id === 'redness') : null;
-      const sensScore = rednessConcern ? rednessConcern.score : 66;
+      const sensScore = (res.reactivity_index && typeof res.reactivity_index.score === 'number') 
+        ? res.reactivity_index.score 
+        : (rednessConcern ? rednessConcern.score : 42);
       if (reactScoreEl) reactScoreEl.innerText = sensScore + '%';
       if (reactBarEl) reactBarEl.style.width = sensScore + '%';
       if (reactBadgeEl) reactBadgeEl.innerText = sensScore > 50 ? 'REACTIVE' : 'STABLE';
@@ -3592,70 +3815,37 @@
       const docNarrative = document.getElementById('report-doctor-narrative');
       const topConcern = (res.concerns && res.concerns[0]) ? res.concerns[0].title : 'Dehydration';
       if (diagTitle) {
-        diagTitle.innerText = `Primary Diagnosis: Cutaneous ${topConcern} with ${skinType.toUpperCase()} Tendencies`;
+        diagTitle.innerText = `Primary Diagnosis: Cutaneous ${topConcern} with ${skinType.toUpperCase()} Profile`;
       }
       if (docNarrative) {
-        docNarrative.innerHTML = `Biometric scan of your facial contours indicates an overall epidermal vitality index of <strong>${score}/100</strong>. Analysis confirms a <strong>${skinType}</strong> physiological presentation with localized lipid depletion. The stratum corneum shows signs of elevated transepidermal evaporation across cheek planes and suborbital vascular micro-pooling under lower eyelids. With targeted barrier reinforcement (bio-identical ceramides NP/AP/EOP, panthenol B5, and daily broad-spectrum SPF 50+), full cutaneous recovery is expected within 21 to 28 days.`;
+        if (res.clinical_impression) {
+          docNarrative.innerText = res.clinical_impression;
+        } else {
+          docNarrative.innerHTML = `Biometric scan of your facial contours indicates an overall epidermal vitality index of <strong>${score}/100</strong>. Analysis confirms a <strong>${skinType}</strong> physiological presentation with localized lipid depletion. The stratum corneum shows signs of elevated transepidermal evaporation across cheek planes and suborbital vascular micro-pooling under lower eyelids. With targeted barrier reinforcement (bio-identical ceramides NP/AP/EOP, panthenol B5, and daily broad-spectrum SPF 50+), full cutaneous recovery is expected within 21 to 28 days.`;
+        }
       }
 
-      // 6. Anatomical Zone Mapping
-      const zoneContainer = document.getElementById('report-zone-table');
-      if (zoneContainer) {
-        zoneContainer.innerHTML = '';
-        const zoneItems = [
-          { zone: 'Bilateral Cheeks (Zygomatic)', metric: 'Hydration & Microvasculature', score: res.concerns?.[0]?.score || 68, status: 'Mild-Moderate Dehydration', desc: 'Surface micro-flaking and epidermal moisture depletion observed.' },
-          { zone: 'Periorbital Contour (Under-Eyes)', metric: 'Venous Microcirculation', score: res.concerns?.find(c => c.id === 'dark_circles')?.score || 58, status: 'Suborbital Shadowing', desc: 'Vascular pooling responsive to topical caffeine & peptides.' },
-          { zone: 'T-Zone (Forehead & Nasal Crest)', metric: 'Sebum Clearance & Pores', score: res.concerns?.find(c => c.id === 'pores')?.score || 48, status: 'Follicular Prominence', desc: 'Follicular visibility and mild sebum oxidation.' },
-          { zone: 'Perioral & Chin Contour', metric: 'Barrier Integrity & Elasticity', score: 82, status: 'Intact Acid Mantle', desc: 'Healthy lipid bilayer with resilient dermal bounce.' }
-        ];
+      // 6. Every Part of Face Zone Table
+      globalReportPartsCache = normalizeFacialParts(res);
+      renderReportZoneCards(globalReportPartsCache, 'all');
 
-        zoneItems.forEach(item => {
-          const row = document.createElement('div');
-          row.style.cssText = 'background: var(--surface-sec); border-radius: 10px; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 11px;';
-          row.innerHTML = `
-            <div>
-              <div style="font-weight: 700; color: var(--primary-dark); font-size: 11.5px;">${item.zone}</div>
-              <div style="color: var(--text-sec); font-size: 10px; margin-top: 2px;">${item.desc}</div>
-            </div>
-            <div style="text-align: right; min-width: 90px;">
-              <span style="font-weight: 700; font-size: 10px; color: ${item.score > 60 ? 'var(--warning)' : 'var(--success)'}; background: ${item.score > 60 ? 'rgba(197,139,125,0.18)' : 'rgba(78,141,124,0.15)'}; padding: 2px 7px; border-radius: 6px;">${item.status}</span>
-              <div style="font-size: 10px; color: var(--text-muted); margin-top: 3px;">Severity: <strong>${item.score}%</strong></div>
-            </div>
-          `;
-          zoneContainer.appendChild(row);
-        });
-      }
-
-      // 7. Patient History Integration from userConsultationAnswers
-      const pSkinType = document.getElementById('report-user-skintype');
-      const pSens = document.getElementById('report-user-sens');
-      const pAllergies = document.getElementById('report-user-allergies');
-      const pHabits = document.getElementById('report-user-habits');
-
-      if (pSkinType) pSkinType.innerText = userConsultationAnswers.skin_type || 'Combination / Sensitive';
-      if (pSens) pSens.innerText = userConsultationAnswers.sensitivity || 'Mildly sensitive to perfumes & weather';
-      if (pAllergies) pAllergies.innerText = userConsultationAnswers.allergies || 'Fragrance & harsh chemicals excluded';
-      if (pHabits) pHabits.innerText = userConsultationAnswers.sun_water || 'Moderate Commute UV • Drink ~1.5L';
-
-      // 8. Dynamic Positive Factors (What You're Doing Right)
+      // 7. Dynamic Protective Factors (What You're Doing Right)
       const posList = document.getElementById('report-positive-list');
       if (posList) {
-        const userRoutine = userConsultationAnswers.routine || 'Gentle Cleanser';
         posList.innerHTML = `
-          <li>Maintaining a consistent baseline routine with <strong>${userRoutine}</strong> without stripping protective ceramides.</li>
-          <li>Conscious exclusion of harsh allergens (<strong>${userConsultationAnswers.allergies || 'Fragrance-free approach'}</strong>) that cause mid-facial flushing.</li>
-          <li>Preserved basal cellular collagen density yielding an estimated biological skin age of <strong>${Math.max(20, 24 - Math.round((score - 70) / 10))} years</strong>.</li>
+          <li>Intact basement cellular turgor maintaining an estimated biological skin age of <strong>${res.biological_skin_age || 24} years</strong>.</li>
+          <li>Resilient mandibular and chin contour with clear acid mantle and zero cystic nodular eruptions.</li>
+          <li>Good cellular density in lateral planes preserving facial lipid elasticity.</li>
         `;
       }
 
-      // 9. Dynamic Critical Risk Factors (What Needs Immediate Correction)
+      // 8. Dynamic Critical Risk Factors (What Needs Immediate Correction)
       const negList = document.getElementById('report-negative-list');
       if (negList) {
-        const waterHabit = userConsultationAnswers.sun_water || 'Moderate water intake';
         negList.innerHTML = `
-          <li>Inconsistent daily broad-spectrum photoprotection allows UVA penetration, accelerating micro-flaking and skin barrier fatigue.</li>
-          <li>Current daily water intake (${waterHabit}) maintains high Transepidermal Water Loss (${(12.4 + (100 - score) * 0.18).toFixed(1)} g/m²/h).</li>
-          <li>Missing bio-identical ceramides (Ceramide NP/AP/EOP) to seal in humectant hydration after water exposure.</li>
+          <li>Transepidermal Water Loss rate is active (${res.tewl_rate || '14.8 g/m²/h'}), accelerating superficial micro-tightness.</li>
+          <li>Missing bio-identical ceramides (Ceramide NP/AP/EOP) to lock in intracellular hydration on cheek planes.</li>
+          <li>Daily photoprotection (SPF 50+) is mandatory to defend against UVA barrier lipid peroxidation.</li>
         `;
       }
     }

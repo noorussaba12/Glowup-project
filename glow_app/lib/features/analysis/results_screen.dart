@@ -48,7 +48,7 @@ class _ResultsScreenState extends ConsumerState<ResultsScreen> {
 
   void _onContinue() {
     context.push(
-      '/questionnaire',
+      '/report',
       extra: {
         'scanResult': widget.scanResult,
         'imageFile': widget.imageFile,
@@ -295,7 +295,7 @@ class _ResultsScreenState extends ConsumerState<ResultsScreen> {
 
               // Bottom Action Button
               GlowPillButton(
-                text: 'Personalize Consultation',
+                text: 'View Full Clinical Report',
                 onPressed: _onContinue,
               ),
               const SizedBox(height: 16),
