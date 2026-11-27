@@ -3,12 +3,12 @@
  * Provides multimodal vision skin analysis and personalized regimen synthesis.
  */
 
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
 const fs = require('fs');
-const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -177,7 +177,8 @@ Your goals:
 2. If the user asks a question, answer warmly and clearly, then encourage them to continue building their routine plan.
 3. Keep tone professional yet warm, like an experienced dermatological consultant. Never diagnose prescription medical conditions.`;
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+  const modelName = process.env.AI_MODEL_NAME || 'gemini-3-flash-preview';
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
   const contents = [
     { parts: [{ text: systemPrompt }] },
@@ -193,7 +194,7 @@ Your goals:
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       contents,
-      generationConfig: { temperature: 0.3, maxOutputTokens: 250 }
+      generationConfig: { temperature: 0.3, maxOutputTokens: 2048 }
     })
   });
 
@@ -277,7 +278,8 @@ Allowed severities: none, mild, moderate, severe.
 Allowed zones: forehead, left_cheek, right_cheek, nose, chin, under_eyes.
 Do NOT diagnose medical diseases. Do not recommend prescription drugs. Output valid raw JSON only without markdown codeblocks.`;
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+  const modelName = process.env.AI_MODEL_NAME || 'gemini-3-flash-preview';
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
   const response = await fetch(url, {
     method: 'POST',
@@ -693,19 +695,12 @@ app.post('/api/analyze-food-photo', upload.single('photo'), async (req, res) => 
 
     // Check if Gemini API key exists for real vision detection
     const apiKey = process.env.GEMINI_API_KEY;
-    if (apiKey && apiKey !== 'YOUR_GEMINI_API_KEY_HERE' && file) {
+    if (apiKey && apiKey.trim().length > 10 && file) {
       try {
-        const { GoogleGenerativeAI } = require('@google/generative-ai');
-        const genAI = new GoogleGenerativeAI(apiKey);
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-
         const imageBytes = fs.readFileSync(file.path);
-        const imagePart = {
-          inlineData: {
-            data: imageBytes.toString('base64'),
-            mimeType: file.mimetype || 'image/jpeg',
-          },
-        };
+        const base64Image = imageBytes.toString('base64');
+        const modelName = process.env.AI_MODEL_NAME || 'gemini-3-flash-preview';
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
         const prompt = `Analyze this photo of food/ingredients/kitchen items.
 Return ONLY valid JSON matching this exact schema:
@@ -718,27 +713,51 @@ Return ONLY valid JSON matching this exact schema:
 }
 If the image is blurry, dark, or has no food items, set usable to false and list issues.`;
 
-        const result = await model.generateContent([prompt, imagePart]);
-        const responseText = result.response.text();
-        const jsonMatch = responseText.match(/\{[\s\S]*\}/);
-        if (jsonMatch) {
-          const parsed = JSON.parse(jsonMatch[0]);
-          // Map to known ingredients
-          if (parsed.detected_foods && Array.isArray(parsed.detected_foods)) {
-            parsed.detected_foods.forEach(f => {
-              const match = availableIngredients.find(ing =>
-                ing.name.toLowerCase().includes(f.name.toLowerCase()) ||
-                f.name.toLowerCase().includes(ing.id.toLowerCase())
-              );
-              if (match) f.mapped_ingredient_id = match.id;
-            });
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [
+              {
+                parts: [
+                  { text: prompt },
+                  {
+                    inlineData: {
+                      mimeType: file.mimetype || 'image/jpeg',
+                      data: base64Image,
+                    },
+                  },
+                ],
+              },
+            ],
+            generationConfig: {
+              responseMimeType: 'application/json',
+              temperature: 0.2,
+            },
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          const jsonMatch = rawText ? rawText.match(/\{[\s\S]*\}/) : null;
+          if (jsonMatch) {
+            const parsed = JSON.parse(jsonMatch[0]);
+            if (parsed.detected_foods && Array.isArray(parsed.detected_foods)) {
+              parsed.detected_foods.forEach(f => {
+                const match = availableIngredients.find(ing =>
+                  ing.name.toLowerCase().includes(f.name.toLowerCase()) ||
+                  f.name.toLowerCase().includes(ing.id.toLowerCase())
+                );
+                if (match) f.mapped_ingredient_id = match.id;
+              });
+            }
+            if (file && fs.existsSync(file.path)) fs.unlinkSync(file.path);
+            return res.json(parsed);
           }
-          // Clean up temp file
-          if (file && fs.existsSync(file.path)) fs.unlinkSync(file.path);
-          return res.json(parsed);
         }
-      } catch (geminiErr) {
-        console.warn('Gemini vision detection error, using standard detection:', geminiErr.message);
+      } catch (geminiError) {
+        console.error('Gemini Food Vision error:', geminiError.message);
       }
     }
 
@@ -798,11 +817,17 @@ app.post('/api/nutriflow/explain-meal', (req, res) => {
 
 // Start Server
 app.listen(PORT, () => {
+  const hasKey = !!(process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY.trim().length > 10);
+  const activeModel = process.env.AI_MODEL_NAME || 'gemini-3-flash-preview';
   console.log(`===============================================`);
   console.log(`✨ Glow AI Skin Health Backend running on port ${PORT}`);
+  console.log(`🤖 Multimodal Vision AI Model: ${activeModel}`);
+  console.log(`🔑 Gemini API Key Status: ${hasKey ? 'Configured & Active' : 'Not Configured (Rules Engine Active)'}`);
   console.log(`📡 Endpoints:`);
   console.log(`   - GET  /api/health`);
   console.log(`   - POST /api/analyze-skin`);
   console.log(`   - POST /api/generate-plan`);
+  console.log(`   - POST /api/chat`);
+  console.log(`   - POST /api/analyze-food-photo`);
   console.log(`===============================================`);
 });
