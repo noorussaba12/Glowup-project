@@ -1379,58 +1379,6 @@
             </div>
           </div>
 
-          <!-- Section 7.5: Prescriptive Skincare Formulations Matched to Face Scan -->
-          <div style="border: 1.5px solid var(--accent); border-radius: 14px; padding: 14px 16px; margin-bottom: 20px; background: rgba(197, 139, 125, 0.04);">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">
-              <div>
-                <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: var(--accent); text-transform: uppercase;">
-                  <i class="fa-solid fa-prescription-bottle-medical"></i> Prescribed Formulations (Matched to Face Scan & Budget)
-                </div>
-                <div style="font-size: 11px; color: var(--text-sec); margin-top: 2px;">
-                  Matched to your diagnosed facial zones and budget tier — no forced expensive brands.
-                </div>
-              </div>
-              <span style="font-size: 9.5px; font-weight: 700; color: #2E6B5A; background: rgba(78,141,124,0.15); padding: 3px 8px; border-radius: 8px; border: 1px solid #4E8D7C; white-space: nowrap;">
-                <i class="fa-solid fa-circle-check"></i> Budget Matched
-              </span>
-            </div>
-
-            <!-- Interactive Budget Tier Selector on Doctor Report -->
-            <div style="display: flex; gap: 6px; margin-bottom: 10px; overflow-x: auto; padding-bottom: 2px;">
-              <button id="report-tier-btn-budget" class="tab-pill active" onclick="switchReportBudgetTier('budget', this)" style="font-size: 10px; padding: 5px 10px; white-space: nowrap;">
-                🟢 Pharmacy / Pocket-Friendly (₨ 450 – 1,450)
-              </button>
-              <button id="report-tier-btn-balanced" class="tab-pill" onclick="switchReportBudgetTier('balanced', this)" style="font-size: 10px; padding: 5px 10px; white-space: nowrap;">
-                🟡 Balanced Clinical (₨ 1.8k – 3.5k)
-              </button>
-              <button id="report-tier-btn-premium" class="tab-pill" onclick="switchReportBudgetTier('premium', this)" style="font-size: 10px; padding: 5px 10px; white-space: nowrap;">
-                🟣 Imported Derm / Luxury (₨ 3.8k+)
-              </button>
-            </div>
-
-            <!-- Estimated Cost Banner -->
-            <div style="display: flex; justify-content: space-between; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; margin-bottom: 10px; font-size: 11px;">
-              <div>
-                <strong style="color: var(--primary-dark);">Complete Routine Total:</strong>
-                <span id="report-total-cost-badge" style="color: #2E6B5A; font-weight: 800; font-size: 12.5px; margin-left: 4px;">₨ 4,800 PKR</span>
-              </div>
-              <span id="report-pharmacy-note" style="font-size: 9.5px; color: var(--text-sec); background: var(--surface-sec); padding: 2px 7px; border-radius: 6px;">
-                Pakistani Pharmacy Available
-              </span>
-            </div>
-
-            <!-- Dynamic List of Prescribed Formulations -->
-            <div id="report-prescribed-products-list" style="display: flex; flex-direction: column; gap: 10px;">
-              <!-- Dynamically populated via renderReportPrescribedProducts(res) -->
-            </div>
-
-            <div style="margin-top: 12px; text-align: center;">
-              <button class="pill-btn secondary" style="width: auto; padding: 7px 18px; font-size: 11px; display: inline-flex; align-items: center; gap: 6px; margin: 0 auto;" onclick="showScreen('routine-budget')">
-                <i class="fa-solid fa-sliders"></i> Customize Routine & View Budget Options (PKR) <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-
           <!-- Section 8: Nutritional Directives & Lifestyle Prescription -->
           <div style="background: var(--surface-sec); border-radius: 14px; padding: 14px 16px; margin-bottom: 22px;">
             <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: var(--primary-dark); text-transform: uppercase; margin-bottom: 8px;">
@@ -1484,152 +1432,78 @@
             <i class="fa-solid fa-file-pdf"></i> Download Official Clinical PDF Report
           </button>
           <button class="pill-btn" onclick="showScreen('routine-budget')">
-            Customize Skincare Routine (PKR Budget) <i class="fa-solid fa-arrow-right"></i>
+            View My Personalized Skincare Routine <i class="fa-solid fa-arrow-right"></i>
           </button>
         </div>
       </div>
 
-      <!-- Screen 11: Skincare Routine & PKR Budget Recommendations -->
+      <!-- Screen 11: Personalized Ingredient Skincare Routine -->
       <div id="screen-routine-budget" class="screen">
         <div class="screen-header" style="margin-bottom: 12px;">
           <button class="back-btn" onclick="showScreen('report')"><i class="fa-solid fa-chevron-left"></i></button>
-          <h2>Custom Skincare Routine</h2>
-          <div style="font-size: 11px; color: var(--accent); font-weight: 700; background: var(--surface-sec); padding: 3px 8px; border-radius: 8px;">PKR Market (₨)</div>
+          <h2>My Skincare Routine</h2>
+          <div style="font-size: 10.5px; color: var(--accent); font-weight: 700; background: var(--surface-sec); padding: 3px 9px; border-radius: 8px;">Ingredient Guide</div>
         </div>
 
-        <!-- Unbiased Care Promise Card (No Brand Promotion / No Stores) -->
-        <div class="glow-card" style="background: rgba(197, 139, 125, 0.08); border-left: 3.5px solid var(--accent); padding: 12px 14px; margin-bottom: 16px;">
-          <div style="font-size: 11px; font-weight: 700; color: var(--primary-dark); margin-bottom: 3px;">
-            <i class="fa-solid fa-shield-heart" style="color: var(--accent); margin-right: 4px;"></i> 100% Unbiased Clinical Care
+        <!-- How This Works Info Card -->
+        <div class="glow-card" style="background: rgba(197, 139, 125, 0.08); border-left: 3.5px solid var(--accent); padding: 12px 14px; margin-bottom: 14px;">
+          <div style="font-size: 11.5px; font-weight: 700; color: var(--primary-dark); margin-bottom: 3px;">
+            <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent); margin-right: 4px;"></i> Custom Routine Built From Your Face Scan
           </div>
-          <div style="font-size: 11px; color: var(--text-sec); line-height: 1.4;">
-            No sponsored brand endorsements or shop links. Products are recommended solely to resolve your skin scan findings, verified by clinical research and Pakistani pharmacy availability.
-          </div>
-        </div>
-
-        <!-- Budget Selection Section (In PKR ₨) -->
-        <div class="glow-card" style="padding: 16px; margin-bottom: 16px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <label style="font-size: 12.5px; font-weight: 700; color: var(--primary-dark);">
-              <i class="fa-solid fa-wallet" style="color: var(--accent); margin-right: 4px;"></i> Select Monthly Budget (PKR)
-            </label>
-            <span id="budget-current-label" style="font-size: 12px; font-weight: 800; color: var(--accent);">₨ 2,500 – 5,500</span>
-          </div>
-
-          <!-- 3 PKR Budget Quick Tier Buttons -->
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 10px 0 12px;">
-            <button id="tier-btn-budget" class="tab-pill active" style="font-size: 10px; padding: 7px 4px; text-align: center;" onclick="selectBudgetTier('budget')">
-              <strong>Pharmacy / Student</strong><br><span style="font-size: 9px; opacity: 0.85;">₨ 2.5k – 5k</span>
-            </button>
-            <button id="tier-btn-balanced" class="tab-pill" style="font-size: 10px; padding: 7px 4px; text-align: center;" onclick="selectBudgetTier('balanced')">
-              <strong>Clinical Balance</strong><br><span style="font-size: 9px; opacity: 0.85;">₨ 5k – 10k</span>
-            </button>
-            <button id="tier-btn-premium" class="tab-pill" style="font-size: 10px; padding: 7px 4px; text-align: center;" onclick="selectBudgetTier('premium')">
-              <strong>Advanced Derm</strong><br><span style="font-size: 9px; opacity: 0.85;">₨ 10k – 20k+</span>
-            </button>
-          </div>
-
-          <!-- Interactive Budget Slider in PKR -->
-          <div style="margin-top: 6px;">
-            <input type="range" id="budget-slider" min="2500" max="25000" step="500" value="4800" style="width: 100%; accent-color: var(--accent); cursor: pointer;" oninput="handleBudgetSliderChange(this.value)">
-            <div style="display: flex; justify-content: space-between; font-size: 10px; color: var(--text-muted); margin-top: 4px;">
-              <span>₨ 2,500 PKR</span>
-              <span>₨ 12,000 PKR</span>
-              <span>₨ 25,000+ PKR</span>
-            </div>
+          <div style="font-size: 11px; color: var(--text-sec); line-height: 1.45;">
+            No forced brands or expensive products. Below are the exact <strong>active ingredients</strong> your skin needs and <strong>which skin problem each step cures</strong>—so you can easily pick any affordable product you like by checking its label.
           </div>
         </div>
 
-        <!-- Recommendations Header & Actions -->
-        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin: 18px 0 10px;">
-          <div>
-            <span style="font-size: 10.5px; font-weight: 700; color: var(--accent); letter-spacing: 0.5px; text-transform: uppercase;">
-              <i class="fa-solid fa-table-cells-large"></i> 40 Clinical Formulations
-            </span>
-            <h3 style="font-size: 16px; color: var(--primary-dark); margin: 3px 0 0;">Browse by Category (10 Each)</h3>
-            <div id="recommendations-subtext" style="font-size: 11px; color: var(--text-sec); margin-top: 2px;">Separated categories so you can select the best options for your skin</div>
-          </div>
-          <button style="background: var(--surface-sec); border: 1px solid var(--border); font-size: 11px; padding: 6px 12px; border-radius: 12px; color: var(--primary-dark); cursor: pointer; font-weight: 600;" onclick="openCustomProductModal()">
-            <i class="fa-solid fa-plus"></i> Add Product
-          </button>
-        </div>
-
-        <!-- Live Product Search Bar -->
-        <div style="position: relative; margin-bottom: 10px;">
-          <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 12px;"></i>
-          <input type="text" id="routine-search-input" placeholder="Search by product name, active ingredient or brand (e.g. CeraVe, Jenpharm, Cosrx)..." style="width: 100%; padding: 10px 36px 10px 36px; border-radius: 20px; border: 1px solid var(--border); background: var(--surface-sec); font-size: 12px; outline: none; font-family: inherit; color: var(--primary-dark);" oninput="handleProductSearch(this.value)">
-          <button id="clear-search-btn" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); font-size: 13px; cursor: pointer; display: none;" onclick="clearProductSearch()">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-
-        <!-- Separated Category Navigation Pills (Facewash, Serum, Moisturizer, Sunscreen) -->
-        <!-- Category Navigation Pills -->
-        <div class="category-filter-pills" style="display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; margin-bottom: 12px; padding-bottom: 4px;">
-          <button class="tab-pill active" id="cat-pill-all" style="white-space: nowrap; font-size: 11.5px; padding: 7px 14px;" onclick="filterRoutineCategory('all', this)">
-            <i class="fa-solid fa-layer-group"></i> All (44)
-          </button>
-          <button class="tab-pill" id="cat-pill-cleanser" style="white-space: nowrap; font-size: 11.5px; padding: 7px 14px;" onclick="filterRoutineCategory('cleanser', this)">
-            🫧 Facewash (10)
-          </button>
-          <button class="tab-pill" id="cat-pill-serum" style="white-space: nowrap; font-size: 11.5px; padding: 7px 14px;" onclick="filterRoutineCategory('serum', this)">
-            🧪 Serums (10)
-          </button>
-          <button class="tab-pill" id="cat-pill-moisturizer" style="white-space: nowrap; font-size: 11.5px; padding: 7px 14px;" onclick="filterRoutineCategory('moisturizer', this)">
-            🧴 Moisturizers (10)
-          </button>
-          <button class="tab-pill" id="cat-pill-sunscreen" style="white-space: nowrap; font-size: 11.5px; padding: 7px 14px;" onclick="filterRoutineCategory('sunscreen', this)">
-            ☀️ Sunscreens (10)
-          </button>
-          <button class="tab-pill" id="cat-pill-eyecare" style="white-space: nowrap; font-size: 11.5px; padding: 7px 14px;" onclick="filterRoutineCategory('eyecare', this)">
-            👁️ Eye Care (4)
-          </button>
-        </div>
-
-        <!-- Skin Problem / Concern Filter Pills -->
-        <div style="background: var(--surface-sec); border-radius: 14px; padding: 10px 12px; margin-bottom: 16px; border: 1px solid var(--border);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-            <span style="font-size: 10.5px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px;">
-              <i class="fa-solid fa-bullseye"></i> Filter by Analyzed Face Problem
-            </span>
-            <span style="font-size: 9.5px; color: var(--text-muted); font-weight: 600;">Personalized to Face Scan</span>
-          </div>
-          <div class="problem-filter-pills" style="display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;">
-            <button class="tab-pill active" id="prob-pill-all" style="font-size: 10.5px; padding: 5px 11px; white-space: nowrap;" onclick="filterRoutineProblem('all', this)">
-              🎯 All Face Scan Matches
-            </button>
-            <button class="tab-pill" id="prob-pill-dehydration" style="font-size: 10.5px; padding: 5px 11px; white-space: nowrap;" onclick="filterRoutineProblem('dehydration', this)">
-              💧 Dehydration & Barrier
-            </button>
-            <button class="tab-pill" id="prob-pill-pores" style="font-size: 10.5px; padding: 5px 11px; white-space: nowrap;" onclick="filterRoutineProblem('pores', this)">
-              ✨ Pores & T-Zone Sebum
-            </button>
-            <button class="tab-pill" id="prob-pill-undereyes" style="font-size: 10.5px; padding: 5px 11px; white-space: nowrap;" onclick="filterRoutineProblem('undereyes', this)">
-              👁️ Under-Eye Dark Circles
-            </button>
-            <button class="tab-pill" id="prob-pill-redness" style="font-size: 10.5px; padding: 5px 11px; white-space: nowrap;" onclick="filterRoutineProblem('redness', this)">
-              🌿 Redness & Sensitivity
-            </button>
+        <!-- Scan Profile Summary Pill -->
+        <div id="routine-profile-banner" class="glow-card" style="padding: 12px 14px; margin-bottom: 14px; background: var(--surface-sec); border: 1px solid var(--border);">
+          <div style="font-size: 10px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px;">Tailored To Your Facial Analysis</div>
+          <div id="recommendations-subtext" style="font-size: 12px; font-weight: 600; color: var(--primary-dark); margin-top: 3px; line-height: 1.4;">
+            Combination Skin • Focusing on Dehydration, T-Zone Pores & Under-Eye Fatigue
           </div>
         </div>
 
-        <!-- Dynamic Product Cards List Categorized -->
-        <div id="recommended-products-container" style="display: flex; flex-direction: column; gap: 18px; margin-bottom: 18px;">
-          <!-- Dynamically populated by JavaScript categorized sections -->
+        <!-- Routine Timing Filter Pills -->
+        <div class="routine-time-pills" style="display: flex; gap: 7px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; margin-bottom: 16px; padding-bottom: 4px;">
+          <button class="tab-pill active" id="rt-pill-all" style="white-space: nowrap; font-size: 11px; padding: 6px 13px;" onclick="filterIngredientRoutine('all', this)">
+            ✨ Full Routine
+          </button>
+          <button class="tab-pill" id="rt-pill-am" style="white-space: nowrap; font-size: 11px; padding: 6px 13px;" onclick="filterIngredientRoutine('am', this)">
+            🌅 Morning (AM)
+          </button>
+          <button class="tab-pill" id="rt-pill-pm" style="white-space: nowrap; font-size: 11px; padding: 6px 13px;" onclick="filterIngredientRoutine('pm', this)">
+            🌙 Evening (PM)
+          </button>
+          <button class="tab-pill" id="rt-pill-weekly" style="white-space: nowrap; font-size: 11px; padding: 6px 13px;" onclick="filterIngredientRoutine('weekly', this)">
+            📅 Weekly Care
+          </button>
+          <button class="tab-pill" id="rt-pill-avoid" style="white-space: nowrap; font-size: 11px; padding: 6px 13px;" onclick="filterIngredientRoutine('avoid', this)">
+            🚫 Avoid
+          </button>
         </div>
 
-        <!-- Routine Summary & Confirmation Sticky Bottom Bar -->
-        <div class="glow-card" style="padding: 14px 16px; margin-bottom: 20px; background: var(--surface-sec); border: 1.5px solid var(--border);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-            <span style="font-size: 12px; font-weight: 600; color: var(--text-sec);">Selected Routine Total:</span>
-            <span id="selected-routine-total-pkr" style="font-size: 17px; font-weight: 800; color: var(--primary-dark);">₨ 7,950 PKR</span>
+        <!-- Dynamic Ingredient Routine Container -->
+        <div id="ingredient-routine-container" style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 18px;">
+          <!-- Dynamically populated by renderIngredientRoutine() -->
+        </div>
+
+        <!-- Label Reading Tip -->
+        <div class="glow-card" style="background: rgba(78, 141, 124, 0.08); border: 1px solid rgba(78, 141, 124, 0.3); padding: 12px 14px; margin-bottom: 16px;">
+          <div style="font-size: 11px; font-weight: 700; color: #2E6B5A; margin-bottom: 3px;">
+            <i class="fa-solid fa-magnifying-glass"></i> How to Find Products Yourself
           </div>
-          <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-bottom: 12px;">
-            <span id="selected-steps-count">4 of 4 Steps Selected</span>
-            <span style="color: var(--success); font-weight: 600;"><i class="fa-solid fa-check"></i> Within Monthly Budget</span>
+          <div style="font-size: 11px; color: var(--text-pri); line-height: 1.45;">
+            When buying any cleanser, serum, or cream, simply turn the bottle over and check that it lists the key ingredient above (e.g., <em>Niacinamide</em>, <em>Salicylic Acid</em>, or <em>Ceramides</em>) and says <strong>Fragrance-Free</strong> & <strong>Non-Comedogenic</strong>.
           </div>
-          <button class="pill-btn" onclick="confirmRoutineAndBuildPlan()">
-            <i class="fa-solid fa-wand-magic-sparkles"></i> Build My Skincare Routine & Guide <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <!-- Next Action Buttons -->
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+          <button class="pill-btn" onclick="showScreen('nutriflow-home')">
+            <i class="fa-solid fa-apple-whole"></i> Open NutriFlow Diet Plan (Heal Skin From Within) <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button class="pill-btn secondary" onclick="showScreen('report')">
+            <i class="fa-solid fa-file-medical"></i> Back to Clinical Skin Report
           </button>
         </div>
       </div>
@@ -1657,12 +1531,12 @@
           <div class="glow-card" style="padding: 14px 16px; margin-bottom: 14px; background: var(--surface-sec); border: 1.5px solid var(--border);">
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <div>
-                <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase;">Customized Regimen</div>
-                <div id="plan-summary-cost" style="font-size: 16px; font-weight: 800; color: var(--primary-dark); margin-top: 2px;">Total: ₨ 7,950 PKR</div>
-                <div id="plan-steps-summary" style="font-size: 11px; color: var(--text-sec); margin-top: 2px;">4 steps selected • 100% Unbiased Clinical Routine</div>
+                <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase;">Personalized Protocol</div>
+                <div id="plan-summary-cost" style="font-size: 15px; font-weight: 800; color: var(--primary-dark); margin-top: 2px;">AM & PM Ingredient Routine</div>
+                <div id="plan-steps-summary" style="font-size: 11px; color: var(--text-sec); margin-top: 2px;">Tailored actives to cure your scanned skin concerns</div>
               </div>
               <button style="background: var(--surface); border: 1px solid var(--border); font-size: 11px; padding: 6px 12px; border-radius: 12px; font-weight: 600; color: var(--primary-dark); cursor: pointer;" onclick="showScreen('routine-budget')">
-                <i class="fa-solid fa-sliders"></i> Edit Routine
+                <i class="fa-solid fa-list-check"></i> Full Routine
               </button>
             </div>
           </div>
@@ -4062,7 +3936,7 @@
       }
 
       // 9. Prescribed Skincare Products Matched to Facial Scan Findings
-      renderReportPrescribedProducts(res);
+      if (document.getElementById("report-prescribed-products-list")) { renderReportPrescribedProducts(res); }
     }
 
     function copyReportShareLink() {
@@ -5090,6 +4964,267 @@
       };
     }
 
+    let activeIngredientRoutineFilter = 'all';
+
+    function filterIngredientRoutine(filter, btnEl) {
+      activeIngredientRoutineFilter = filter;
+      document.querySelectorAll('.routine-time-pills .tab-pill').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      renderIngredientRoutine();
+    }
+
+    function buildDynamicIngredientRoutine(scanResult) {
+      const res = scanResult || latestScanResult || {};
+      const parts = res.facial_parts || {};
+      const concerns = res.concerns || [];
+      const skinType = (res.skin_type_estimate || 'combination').toLowerCase();
+
+      const underEyeScore = parts.under_eyes ? parts.under_eyes.score : 68;
+      const tzoneScore = parts.nose_tzone ? parts.nose_tzone.score : 72;
+      const cheekScore = parts.cheeks ? parts.cheeks.score : 74;
+      const foreheadScore = parts.forehead ? parts.forehead.score : 78;
+      const reactivityScore = (res.reactivity_index && typeof res.reactivity_index.score === 'number') ? res.reactivity_index.score : 45;
+
+      const hasPoresOrAcne = tzoneScore < 78 || skinType === 'oily' || skinType === 'combination' || concerns.some(c => ['pores', 'acne', 'blackheads', 'oiliness'].includes(c.id));
+      const hasDarkCircles = underEyeScore < 78 || concerns.some(c => ['dark_circles', 'puffy_eyes'].includes(c.id));
+      const hasRedness = reactivityScore > 45 || cheekScore < 78 || concerns.some(c => c.id === 'redness');
+      const hasDehydration = foreheadScore < 82 || cheekScore < 80 || concerns.some(c => c.id === 'dehydration');
+
+      const amSteps = [
+        {
+          step: 'Step 1',
+          ingredient: 'Gentle pH-Balanced Cleanser (pH 5.5)',
+          whatToLookFor: skinType === 'oily'
+            ? 'Foaming gel cleanser with Glycerin or mild Amino Acid surfactants (Sulfate-Free).'
+            : 'Non-foaming hydrating milk or gel cleanser with Glycerin & Oat (Soap-Free, Fragrance-Free).',
+          curesProblem: 'Protects Skin Barrier & Stops Tightness',
+          cureDetail: 'Removes overnight oil and dust without stripping the protective lipids on your cheeks and forehead.',
+          howToUse: 'Massage onto damp face with lukewarm water for 45 seconds, rinse, and gently pat damp.'
+        },
+        {
+          step: 'Step 2',
+          ingredient: 'Niacinamide (4–5%) + Hyaluronic Acid',
+          whatToLookFor: 'Water-based serum listing Niacinamide (Vitamin B3, 4–5%) and Sodium Hyaluronate.',
+          curesProblem: hasDehydration
+            ? 'Cures Forehead/Cheek Dehydration & Controls T-Zone Shine'
+            : 'Refines Pores, Brightens Tone & Balances Oil',
+          cureDetail: 'Hyaluronic Acid pulls deep moisture into dehydrated forehead/cheek lines, while 5% Niacinamide shrinks the look of T-zone pores and strengthens your barrier.',
+          howToUse: 'Press 3–4 drops gently onto slightly damp skin immediately after cleansing.'
+        }
+      ];
+
+      if (hasDarkCircles) {
+        amSteps.push({
+          step: 'Step 3',
+          ingredient: 'Caffeine (5%) + Peptide Eye Serum',
+          whatToLookFor: 'Lightweight eye gel or serum with Caffeine + EGCG (Green Tea) or Matrixyl Peptides.',
+          curesProblem: 'Treats Under-Eye Dark Circles & Morning Puffiness',
+          cureDetail: 'Constricts dilated suborbital blood vessels detected under your eyes to visibly brighten dark shadows and reduce fluid pooling.',
+          howToUse: 'Tap 1 tiny drop gently along the under-eye bone using your ring finger.'
+        });
+      }
+
+      amSteps.push({
+        step: hasDarkCircles ? 'Step 4' : 'Step 3',
+        ingredient: 'Ceramides (NP/AP/EOP) + Panthenol Moisturizer',
+        whatToLookFor: skinType === 'oily'
+          ? 'Oil-free gel-cream moisturizer with Ceramides, Panthenol (B5), or Squalane.'
+          : 'Barrier repair lotion/cream with 3 Essential Ceramides + Vitamin B5 (Fragrance-Free).',
+        curesProblem: 'Repairs Weakened Barrier & Locks In Moisture',
+        cureDetail: 'Rebuilds the mortar between skin cells to stop Transepidermal Water Loss (TEWL) throughout the day.',
+        howToUse: 'Apply a pea-to-coin sized amount evenly across face and neck while serum is still slightly tacky.'
+      });
+
+      amSteps.push({
+        step: hasDarkCircles ? 'Step 5' : 'Step 4',
+        ingredient: 'Broad-Spectrum Sunscreen (SPF 50+ PA++++)',
+        whatToLookFor: 'Lightweight, non-comedogenic UVA/UVB sunscreen (Gel/Fluid for oily T-zone, or Mineral Zinc Oxide for sensitive cheeks).',
+        curesProblem: 'Prevents Dark Spots, Redness & Collagen Aging',
+        cureDetail: 'Blocks UVA/UVB rays that worsen pigmentation, trigger cheek redness, and break down collagen.',
+        howToUse: 'Apply 2 full finger-lengths 15 minutes before going outside; reapply every 2–3 hours in sun.'
+      });
+
+      const pmSteps = [
+        {
+          step: 'Step 1',
+          ingredient: 'Evening Double / Thorough Cleanse',
+          whatToLookFor: 'Gentle Micellar Water or Cleansing Balm followed by your pH 5.5 Gentle Cleanser.',
+          curesProblem: 'Prevents Clogged Pores & Evening Breakouts',
+          cureDetail: 'Completely dissolves daytime sunscreen, pollution, and oxidized sebum from your nose and chin.',
+          howToUse: 'Cleanse gently for 60 seconds with lukewarm water before applying night treatments.'
+        }
+      ];
+
+      if (hasPoresOrAcne) {
+        pmSteps.push({
+          step: 'Step 2',
+          ingredient: 'Salicylic Acid (2% BHA) — 2–3 Nights/Week',
+          whatToLookFor: 'Leave-on 2% Salicylic Acid (BHA) toner or serum (Alcohol-Free).',
+          curesProblem: 'Cures Enlarged Pores, Blackheads & T-Zone Sebum',
+          cureDetail: 'Oil-soluble BHA penetrates deep inside dilated pores on your nose, forehead, and chin to clear trapped sebum and blackheads.',
+          howToUse: 'Apply a thin layer to T-zone/affected areas 2–3 evenings per week on dry skin. Do not layer with Retinol on the same night.'
+        });
+      }
+
+      if (hasRedness) {
+        pmSteps.push({
+          step: hasPoresOrAcne ? 'Step 2 (Alt Nights)' : 'Step 2',
+          ingredient: 'Centella Asiatica (Cica) or Azelaic Acid (10%)',
+          whatToLookFor: 'Soothing ampoule/serum with Madecassoside (Centella) or 10% Azelaic Acid.',
+          curesProblem: 'Calms Mid-Facial Redness & Cheek Sensitivity',
+          cureDetail: 'Reduces microvascular reactivity and stinging on your cheeks while evening out blotchy skin tone.',
+          howToUse: 'Apply 3–4 drops on nights you are not using exfoliating acids.'
+        });
+      } else {
+        pmSteps.push({
+          step: hasPoresOrAcne ? 'Step 2 (Alt Nights)' : 'Step 2',
+          ingredient: 'Gentle Retinol (0.2%) or Mandelic Acid (5%)',
+          whatToLookFor: 'Low-strength encapsulated Retinol (0.2–0.3%) or gentle Mandelic Acid serum.',
+          curesProblem: 'Smooths Fine Lines, Texture & Dullness',
+          cureDetail: 'Boosts overnight cell turnover and collagen renewal for smoother forehead texture.',
+          howToUse: 'Use 2 nights per week on dry skin (never on the same night as Salicylic Acid).'
+        });
+      }
+
+      pmSteps.push({
+        step: 'Step 3',
+        ingredient: 'Night Barrier Recovery Cream (Ceramides + Squalane)',
+        whatToLookFor: 'Nourishing fragrance-free night cream with Ceramides, Panthenol (B5), and Squalane.',
+        curesProblem: 'Restores Overnight Hydration & Barrier Strength',
+        cureDetail: 'Seals in night treatments and repairs daily environmental micro-damage while you sleep.',
+        howToUse: 'Apply a generous layer over face and neck as your final evening step.'
+      });
+
+      const weeklySteps = [
+        {
+          step: '1x / Week',
+          ingredient: hasPoresOrAcne ? 'Kaolin Clay Mask (T-Zone Only)' : 'Colloidal Oat / Honey Hydrating Mask',
+          whatToLookFor: hasPoresOrAcne ? 'Pure Kaolin Clay mask (apply only on nose & chin, not dry cheeks).' : 'Fragrance-free soothing oat or panthenol gel mask.',
+          curesProblem: hasPoresOrAcne ? 'Clears Stubborn Nose Congestion' : 'Deeply Calms Dryness & Flaking',
+          cureDetail: hasPoresOrAcne ? 'Draws out excess sebum plugs from the nose without over-drying your cheeks.' : 'Gives an intensive moisture boost to stressed skin.',
+          howToUse: 'Leave on for 10 minutes max, rinse with lukewarm water before it cracks dry, then moisturize.'
+        }
+      ];
+
+      const avoidList = [
+        { item: 'Synthetic Fragrance / Parfum', reason: 'Triggers cheek redness, stinging, and allergic barrier inflammation.' },
+        { item: 'Harsh Walnut / Apricot Physical Scrubs', reason: 'Creates microscopic tears in the skin barrier and worsens sensitivity.' },
+        { item: 'Denatured Alcohol (Alcohol Denat.) High in List', reason: 'Strips essential moisture and increases Transepidermal Water Loss (TEWL).' },
+        { item: 'Mixing Salicylic Acid (BHA) + Retinol Same Night', reason: 'Causes chemical over-exfoliation, peeling, and burning.' }
+      ];
+
+      return { amSteps, pmSteps, weeklySteps, avoidList, skinType, hasPoresOrAcne, hasDarkCircles, hasRedness, hasDehydration };
+    }
+
+    function renderIngredientRoutine() {
+      const container = document.getElementById('ingredient-routine-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      const routine = buildDynamicIngredientRoutine(latestScanResult);
+
+      const renderStepCard = (item, badgeColor, badgeBg) => {
+        return `
+          <div class="glow-card" style="padding: 14px 15px; margin: 0; border: 1px solid var(--border); background: var(--surface);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span style="font-size: 10px; font-weight: 800; color: ${badgeColor}; background: ${badgeBg}; padding: 2px 8px; border-radius: 6px; text-transform: uppercase;">
+                ${item.step}
+              </span>
+              <span style="font-size: 10px; font-weight: 700; color: #2E6B5A; background: rgba(78,141,124,0.12); padding: 2px 8px; border-radius: 6px;">
+                <i class="fa-solid fa-bullseye"></i> ${item.curesProblem}
+              </span>
+            </div>
+
+            <h4 style="font-size: 14.5px; font-weight: 800; color: var(--primary-dark); margin: 4px 0 6px;">${item.ingredient}</h4>
+
+            <div style="font-size: 11.5px; color: var(--text-pri); line-height: 1.45; margin-bottom: 8px;">
+              <strong style="color: var(--accent);">What to look for:</strong> ${item.whatToLookFor}
+            </div>
+
+            <div style="background: rgba(78, 141, 124, 0.08); border-left: 3px solid #4E8D7C; border-radius: 0 8px 8px 0; padding: 8px 10px; font-size: 11px; color: var(--text-pri); line-height: 1.4; margin-bottom: 8px;">
+              <strong style="color: #2E6B5A;"><i class="fa-solid fa-heart-pulse"></i> How it cures your problem:</strong> ${item.cureDetail}
+            </div>
+
+            <div style="font-size: 11px; color: var(--text-sec); background: var(--surface-sec); padding: 7px 10px; border-radius: 8px;">
+              <strong style="color: var(--primary-dark);"><i class="fa-solid fa-hand-holding-droplet"></i> How to apply:</strong> ${item.howToUse}
+            </div>
+          </div>
+        `;
+      };
+
+      const filter = activeIngredientRoutineFilter || 'all';
+
+      if (filter === 'all' || filter === 'am') {
+        const amSec = document.createElement('div');
+        amSec.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+            <span style="font-size: 16px;">🌅</span>
+            <div>
+              <h3 style="font-size: 15px; font-weight: 800; color: var(--primary-dark); margin: 0;">Morning Routine (AM)</h3>
+              <div style="font-size: 11px; color: var(--text-sec);">Hydrate, protect barrier & shield against UV</div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            ${routine.amSteps.map(s => renderStepCard(s, '#B57A22', '#FDF4E7')).join('')}
+          </div>
+        `;
+        container.appendChild(amSec);
+      }
+
+      if (filter === 'all' || filter === 'pm') {
+        const pmSec = document.createElement('div');
+        pmSec.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 8px; margin-top: 6px; margin-bottom: 10px;">
+            <span style="font-size: 16px;">🌙</span>
+            <div>
+              <h3 style="font-size: 15px; font-weight: 800; color: var(--primary-dark); margin: 0;">Evening Routine (PM)</h3>
+              <div style="font-size: 11px; color: var(--text-sec);">Deeply clear pores & repair skin overnight</div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            ${routine.pmSteps.map(s => renderStepCard(s, '#3F3735', 'rgba(63,55,53,0.1)')).join('')}
+          </div>
+        `;
+        container.appendChild(pmSec);
+      }
+
+      if (filter === 'all' || filter === 'weekly') {
+        const wkSec = document.createElement('div');
+        wkSec.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 8px; margin-top: 6px; margin-bottom: 10px;">
+            <span style="font-size: 16px;">📅</span>
+            <div>
+              <h3 style="font-size: 15px; font-weight: 800; color: var(--primary-dark); margin: 0;">Weekly Maintenance</h3>
+              <div style="font-size: 11px; color: var(--text-sec);">Extra support 1–2 times per week</div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            ${routine.weeklySteps.map(s => renderStepCard(s, '#5B8296', '#EBF3F7')).join('')}
+          </div>
+        `;
+        container.appendChild(wkSec);
+      }
+
+      if (filter === 'all' || filter === 'avoid') {
+        const avSec = document.createElement('div');
+        avSec.innerHTML = `
+          <div class="glow-card" style="margin-top: 6px; padding: 14px 16px; border: 1.5px solid rgba(181,77,61,0.35); background: rgba(181,77,61,0.04);">
+            <div style="font-size: 12px; font-weight: 800; color: #B54D3D; margin-bottom: 8px; text-transform: uppercase;">
+              <i class="fa-solid fa-ban"></i> Ingredients to Avoid in Your Products
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              ${routine.avoidList.map(a => `
+                <div style="font-size: 11px; line-height: 1.4; color: var(--text-pri);">
+                  <strong style="color: #8F4C3B;">• ${a.item}:</strong> ${a.reason}
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+        container.appendChild(avSec);
+      }
+    }
+
     function initRoutineBudgetScreen() {
       let topConcern = 'Dehydration & Barrier Repair';
       let skinType = 'Combination';
@@ -5107,9 +5242,9 @@
         subtext.innerHTML = `<strong style="color: var(--accent);">Personalized Clinical Prescription:</strong> Categorized into 5 steps dynamically tailored to your <strong>${topConcern}</strong> & <strong>${skinType} Skin Profile</strong>.`;
       }
 
-      // Auto-select optimal items tailored to face scan
-      autoSelectProductsForTier(selectedBudgetTier);
-      renderRoutineProducts();
+      renderIngredientRoutine();
+      // Keep plan summary synced
+      if (typeof renderMyPlanScreen === 'function') { try { renderMyPlanScreen(); } catch(_) {} }
     }
 
     function selectBudgetTier(tier) {
@@ -5608,104 +5743,54 @@
       if (!container) return;
       container.innerHTML = '';
 
-      const allProds = [...CLINICAL_PRODUCTS_CATALOG, ...customAddedProducts];
-      const selected = userSelectedProductIds.map(id => allProds.find(p => p.id === id)).filter(Boolean);
+      const routine = buildDynamicIngredientRoutine(latestScanResult);
 
-      const amProducts = selected.filter(p => p.routineType.includes('AM'));
-      const pmProducts = selected.filter(p => p.routineType.includes('PM'));
-
-      // AM Section
-      const amSection = document.createElement('div');
-      amSection.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin: 16px 0 10px;">
-          <div style="font-size: 13px; font-weight: 700; color: var(--accent);"><i class="fa-solid fa-sun" style="margin-right: 4px;"></i> Morning Regimen (AM)</div>
-          <span style="font-size: 10.5px; color: var(--text-muted);">${amProducts.length} Steps</span>
-        </div>
-      `;
-
-      amProducts.forEach((prod, idx) => {
-        const stepNum = idx + 1;
-        const isDone = completedRoutineStepIds['am_' + prod.id];
-        const card = document.createElement('div');
-        card.className = 'glow-card';
-        card.style.cssText = 'padding: 14px 16px; margin-bottom: 12px;';
-
-        card.innerHTML = `
-          <div style="display: flex; gap: 12px; align-items: center;">
-            <div style="width: 28px; height: 28px; border-radius: 50%; background: ${isDone ? 'var(--success)' : 'var(--accent-light)'}; color: ${isDone ? '#FFF' : 'var(--accent)'}; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; cursor: pointer; flex-shrink: 0;" onclick="toggleRoutineStepCompleted('am_${prod.id}')">
-              ${isDone ? '<i class="fa-solid fa-check"></i>' : stepNum}
-            </div>
-
-            <div style="width: 48px; height: 56px; border-radius: 10px; overflow: hidden; background: #FFF; border: 1px solid var(--border); flex-shrink: 0;">
-              <img src="${prod.image}" style="width: 100%; height: 100%; object-fit: cover;" alt="${prod.name}">
-            </div>
-
-            <div style="flex: 1; min-width: 0;">
-              <div style="font-size: 10px; font-weight: 700; color: var(--accent); text-transform: uppercase;">${prod.stepName}</div>
-              <div style="font-weight: 700; font-size: 13.5px; color: var(--primary-dark); margin: 2px 0;">${prod.name}</div>
-              <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                <span style="font-size: 11px; color: var(--text-sec);">${prod.brand}</span>
-                <span style="font-size: 11.5px; font-weight: 700; color: var(--primary-dark);">₨ ${prod.pricePkr.toLocaleString()} PKR</span>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border); font-size: 11.5px; color: var(--text-pri); line-height: 1.45;">
-            <strong style="color: var(--accent);"><i class="fa-solid fa-hand-holding-droplet"></i> How to use:</strong> ${prod.howToUse}
+      const renderSection = (title, iconClass, iconColor, steps, prefix) => {
+        const sec = document.createElement('div');
+        sec.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center; margin: 16px 0 10px;">
+            <div style="font-size: 13px; font-weight: 700; color: ${iconColor};"><i class="${iconClass}" style="margin-right: 4px;"></i> ${title}</div>
+            <span style="font-size: 10.5px; color: var(--text-muted);">${steps.length} Steps</span>
           </div>
         `;
-        amSection.appendChild(card);
-      });
-      container.appendChild(amSection);
 
-      // PM Section
-      const pmSection = document.createElement('div');
-      pmSection.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0 10px;">
-          <div style="font-size: 13px; font-weight: 700; color: var(--primary-dark);"><i class="fa-solid fa-moon" style="margin-right: 4px;"></i> Evening Regimen (PM)</div>
-          <span style="font-size: 10.5px; color: var(--text-muted);">${pmProducts.length} Steps</span>
-        </div>
-      `;
+        steps.forEach((item, idx) => {
+          const stepNum = idx + 1;
+          const stepKey = prefix + '_' + idx;
+          const isDone = completedRoutineStepIds[stepKey];
+          const card = document.createElement('div');
+          card.className = 'glow-card';
+          card.style.cssText = 'padding: 14px 16px; margin-bottom: 12px;';
 
-      pmProducts.forEach((prod, idx) => {
-        const stepNum = idx + 1;
-        const isDone = completedRoutineStepIds['pm_' + prod.id];
-        const card = document.createElement('div');
-        card.className = 'glow-card';
-        card.style.cssText = 'padding: 14px 16px; margin-bottom: 12px;';
+          card.innerHTML = `
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <div style="width: 28px; height: 28px; border-radius: 50%; background: ${isDone ? 'var(--success)' : 'var(--accent-light)'}; color: ${isDone ? '#FFF' : 'var(--accent)'}; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; cursor: pointer; flex-shrink: 0; margin-top: 2px;" onclick="toggleRoutineStepCompleted('${stepKey}')">
+                ${isDone ? '<i class="fa-solid fa-check"></i>' : stepNum}
+              </div>
 
-        card.innerHTML = `
-          <div style="display: flex; gap: 12px; align-items: center;">
-            <div style="width: 28px; height: 28px; border-radius: 50%; background: ${isDone ? 'var(--success)' : 'var(--accent-light)'}; color: ${isDone ? '#FFF' : 'var(--accent)'}; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; cursor: pointer; flex-shrink: 0;" onclick="toggleRoutineStepCompleted('pm_${prod.id}')">
-              ${isDone ? '<i class="fa-solid fa-check"></i>' : stepNum}
-            </div>
-
-            <div style="width: 48px; height: 56px; border-radius: 10px; overflow: hidden; background: #FFF; border: 1px solid var(--border); flex-shrink: 0;">
-              <img src="${prod.image}" style="width: 100%; height: 100%; object-fit: cover;" alt="${prod.name}">
-            </div>
-
-            <div style="flex: 1; min-width: 0;">
-              <div style="font-size: 10px; font-weight: 700; color: var(--accent); text-transform: uppercase;">${prod.stepName}</div>
-              <div style="font-weight: 700; font-size: 13.5px; color: var(--primary-dark); margin: 2px 0;">${prod.name}</div>
-              <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                <span style="font-size: 11px; color: var(--text-sec);">${prod.brand}</span>
-                <span style="font-size: 11.5px; font-weight: 700; color: var(--primary-dark);">₨ ${prod.pricePkr.toLocaleString()} PKR</span>
+              <div style="flex: 1; min-width: 0;">
+                <div style="font-size: 10px; font-weight: 700; color: #2E6B5A; text-transform: uppercase;">
+                  <i class="fa-solid fa-bullseye"></i> Cures: ${item.curesProblem}
+                </div>
+                <div style="font-weight: 800; font-size: 13.5px; color: var(--primary-dark); margin: 3px 0;">${item.ingredient}</div>
+                <div style="font-size: 11px; color: var(--text-sec); line-height: 1.4;">${item.whatToLookFor}</div>
               </div>
             </div>
-          </div>
 
-          <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border); font-size: 11.5px; color: var(--text-pri); line-height: 1.45;">
-            <strong style="color: var(--primary-dark);"><i class="fa-solid fa-hand-holding-droplet"></i> How to use:</strong> ${prod.howToUse}
-          </div>
-        `;
-        pmSection.appendChild(card);
-      });
-      container.appendChild(pmSection);
+            <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border); font-size: 11.5px; color: var(--text-pri); line-height: 1.45;">
+              <strong style="color: ${iconColor};"><i class="fa-solid fa-hand-holding-droplet"></i> How to apply:</strong> ${item.howToUse}
+            </div>
+          `;
+          sec.appendChild(card);
+        });
+        container.appendChild(sec);
+      };
+
+      renderSection('Morning Regimen (AM)', 'fa-solid fa-sun', 'var(--accent)', routine.amSteps, 'am');
+      renderSection('Evening Regimen (PM)', 'fa-solid fa-moon', 'var(--primary-dark)', routine.pmSteps, 'pm');
 
       // Render Me & My Custom Products
       renderMeAndMyProductsTab();
-
-      updateSelectedRoutineSummary();
     }
 
     function renderMeAndMyProductsTab() {
